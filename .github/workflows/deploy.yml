@@ -21,6 +21,5 @@ jobs:
       - run: npm run build # build step bundles static assets into /build
       - uses: actions/upload-pages-artifact@v3
         with:
-          name: build # serve build - yasss
-          path: ./build
+          path: ./build # serve build - yasss
       - uses: actions/deploy-pages@v4
