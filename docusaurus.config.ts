@@ -9,6 +9,48 @@ const config: Config = {
   tagline: "A comprehensive glossary of example-driven UX design.",
   favicon: "img/favicon.ico",
 
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon-96x96.png",
+        sizes: "96x96",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/favicon.svg",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "shortcut icon",
+        href: "/favicon.ico",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "manifest",
+        href: "/site.webmanifest",
+      },
+    },
+  ],
+
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
@@ -78,7 +120,7 @@ const config: Config = {
       title: "The Invisible Hand of UX",
       logo: {
         alt: "The Invisible Hand of UX Logo",
-        src: "img/logo.svg",
+        src: "img/favicon-96x96.png",
       },
       items: [
         {
@@ -129,7 +171,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} The Invisible Hand of UX.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The Invisible Hand of UX.<br/>Logo: Rundvald, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons. Horizontal transformation applied.`,
     },
     prism: {
       theme: prismThemes.github,
