@@ -13,28 +13,6 @@ const config: Config = {
     {
       tagName: "link",
       attributes: {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossorigin: "anonymous",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap",
-      },
-    },
-    {
-      tagName: "link",
-      attributes: {
         rel: "icon",
         type: "image/png",
         href: "/favicon-96x96.png",
@@ -160,39 +138,6 @@ const config: Config = {
       ],
     },
     footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Resources",
-          items: [
-            {
-              label: "GitHub",
-              href: "https://github.com/liambsulliva/dnid-capstone",
-            },
-            {
-              label: "Documentation",
-              to: "/docs/intro",
-            },
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-          ],
-        },
-        {
-          title: "Connect",
-          items: [
-            {
-              label: "LinkedIn",
-              href: "https://linkedin.com/in/liambsulliva",
-            },
-            {
-              label: "Portfolio",
-              href: "https://liambsullivan.com",
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} The Invisible Hand of UX.<br/>Logo: Rundvald, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons. Horizontal transformation applied.`,
     },
     prism: {
