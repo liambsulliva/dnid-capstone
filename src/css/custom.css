@@ -6,6 +6,8 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-font-family-base: "Sora", system-ui, -apple-system, sans-serif;
+  --ifm-letter-spacing: -0.05em;
   --ifm-color-primary: #ffffff;
   --ifm-color-primary-dark: #177db8;
   --ifm-color-primary-darker: #1576ad;
@@ -64,6 +66,7 @@
 
 body {
   background-color: var(--ifm-background-color);
+  letter-spacing: -0.05em;
 }
 
 .navbar {
@@ -97,6 +100,10 @@ body {
   color: #fff;
 }
 
+:root .hero__subtitle {
+  font-size: 1.35em;
+}
+
 [data-theme="dark"] body {
   background-color: #25274d;
 }
@@ -117,6 +124,10 @@ body {
 
 [data-theme="dark"] .hero__title {
   color: #2e9cca;
+}
+
+[data-theme="dark"] .hero__subtitle {
+  font-size: 1.35em;
 }
 
 :root code {
