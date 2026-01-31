@@ -44,6 +44,10 @@
   --ifm-color-primary-light: #2e7397;
   --ifm-color-primary-lighter: #327a9f;
   --ifm-color-primary-lightest: #3e8bb2;
+  --ifm-breadcrumb-item-background-active: #464866;
+  --ifm-breadcrumb-color-active: #ffffff;
+  --ifm-menu-color-background-active: #464866;
+  --ifm-menu-color-active: #ffffff;
   --ifm-background-color: #25274d;
   --ifm-navbar-background-color: #25274d;
   --ifm-footer-background-color: #25274d;
