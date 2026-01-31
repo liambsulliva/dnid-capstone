@@ -6,25 +6,203 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #1a8ccc;
+  --ifm-color-primary-dark: #177db8;
+  --ifm-color-primary-darker: #1576ad;
+  --ifm-color-primary-darkest: #12618f;
+  --ifm-color-primary-light: #2e9cca;
+  --ifm-color-primary-lighter: #42a8d4;
+  --ifm-color-primary-lightest: #5bb5db;
+  --ifm-background-color: #2e9cca;
+  --ifm-navbar-background-color: #2e9cca;
+  --ifm-footer-background-color: #2e9cca;
+  --ifm-background-surface-color: #2e9cca;
+  --ifm-code-background: #29648a;
+  --ifm-pre-background: #29648a;
+  --ifm-code-color: #fff;
+  --ifm-font-family-monospace: "Martian Mono", "Courier New", monospace;
+  --ifm-font-color-base: #fff;
+  --ifm-heading-color: #fff;
+  --ifm-link-color: #fff;
+  --ifm-menu-color: #fff;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.15);
+  --ifm-navbar-link-color: #fff;
+  --ifm-navbar-link-hover-color: #25274d;
+  --ifm-toc-link-color: #fff;
+  --ifm-footer-link-color: #fff;
+  --ifm-footer-color: #fff;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+[data-theme="dark"] {
+  --ifm-color-primary: #29648a;
+  --ifm-color-primary-dark: #246082;
+  --ifm-color-primary-darker: #22597a;
+  --ifm-color-primary-darkest: #1c4a65;
+  --ifm-color-primary-light: #2e7397;
+  --ifm-color-primary-lighter: #327a9f;
+  --ifm-color-primary-lightest: #3e8bb2;
+  --ifm-background-color: #25274d;
+  --ifm-navbar-background-color: #25274d;
+  --ifm-footer-background-color: #25274d;
+  --ifm-background-surface-color: #25274d;
+  --ifm-code-background: #464866;
+  --ifm-pre-background: #464866;
+  --ifm-code-color: #fff;
+  --ifm-font-family-monospace: "Martian Mono", "Courier New", monospace;
+  --ifm-font-color-base: #fff;
+  --ifm-heading-color: #2e9cca;
+  --ifm-link-color: #2e9cca;
+  --ifm-menu-color: #fff;
+  --docusaurus-highlighted-code-line-bg: rgba(46, 156, 202, 0.2);
+  --ifm-navbar-link-color: #fff;
+  --ifm-navbar-link-hover-color: #2e9cca;
+  --ifm-toc-link-color: #fff;
+  --ifm-footer-link-color: #2e9cca;
+  --ifm-footer-color: #fff;
+}
+
+body {
+  background-color: var(--ifm-background-color);
+}
+
+.navbar {
+  background-color: var(--ifm-navbar-background-color);
+}
+
+.footer {
+  background-color: var(--ifm-footer-background-color);
+}
+
+:root body {
+  background-color: #2e9cca;
+}
+
+:root .navbar {
+  background-color: #2e9cca;
+}
+
+:root .footer {
+  background-color: #2e9cca;
+}
+
+:root .hero {
+  background-color: #2e9cca;
+  color: #fff;
+}
+
+:root .hero__title {
+  color: #fff;
+}
+
+[data-theme="dark"] body {
+  background-color: #25274d;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #25274d;
+}
+
+[data-theme="dark"] .footer {
+  background-color: #25274d;
+}
+
+[data-theme="dark"] .hero {
+  background-color: #25274d;
+  color: #fff;
+}
+
+[data-theme="dark"] .hero__title {
+  color: #2e9cca;
+}
+
+:root code {
+  background-color: #29648a !important;
+}
+
+:root pre {
+  background-color: #29648a !important;
+}
+
+[data-theme="dark"] code {
+  background-color: #464866 !important;
+}
+
+[data-theme="dark"] pre {
+  background-color: #464866 !important;
+}
+
+code {
+  background-color: #464866 !important;
+  color: #fff !important;
+  font-family: "Martian Mono", "Courier New", monospace !important;
+}
+
+pre {
+  background-color: #464866 !important;
+}
+
+pre code {
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+/* Override syntax highlighting colors (for now) */
+pre[class*="language-"] code,
+pre[class*="language-"] code *,
+code[class*="language-"] *,
+.token {
+  color: #fff !important;
+}
+
+/* Keep basic syntax highlighting */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #b0b0b0 !important;
+}
+
+.token.punctuation {
+  color: #e0e0e0 !important;
+}
+
+.token.keyword,
+.token.operator,
+.token.boolean,
+.token.number {
+  color: #2e9cca !important;
+}
+
+.token.string,
+.token.char,
+.token.attr-value {
+  color: #b8e0f0 !important;
+}
+
+.token.function,
+.token.class-name {
+  color: #ffffff !important;
+}
+
+:root .button--primary {
+  background-color: #1a8ccc;
+  border-color: #1a8ccc;
+  color: #fff;
+}
+
+:root .button--primary:hover {
+  background-color: #177db8;
+  border-color: #177db8;
+}
+
+[data-theme="dark"] .button--primary {
+  background-color: #29648a;
+  border-color: #29648a;
+  color: #fff;
+}
+
+[data-theme="dark"] .button--primary:hover {
+  background-color: #246082;
+  border-color: #246082;
 }

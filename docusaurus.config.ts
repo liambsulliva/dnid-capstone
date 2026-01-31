@@ -13,6 +13,28 @@ const config: Config = {
     {
       tagName: "link",
       attributes: {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: "anonymous",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
         rel: "icon",
         type: "image/png",
         href: "/favicon-96x96.png",
