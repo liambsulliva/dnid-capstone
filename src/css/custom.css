@@ -21,6 +21,7 @@
   --ifm-background-surface-color: #2e9cca;
   --ifm-code-background: #29648a;
   --ifm-pre-background: #29648a;
+  --ifm-color-emphasis-200: #29648a;
   --ifm-code-color: #fff;
   --ifm-font-family-monospace: "Martian Mono", "Courier New", monospace;
   --ifm-font-color-base: #fff;
@@ -52,6 +53,7 @@
   --ifm-background-surface-color: #25274d;
   --ifm-code-background: #464866;
   --ifm-pre-background: #464866;
+  --ifm-color-emphasis-200: #464866;
   --ifm-code-color: #fff;
   --ifm-font-family-monospace: "Martian Mono", "Courier New", monospace;
   --ifm-font-color-base: #fff;
