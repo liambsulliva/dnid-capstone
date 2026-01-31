@@ -125,11 +125,34 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "attentionSidebar",
           position: "left",
-          label: "Tutorial",
+          label: "Attention",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        {
+          type: "docSidebar",
+          sidebarId: "behaviorSidebar",
+          position: "left",
+          label: "Behavior",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "coercionSidebar",
+          position: "left",
+          label: "Coercion",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "primingSidebar",
+          position: "left",
+          label: "Priming",
+        },
+        {
+          type: "docSidebar",
+          sidebarId: "anchoringSidebar",
+          position: "left",
+          label: "Anchoring",
+        },
         {
           href: "https://github.com/liambsulliva/dnid-capstone",
           label: "GitHub",
