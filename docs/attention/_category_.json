@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Basics",
+  "label": "Attention",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Lorem ipsum dolor sit amet"
   }
 }
