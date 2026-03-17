@@ -1,0 +1,78 @@
+import { useState, useEffect, useCallback, useRef } from "react";
+// @ts-ignore
+import igIcon from "@site/docs/attention/img/ig-transparent.png";
+import styles from "./styles.module.css";
+
+type BadgeState = {
+  count: number;
+  visible: boolean;
+  animating: "in" | "out" | "idle";
+};
+
+export default function RedDotDemo() {
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const [badge, setBadge] = useState<BadgeState>({
+    count: 0,
+    visible: false,
+    animating: "idle",
+  });
+
+  const triggerBadge = useCallback(() => {
+    setBadge((prev) => ({
+      count: prev.count + Math.floor(Math.random() * 2) + 1,
+      visible: true,
+      animating: "in",
+    }));
+  }, []);
+
+  useEffect(() => {
+    const scheduleNext = () => {
+      const delay = 1000 + Math.random() * 1000;
+      return setTimeout(() => {
+        triggerBadge();
+        timerRef.current = scheduleNext();
+      }, delay);
+    };
+    timerRef.current = scheduleNext();
+    return () => clearTimeout(timerRef.current);
+  }, [triggerBadge]);
+
+  const dismissBadge = () => {
+    setBadge((prev) => ({ ...prev, animating: "out" }));
+    setTimeout(() => {
+      setBadge((prev) => ({
+        ...prev,
+        count: 0,
+        visible: false,
+        animating: "idle",
+      }));
+    }, 300);
+  };
+
+  return (
+    <div className={styles.appWrapper}>
+      <button
+        className={styles.appIcon}
+        onClick={() => badge.visible && dismissBadge()}
+        aria-label={`Instagram${badge.visible ? `, ${badge.count} notification` : ""}`}
+      >
+        <img src={igIcon} alt="Instagram" className={styles.appSymbol} />
+        {badge.visible && (
+          <span
+            key={badge.count}
+            className={`${styles.badge} ${
+              badge.animating === "in"
+                ? styles.badgeIn
+                : badge.animating === "out"
+                  ? styles.badgeOut
+                  : ""
+            }`}
+            aria-hidden="true"
+          >
+            {badge.count}
+          </span>
+        )}
+      </button>
+    </div>
+  );
+}
