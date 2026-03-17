@@ -1,0 +1,129 @@
+.patternGrid {
+  padding: 2rem 0;
+}
+
+.patternCard {
+  margin-bottom: 2rem;
+  padding: 0 0.75rem;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.cardLink:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-primary-lightest);
+  transition: border 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .card {
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.card:hover {
+  border: 1px solid var(--ifm-color-primary);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--ifm-color-emphasis-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardPlaceholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    135deg,
+    var(--pattern-placeholder-gradient-start) 0%,
+    var(--pattern-placeholder-gradient-end) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryIcon {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary-darkest);
+  opacity: 0.3;
+}
+
+.cardContent {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardCategory {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ifm-color-primary);
+  display: block;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 996px) {
+  .patternCard {
+    width: 33.333%;
+    flex: 0 0 33.333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .patternCard {
+    width: 50%;
+    flex: 0 0 50%;
+  }
+
+  .cardImage,
+  .cardPlaceholder {
+    height: 160px;
+  }
+}
+
+@media (max-width: 576px) {
+  .patternCard {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .cardImage,
+  .cardPlaceholder {
+    height: 200px;
+  }
+}

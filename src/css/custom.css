@@ -35,6 +35,8 @@
   --ifm-toc-link-color: #fff;
   --ifm-footer-link-color: #fff;
   --ifm-footer-color: #fff;
+  --pattern-placeholder-gradient-start: #3aa8d5;
+  --pattern-placeholder-gradient-end: #2a94c0;
 }
 
 [data-theme="dark"] {
@@ -66,6 +68,8 @@
   --ifm-toc-link-color: #fff;
   --ifm-footer-link-color: #2e9cca;
   --ifm-footer-color: #fff;
+  --pattern-placeholder-gradient-start: #2d2f52;
+  --pattern-placeholder-gradient-end: #1f2142;
 }
 
 body {

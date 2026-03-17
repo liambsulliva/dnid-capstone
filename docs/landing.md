@@ -2,22 +2,11 @@
 sidebar_position: 1
 ---
 
+<!-- imports are ignored by Docusaurus -->
+
+import PatternGrid from '@site/src/components/PatternGrid';
+
 # Landing
 
-Test code block
-
-```ts title="docusaurus.config.js"
-export default {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: "docsVersionDropdown",
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
+Quickly get to the good stuff.
+<PatternGrid />
