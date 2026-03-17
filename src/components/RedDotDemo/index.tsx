@@ -19,7 +19,7 @@ export default function RedDotDemo() {
 
   const triggerBadge = useCallback(() => {
     setBadge((prev) => ({
-      count: prev.count + Math.floor(Math.random() * 2) + 1,
+      count: Math.min(prev.count + Math.floor(Math.random() * 2) + 1, 999),
       visible: true,
       animating: "in",
     }));
