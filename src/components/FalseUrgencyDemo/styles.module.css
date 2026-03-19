@@ -1,0 +1,313 @@
+.scene {
+  display: flex;
+}
+
+.panel {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 14px;
+  background: var(--dnid-card-background-color);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.07),
+    0 10px 30px -4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.urgencyBanner {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  background: #e84141;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.fireIcon {
+  font-style: normal;
+  flex-shrink: 0;
+}
+
+.timerInline {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+.timerUrgent {
+  animation: urgentPulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes urgentPulse {
+  from { opacity: 1; }
+  to   { opacity: 0.55; }
+}
+
+/* Product image */
+.productImageWrap {
+  position: relative;
+  background: var(--ifm-color-emphasis-100, #f3f4f6);
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImagePlaceholder {
+  color: var(--ifm-color-primary-dark, #177db8);
+  width: 80px;
+  height: 80px;
+}
+
+.productSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.stockBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e84141;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: 99px;
+  text-transform: uppercase;
+}
+
+.productInfo {
+  padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.productCategory {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary-dark, #177db8);
+  opacity: 0.75;
+  margin: 0 0 0.3rem;
+}
+
+.productName {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ifm-color-emphasis-800);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.ratingCount {
+  font-size: 0.72rem;
+  color: var(--ifm-color-emphasis-800);
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.priceSale {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #e84141;
+  letter-spacing: -0.04em;
+}
+
+.priceOriginal {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-800);
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.discountBadge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.1);
+  border: 1px solid rgba(22, 163, 74, 0.25);
+  border-radius: 99px;
+  padding: 2px 7px;
+}
+
+.urgencyStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.urgencyRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  flex-shrink: 0;
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+.dotRed {
+  background: #e84141;
+  animation-delay: 0.9s;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+.urgencyText {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-800);
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.countdownBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: color-mix(in srgb, #e84141 8%, transparent);
+  border: 1px solid color-mix(in srgb, #e84141 20%, transparent);
+  border-radius: 9px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.85rem;
+  transition: background 0.3s;
+}
+
+.countdownUrgent {
+  background: color-mix(in srgb, #e84141 18%, transparent);
+  border-color: color-mix(in srgb, #e84141 40%, transparent);
+}
+
+.countdownLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #e84141;
+  opacity: 0.85;
+  letter-spacing: 0.02em;
+}
+
+.countdownTimer {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #e84141;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.buyBtn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
+  border: none;
+  background: #e84141;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+  margin-bottom: 0.5rem;
+}
+
+.buyBtn:hover {
+  background: #d13333;
+  box-shadow: 0 2px 10px rgba(232, 65, 65, 0.4);
+}
+
+.subtext {
+  font-size: 0.7rem;
+  color: var(--ifm-color-emphasis-800);
+  opacity: 0.45;
+  text-align: center;
+  margin: 0;
+}
+
+.endState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+.successIcon {
+  font-size: 1.75rem;
+  color: #16a34a;
+  line-height: 1;
+}
+
+.expiredIcon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.endTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-800);
+  margin: 0.2rem 0 0;
+}
+
+.endSub {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-800);
+  opacity: 0.55;
+  margin: 0 0 0.65rem;
+}
+
+.resetBtn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300, #d1d5db);
+  background: transparent;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.resetBtn:hover {
+  background: var(--ifm-color-emphasis-200, #e5e7eb);
+}
