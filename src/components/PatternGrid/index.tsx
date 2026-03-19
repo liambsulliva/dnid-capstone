@@ -14,11 +14,6 @@ type PatternCard = {
 
 const PatternList: PatternCard[] = [
   {
-    title: "Introduction",
-    category: "Anchoring",
-    path: "/docs/anchoring/introduction",
-  },
-  {
     title: "Highballing",
     category: "Anchoring",
     path: "/docs/anchoring/highballing",
@@ -38,11 +33,6 @@ const PatternList: PatternCard[] = [
     title: "Comparison",
     category: "Anchoring",
     path: "/docs/anchoring/comparison",
-  },
-  {
-    title: "Introduction",
-    category: "Attention",
-    path: "/docs/attention/introduction",
   },
   {
     title: "Salience Bias",
@@ -67,11 +57,6 @@ const PatternList: PatternCard[] = [
     image: require("@site/docs/attention/img/red-dot.jpg").default,
   },
   {
-    title: "Introduction",
-    category: "Behavior",
-    path: "/docs/behavior/introduction",
-  },
-  {
     title: "A/B Testing",
     category: "Behavior",
     path: "/docs/behavior/AB-Testing",
@@ -87,11 +72,6 @@ const PatternList: PatternCard[] = [
     title: "Feedback Loop",
     category: "Behavior",
     path: "/docs/behavior/feedback-loop",
-  },
-  {
-    title: "Introduction",
-    category: "Coercion",
-    path: "/docs/coercion/introduction",
   },
   {
     title: "Confirmshaming",
@@ -123,11 +103,6 @@ const PatternList: PatternCard[] = [
     title: "False Urgency",
     category: "Coercion",
     path: "/docs/coercion/false-urgency",
-  },
-  {
-    title: "Introduction",
-    category: "Priming",
-    path: "/docs/priming/introduction",
   },
   {
     title: "Curated Defaults",

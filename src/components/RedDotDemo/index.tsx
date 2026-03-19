@@ -1,7 +1,12 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 // @ts-ignore
-import igIcon from "@site/docs/attention/img/ig-transparent.png";
+// import igIcon from "@site/docs/attention/img/ig-transparent.png";
 import styles from "./styles.module.css";
+
+interface RedDotProps {
+  image: string;
+  alt: string;
+}
 
 type BadgeState = {
   count: number;
@@ -9,7 +14,7 @@ type BadgeState = {
   animating: "in" | "out" | "idle";
 };
 
-export default function RedDotDemo() {
+export default function RedDotDemo({ image, alt }: RedDotProps) {
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const [badge, setBadge] = useState<BadgeState>({
     count: 0,
@@ -56,7 +61,7 @@ export default function RedDotDemo() {
         onClick={() => badge.visible && dismissBadge()}
         aria-label={`Instagram${badge.visible ? `, ${badge.count} notification` : ""}`}
       >
-        <img src={igIcon} alt="Instagram" className={styles.appSymbol} />
+        <img src={image} alt={alt} className={styles.appSymbol} />
         {badge.visible && (
           <span
             key={badge.count}

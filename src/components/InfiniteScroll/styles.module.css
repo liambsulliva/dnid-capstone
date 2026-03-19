@@ -1,0 +1,179 @@
+.scrollBox {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 1.5rem 0 2rem;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.scrollLabel {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.12);
+  user-select: none;
+}
+
+.labelDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.content {
+  height: 380px;
+  overflow-y: scroll;
+  padding: 24px 28px 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.block {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  margin-bottom: 0;
+}
+
+.blockEntering {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.blockVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 1.6rem 0 0.5rem;
+  color: #fff;
+  letter-spacing: -0.03em;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.heading3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1.2rem 0 0.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: -0.02em;
+}
+
+.para {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 1rem;
+}
+
+.quote {
+  margin: 0.5rem 0 1.2rem;
+  padding: 14px 18px;
+  border-left: 3px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0 6px 6px 0;
+}
+
+.quote p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 8px;
+}
+
+.quote footer {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: normal;
+}
+
+.list {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  padding-left: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+.sentinel {
+  padding: 20px 0 8px;
+  min-height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.loader span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  animation: pulse 0.9s ease-in-out infinite;
+}
+
+.loader span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.endNote {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-style: italic;
+  padding: 8px 0 4px;
+  margin: 0;
+}
