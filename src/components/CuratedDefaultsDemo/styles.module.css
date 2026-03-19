@@ -112,19 +112,6 @@
   flex-wrap: wrap;
 }
 
-.defaultPill {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #16a34a;
-  background: #dcfce7;
-  border: 1px solid #bbf7d0;
-  border-radius: 99px;
-  padding: 1px 7px;
-  line-height: 1.5;
-}
-
 .rowDesc {
   font-size: 0.775rem;
   color: var(--ifm-color-emphasis-800);

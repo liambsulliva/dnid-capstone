@@ -110,9 +110,6 @@ export default function CuratedDefaultsDemo() {
                 <div className={styles.rowText}>
                   <span className={styles.rowLabel}>
                     {opt.label}
-                    {opt.defaultOn && (
-                      <span className={styles.defaultPill}>default</span>
-                    )}
                   </span>
                   <span className={styles.rowDesc}>{opt.description}</span>
                 </div>
