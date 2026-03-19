@@ -107,8 +107,7 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/liambsulliva/dnid-capstone/tree/main/",
+          editUrl: "https://github.com/liambsulliva/dnid-capstone/tree/main/",
         },
         blog: {
           showReadingTime: true,
@@ -118,8 +117,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/liambsulliva/dnid-capstone/tree/main/",
+          editUrl: "https://github.com/liambsulliva/dnid-capstone/tree/main/",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -183,7 +181,7 @@ const config: Config = {
       ],
     },
     footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} The Invisible Hand of UX.<br/>Logo: Rundvald, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>, via Wikimedia Commons. Horizontal transformation applied.`,
+      copyright: `Copyright © ${new Date().getFullYear()} The Invisible Hand of UX.<br/>Logo: Rundvald, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">CC BY-SA 4.0</a>, via Wikimedia Commons. Horizontal transformation applied.`,
     },
     prism: {
       theme: prismThemes.github,

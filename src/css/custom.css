@@ -38,6 +38,7 @@
   --ifm-footer-color: #fff;
   --pattern-placeholder-gradient-start: #3aa8d5;
   --pattern-placeholder-gradient-end: #2a94c0;
+  --dnid-card-background-color: #fff;
 }
 
 [data-theme="dark"] {
@@ -71,6 +72,7 @@
   --ifm-footer-color: #fff;
   --pattern-placeholder-gradient-start: #2d2f52;
   --pattern-placeholder-gradient-end: #1f2142;
+  --dnid-card-background-color: #2e2f40;
 }
 
 body {
