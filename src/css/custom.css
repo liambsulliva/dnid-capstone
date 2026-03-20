@@ -54,7 +54,7 @@
   --dnid-text-card: var(--dnid-neutral-800);
   --dnid-text-card-muted: var(--dnid-neutral-600);
   --dnid-text-card-faint: var(--dnid-neutral-400);
-  --dnid-text-category: var(--dnid-brand-500);
+  --dnid-text-category: var(--dnid-neutral-200);
   --dnid-icon-on-card: var(--dnid-brand-700);
 
   --dnid-surface-subtle: var(--dnid-neutral-100);
@@ -187,7 +187,7 @@
   --dnid-text-card: #f3f4f6;
   --dnid-text-card-muted: #9ca3af;
   --dnid-text-card-faint: #9ca3af;
-  --dnid-text-category: var(--dnid-brand-300);
+  --dnid-text-category: var(--dnid-brand-400);
   --dnid-icon-on-card: var(--dnid-brand-700);
 
   --dnid-surface-subtle: var(--dnid-neutral-100);
