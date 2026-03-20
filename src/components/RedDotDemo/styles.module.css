@@ -54,14 +54,14 @@
   min-width: 22px;
   height: 22px;
   padding: 0 5px;
-  background: #ff3b30;
-  color: #fff;
+  background: var(--dnid-badge-notification);
+  color: var(--dnid-neutral-0);
   font-size: 0.7rem;
   font-weight: 700;
   line-height: 22px;
   text-align: center;
   border-radius: 11px;
-  border: 2px solid var(--ifm-background-color, #fff);
+  border: 2px solid var(--dnid-surface-page);
   pointer-events: none;
   transform-origin: center;
   will-change: transform, opacity;
@@ -118,12 +118,12 @@
   width: 210px;
   height: 210px;
   border-radius: 44px;
-  background: rgba(160, 160, 185, 0.38);
+  background: var(--dnid-folder-glass);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    var(--dnid-shadow-lift),
+    inset 0 1px 0 var(--dnid-glass-highlight);
   display: flex;
   align-items: center;
   justify-content: center;

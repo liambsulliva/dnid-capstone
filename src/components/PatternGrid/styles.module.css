@@ -23,26 +23,22 @@
   height: 100%;
   border-radius: 8px;
   overflow: hidden;
-  background: var(--ifm-card-background-color);
-  border: 1px solid var(--ifm-color-primary-lightest);
+  background: var(--dnid-surface-card);
+  border: 1px solid var(--dnid-border-card);
   transition: border 0.2s ease;
   display: flex;
   flex-direction: column;
 }
 
-[data-theme="dark"] .card {
-  border: 1px solid var(--ifm-color-emphasis-200);
-}
-
 .card:hover {
-  border: 1px solid var(--ifm-color-primary);
+  border: 1px solid var(--dnid-card-border-hover);
 }
 
 .cardImage {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: var(--ifm-color-emphasis-100);
+  background: var(--dnid-surface-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +66,7 @@
 .categoryIcon {
   font-size: 4rem;
   font-weight: bold;
-  color: var(--ifm-color-primary-darkest);
+  color: var(--dnid-icon-on-card);
   opacity: 0.3;
 }
 
@@ -86,7 +82,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--ifm-color-primary);
+  color: var(--dnid-text-category);
   display: block;
 }
 

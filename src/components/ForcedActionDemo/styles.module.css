@@ -72,7 +72,7 @@
   padding: 0.6rem 0.8rem;
   border-radius: 8px;
   border: 1.5px solid transparent;
-  background: var(--ifm-color-emphasis-200, #f3f4f6);
+  background: var(--dnid-surface-muted);
   color: var(--ifm-font-color-base);
   font-size: 0.85rem;
   font-family: inherit;
@@ -84,9 +84,8 @@
 }
 
 .input:focus {
-  border-color: var(--ifm-color-emphasis-100);
-  box-shadow: 0 0 0 3px
-    color-mix(in srgb, var(--ifm-color-primary-dark, #177db8) 20%, transparent);
+  border-color: var(--dnid-surface-subtle);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dnid-brand-500) 20%, transparent);
 }
 
 .input::placeholder {
@@ -99,8 +98,8 @@
   padding: 0.65rem 1rem;
   border-radius: 8px;
   border: none;
-  background: var(--ifm-color-emphasis-300);
-  color: var(--ifm-color-emphasis-800);
+  background: var(--dnid-control-track-off);
+  color: var(--dnid-text-card);
   font-size: 0.88rem;
   font-weight: 700;
   font-family: inherit;
@@ -113,16 +112,15 @@
 }
 
 .submitBtn.submitActive {
-  background: var(--ifm-color-primary);
-  color: var(--ifm-color-emphasis-800);
+  background: var(--dnid-submit-active-bg);
+  color: var(--dnid-submit-active-fg);
   cursor: pointer;
   opacity: 1;
 }
 
 .submitBtn.submitActive:hover {
   filter: brightness(0.9);
-  box-shadow: 0 2px 10px
-    color-mix(in srgb, var(--ifm-color-primary-dark, #177db8) 40%, transparent);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--dnid-brand-500) 40%, transparent);
 }
 
 .disclaimer {
@@ -143,9 +141,9 @@
   margin: 0.5rem auto 0;
   padding: 0.45rem 1.1rem;
   border-radius: 8px;
-  border: 1px solid var(--ifm-color-emphasis-300, #d1d5db);
+  border: 1px solid var(--dnid-border-strong);
   background: transparent;
-  color: var(--ifm-font-color-base, #fff);
+  color: var(--ifm-font-color-base);
   font-size: 0.78rem;
   font-weight: 600;
   font-family: inherit;
@@ -156,5 +154,5 @@
 }
 
 .resetBtn:hover {
-  background: var(--ifm-color-emphasis-200, #e5e7eb);
+  background: var(--dnid-surface-muted);
 }

@@ -2,9 +2,9 @@
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--dnid-demo-chrome-border);
   margin: 1.5rem 0 2rem;
-  background: rgba(0, 0, 0, 0.18);
+  background: var(--dnid-demo-chrome-well);
 }
 
 .scrollLabel {
@@ -16,9 +16,9 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.12);
+  color: var(--dnid-demo-chrome-label);
+  border-bottom: 1px solid var(--dnid-demo-chrome-rule);
+  background: var(--dnid-demo-chrome-header-bg);
   user-select: none;
 }
 
@@ -32,8 +32,13 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .content {
@@ -41,7 +46,7 @@
   overflow-y: scroll;
   padding: 24px 28px 12px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-color: var(--dnid-demo-chrome-scrollbar) transparent;
 }
 
 .content::-webkit-scrollbar {
@@ -49,7 +54,7 @@
 }
 
 .content::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--dnid-demo-chrome-scrollbar);
   border-radius: 2px;
 }
 
@@ -72,32 +77,32 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin: 1.6rem 0 0.5rem;
-  color: #fff;
+  color: var(--dnid-demo-chrome-inverse);
   letter-spacing: -0.03em;
   padding-top: 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--dnid-demo-chrome-rule-soft);
 }
 
 .heading3 {
   font-size: 1rem;
   font-weight: 700;
   margin: 1.2rem 0 0.4rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--dnid-demo-chrome-body-soft);
   letter-spacing: -0.02em;
 }
 
 .para {
   font-size: 0.92rem;
   line-height: 1.75;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--dnid-demo-chrome-body);
   margin: 0 0 1rem;
 }
 
 .quote {
   margin: 0.5rem 0 1.2rem;
   padding: 14px 18px;
-  border-left: 3px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--dnid-demo-chrome-quote-bar);
+  background: var(--dnid-demo-chrome-quote-bg);
   border-radius: 0 6px 6px 0;
 }
 
@@ -105,20 +110,20 @@
   font-size: 0.9rem;
   line-height: 1.65;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--dnid-demo-chrome-quote);
   margin: 0 0 8px;
 }
 
 .quote footer {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--dnid-demo-chrome-caption);
   font-style: normal;
 }
 
 .list {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--dnid-demo-chrome-body);
   padding-left: 1.4rem;
   margin: 0 0 1rem;
 }
@@ -146,7 +151,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--dnid-demo-chrome-loader);
   animation: pulse 0.9s ease-in-out infinite;
 }
 
@@ -159,7 +164,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.25;
     transform: scale(0.75);
   }
@@ -171,7 +177,7 @@
 
 .endNote {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--dnid-demo-chrome-end);
   text-align: center;
   font-style: italic;
   padding: 8px 0 4px;

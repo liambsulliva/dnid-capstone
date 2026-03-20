@@ -6,10 +6,8 @@
   width: 100%;
   max-width: 420px;
   border-radius: 14px;
-  background: var(--dnid-card-background-color);
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.07),
-    0 10px 30px -4px rgba(0, 0, 0, 0.1);
+  background: var(--dnid-surface-card);
+  box-shadow: var(--dnid-shadow-1);
   overflow: hidden;
 }
 
@@ -18,15 +16,15 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 1.25rem;
-  background: var(--ifm-color-emphasis-100, #f9fafb);
+  background: var(--dnid-neutral-50);
 }
 
 .appIcon {
   width: 36px;
   height: 36px;
   border-radius: 9px;
-  background: var(--ifm-color-primary-dark);
-  color: #fff;
+  background: var(--dnid-brand-500);
+  color: var(--dnid-neutral-0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,13 +46,13 @@
 .panelTitle {
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   line-height: 1.25;
 }
 
 .panelSubtitle {
   font-size: 0.72rem;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   margin-top: 1px;
 }
 
@@ -62,14 +60,9 @@
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: var(--ifm-color-emphasis-800);
-  background: color-mix(
-    in srgb,
-    var(--ifm-color-emphasis-800) 10%,
-    transparent
-  );
-  border: 1px solid
-    color-mix(in srgb, var(--ifm-color-emphasis-800) 25%, transparent);
+  color: var(--dnid-text-card);
+  background: color-mix(in srgb, var(--dnid-text-card) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--dnid-text-card) 25%, transparent);
   border-radius: 99px;
   padding: 3px 10px;
   flex-shrink: 0;
@@ -86,7 +79,7 @@
   align-items: center;
   gap: 1rem;
   padding: 0.8rem 1.25rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-100, #f3f4f6);
+  border-bottom: 1px solid var(--dnid-neutral-100);
   transition: background 0.12s;
 }
 
@@ -105,7 +98,7 @@
 .rowLabel {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -114,7 +107,7 @@
 
 .rowDesc {
   font-size: 0.775rem;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   line-height: 1.4;
 }
 
@@ -125,7 +118,7 @@
   height: 26px;
   border-radius: 99px;
   border: none;
-  background: var(--ifm-color-emphasis-400, #d1d5db);
+  background: var(--dnid-control-track-off);
   cursor: pointer;
   flex-shrink: 0;
   transition: background 0.2s ease;
@@ -133,12 +126,12 @@
 }
 
 .toggle:focus-visible {
-  outline: 2px solid var(--ifm-color-primary, #2563eb);
+  outline: 2px solid var(--dnid-brand-300);
   outline-offset: 2px;
 }
 
 .toggleOn {
-  background: #4878e0;
+  background: var(--dnid-toggle-on);
 }
 
 .toggleThumb {
@@ -148,8 +141,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  background: var(--dnid-neutral-0);
+  box-shadow: var(--dnid-shadow-umbra);
   transition: transform 0.2s ease;
 }
 
@@ -159,7 +152,7 @@
 
 .footer {
   padding: 0.75rem 1.25rem;
-  background: var(--ifm-color-emphasis-100, #f9fafb);
+  background: var(--dnid-neutral-50);
   display: flex;
   align-items: center;
   min-height: 44px;
@@ -167,13 +160,13 @@
 
 .footerHint {
   font-size: 0.75rem;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
 }
 
 .resetBtn {
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-primary-dark, #177db8);
-  border: 1px solid var(--ifm-color-primary-lightest, #5bb5db);
+  background: var(--dnid-surface-subtle);
+  color: var(--dnid-brand-500);
+  border: 1px solid var(--dnid-brand-100);
   border-radius: 7px;
   padding: 0.35rem 0.95rem;
   font-size: 0.83rem;
@@ -188,7 +181,7 @@
 
 .resetBtn:hover,
 .resetBtn:focus-visible {
-  background: var(--ifm-color-primary-dark, #5bb5db);
-  border: 1px solid var(--ifm-color-primary-dark, #5bb5db);
-  color: #fff;
+  background: var(--dnid-brand-100);
+  border: 1px solid var(--dnid-brand-100);
+  color: var(--dnid-neutral-0);
 }

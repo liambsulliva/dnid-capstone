@@ -36,10 +36,8 @@
   width: 100%;
   max-width: 420px;
   border-radius: 14px;
-  background: var(--dnid-card-background-color);
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.07),
-    0 10px 30px -4px rgba(0, 0, 0, 0.1);
+  background: var(--dnid-surface-card);
+  box-shadow: var(--dnid-shadow-1);
   overflow: hidden;
 }
 
@@ -49,8 +47,8 @@
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.9rem 1.25rem;
-  background: var(--ifm-color-emphasis-100, #f9fafb);
-  border-bottom: 1px solid var(--ifm-color-emphasis-100, #f3f4f6);
+  background: var(--dnid-neutral-50);
+  border-bottom: 1px solid var(--dnid-neutral-100);
 }
 
 .storeBrand {
@@ -63,14 +61,14 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--ifm-color-primary-dark, #177db8);
+  background: var(--dnid-brand-500);
   flex-shrink: 0;
 }
 
 .storeName {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   letter-spacing: -0.02em;
 }
 
@@ -78,19 +76,19 @@
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   opacity: 0.55;
 }
 
 .progressTrack {
   height: 3px;
-  background: var(--ifm-color-emphasis-200, #e5e7eb);
+  background: var(--dnid-surface-muted);
   width: 100%;
 }
 
 .progressFill {
   height: 100%;
-  background: var(--ifm-color-primary-dark, #177db8);
+  background: var(--dnid-brand-500);
   transition: width 0.3s ease;
 }
 
@@ -104,14 +102,9 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--ifm-color-primary-dark, #177db8);
-  background: color-mix(
-    in srgb,
-    var(--ifm-color-primary-dark, #177db8) 12%,
-    transparent
-  );
-  border: 1px solid
-    color-mix(in srgb, var(--ifm-color-primary-dark, #177db8) 25%, transparent);
+  color: var(--dnid-brand-500);
+  background: color-mix(in srgb, var(--dnid-brand-500) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--dnid-brand-500) 25%, transparent);
   border-radius: 99px;
   padding: 2px 8px;
   margin-bottom: 0.65rem;
@@ -122,7 +115,7 @@
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--ifm-color-primary-dark, #177db8);
+  color: var(--dnid-brand-500);
   margin: 0 0 0.25rem;
   opacity: 0.8;
 }
@@ -130,7 +123,7 @@
 .addonName {
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   margin: 0 0 0.5rem;
   letter-spacing: -0.03em;
   line-height: 1.2;
@@ -138,7 +131,7 @@
 
 .addonDesc {
   font-size: 0.83rem;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   opacity: 0.65;
   line-height: 1.5;
   margin: 0 0 0.9rem;
@@ -159,11 +152,11 @@
   gap: 0.5rem;
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
 }
 
 .bulletCheck {
-  color: var(--ifm-color-primary-dark, #177db8);
+  color: var(--dnid-brand-500);
   font-weight: 700;
   font-size: 0.75rem;
   flex-shrink: 0;
@@ -182,8 +175,8 @@
   padding: 0.7rem 1rem;
   border-radius: 9px;
   border: none;
-  background: var(--ifm-color-primary-dark, #177db8);
-  color: #fff;
+  background: var(--dnid-brand-500);
+  color: var(--dnid-neutral-0);
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -193,8 +186,8 @@
 }
 
 .acceptBtn:hover {
-  background: var(--ifm-color-primary-darker, #1576ad);
-  box-shadow: 0 2px 8px rgba(23, 125, 184, 0.35);
+  background: var(--dnid-brand-600);
+  box-shadow: 0 2px 8px var(--dnid-accent-glow);
 }
 
 .skipBtn {
@@ -202,7 +195,7 @@
   border: none;
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   opacity: 0.4;
   cursor: pointer;
   padding: 0.25rem 0.5rem;
@@ -215,23 +208,18 @@
 
 .acceptedBar {
   padding: 0.5rem 1.25rem;
-  background: color-mix(
-    in srgb,
-    var(--ifm-color-primary-dark, #177db8) 8%,
-    transparent
-  );
-  border-top: 1px solid
-    color-mix(in srgb, var(--ifm-color-primary-dark, #177db8) 18%, transparent);
+  background: color-mix(in srgb, var(--dnid-brand-500) 8%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--dnid-brand-500) 18%, transparent);
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--ifm-color-primary-dark, #177db8);
+  color: var(--dnid-brand-500);
   text-align: center;
 }
 
 .checkoutTitle {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
 }
 
 .checkoutList {
@@ -246,7 +234,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-100, #f3f4f6);
+  border-bottom: 1px solid var(--dnid-neutral-100);
 }
 
 .checkoutRow:last-child {
@@ -256,13 +244,13 @@
 .checkoutItemName {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
 }
 
 .checkoutItemPrice {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -280,34 +268,34 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1.25rem;
-  background: color-mix(in srgb, var(--ifm-color-emphasis-800) 6%, transparent);
-  border-top: 1px solid var(--ifm-color-emphasis-200, #e5e7eb);
-  border-bottom: 1px solid var(--ifm-color-emphasis-200, #e5e7eb);
+  background: color-mix(in srgb, var(--dnid-text-card) 6%, transparent);
+  border-top: 1px solid var(--dnid-border-default);
+  border-bottom: 1px solid var(--dnid-border-default);
 }
 
 .totalLabel {
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
 }
 
 .totalAmount {
   font-size: 1.1rem;
   font-weight: 800;
-  color: #e84141;
+  color: var(--dnid-semantic-danger);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .footer {
   padding: 0.85rem 1.25rem;
-  background: var(--ifm-color-emphasis-100, #f9fafb);
-  border-top: 1px solid var(--ifm-color-emphasis-100, #f3f4f6);
+  background: var(--dnid-neutral-50);
+  border-top: 1px solid var(--dnid-neutral-100);
 }
 
 .resetNote {
   font-size: 0.75rem;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   opacity: 0.65;
   margin: 0 0 0.65rem;
   line-height: 1.4;
@@ -322,9 +310,9 @@
   flex: 0 0 auto;
   padding: 0.55rem 1rem;
   border-radius: 8px;
-  border: 1px solid var(--ifm-color-emphasis-300, #d1d5db);
+  border: 1px solid var(--dnid-border-strong);
   background: transparent;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   font-size: 0.83rem;
   font-weight: 600;
   cursor: pointer;
@@ -334,7 +322,7 @@
 }
 
 .resetBtn:hover {
-  background: var(--ifm-color-emphasis-200, #e5e7eb);
+  background: var(--dnid-surface-muted);
 }
 
 .confirmBtn {
@@ -342,8 +330,8 @@
   padding: 0.55rem 1rem;
   border-radius: 8px;
   border: none;
-  background: var(--ifm-color-primary-dark, #177db8);
-  color: #fff;
+  background: var(--dnid-brand-500);
+  color: var(--dnid-neutral-0);
   font-size: 0.83rem;
   font-weight: 700;
   cursor: pointer;
@@ -353,8 +341,8 @@
 }
 
 .confirmBtn:hover {
-  background: var(--ifm-color-primary-darker, #1576ad);
-  box-shadow: 0 2px 8px rgba(23, 125, 184, 0.35);
+  background: var(--dnid-brand-600);
+  box-shadow: 0 2px 8px var(--dnid-accent-glow);
 }
 
 .emptyCheckout {
@@ -367,7 +355,7 @@
 
 .emptyText {
   font-size: 0.875rem;
-  color: var(--ifm-color-emphasis-800);
+  color: var(--dnid-text-card);
   opacity: 0.6;
   margin: 0;
 }
