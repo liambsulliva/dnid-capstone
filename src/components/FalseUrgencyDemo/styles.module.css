@@ -155,7 +155,8 @@
   text-transform: uppercase;
   color: var(--dnid-semantic-success);
   background: color-mix(in srgb, var(--dnid-semantic-success) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--dnid-semantic-success) 25%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--dnid-semantic-success) 25%, transparent);
   border-radius: 99px;
   padding: 2px 7px;
 }
@@ -210,7 +211,8 @@
   justify-content: space-between;
   gap: 0.75rem;
   background: color-mix(in srgb, var(--dnid-semantic-danger) 8%, transparent);
-  border: 1px solid color-mix(in srgb, var(--dnid-semantic-danger) 20%, transparent);
+  border: 1px solid
+    color-mix(in srgb, var(--dnid-semantic-danger) 20%, transparent);
   border-radius: 9px;
   padding: 0.6rem 0.9rem;
   margin-bottom: 0.85rem;
@@ -219,7 +221,11 @@
 
 .countdownUrgent {
   background: color-mix(in srgb, var(--dnid-semantic-danger) 18%, transparent);
-  border-color: color-mix(in srgb, var(--dnid-semantic-danger) 40%, transparent);
+  border-color: color-mix(
+    in srgb,
+    var(--dnid-semantic-danger) 40%,
+    transparent
+  );
 }
 
 .countdownLabel {
@@ -236,6 +242,151 @@
   color: var(--dnid-semantic-danger);
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
+}
+
+.buyWithGlyph:disabled {
+  cursor: wait;
+  opacity: 1;
+  filter: brightness(0.97);
+}
+
+.buyWithGlyph:disabled:hover {
+  background: var(--dnid-semantic-danger);
+  box-shadow: none;
+}
+
+.buyGlyphPad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.35em;
+}
+
+.buyGlyphStack {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+
+.spinnerShell,
+.checkShell {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.38s cubic-bezier(0.45, 0, 0.2, 1),
+    transform 0.42s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+
+.spinnerShell {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.spinnerMorphOut {
+  opacity: 0;
+  transform: scale(0.5) rotate(135deg);
+  pointer-events: none;
+}
+
+.spinnerSvg {
+  display: block;
+  animation: buySpin 0.65s linear infinite;
+}
+
+.spinnerMorphOut .spinnerSvg {
+  animation: none;
+}
+
+.spinnerArc {
+  stroke-dasharray: 15 46;
+}
+
+@keyframes buySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.checkShell {
+  opacity: 0;
+  transform: scale(0.55) rotate(-35deg);
+}
+
+.checkMorphIn {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.checkSvg {
+  display: block;
+}
+
+.checkPath {
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+  transition: stroke-dashoffset 0.48s cubic-bezier(0.45, 0, 0.2, 1) 0.06s;
+}
+
+.checkMorphIn .checkPath {
+  stroke-dashoffset: 0;
+}
+
+.outcomeCrossfadeWrap {
+  --outcome-duration: 560ms;
+  --outcome-ease: cubic-bezier(0.22, 1, 0.34, 1);
+  overflow: hidden;
+}
+
+.outcomeCrossfade {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  min-height: 0;
+}
+
+.outcomePaneShop,
+.outcomePaneEnd {
+  grid-area: 1 / 1;
+  transition:
+    opacity var(--outcome-duration) var(--outcome-ease),
+    transform var(--outcome-duration) var(--outcome-ease);
+  will-change: opacity, transform;
+}
+
+.outcomePaneShop {
+  align-self: start;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.outcomePaneEnd {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.outcomeCrossfadeActive .outcomePaneShop {
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+
+.outcomeCrossfadeActive .outcomePaneEnd {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.outcomePaneEnd .endState {
+  padding-top: 0.35rem;
 }
 
 .subtext {
@@ -279,4 +430,3 @@
   opacity: 0.55;
   margin: 0 0 0.65rem;
 }
-
