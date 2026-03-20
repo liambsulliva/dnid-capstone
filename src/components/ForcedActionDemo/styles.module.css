@@ -93,36 +93,6 @@
   opacity: 0.35;
 }
 
-.submitBtn {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border-radius: 8px;
-  border: none;
-  background: var(--dnid-control-track-off);
-  color: var(--dnid-text-card);
-  font-size: 0.88rem;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: not-allowed;
-  opacity: 0.5;
-  transition:
-    filter 0.15s,
-    opacity 0.15s,
-    box-shadow 0.15s;
-}
-
-.submitBtn.submitActive {
-  background: var(--dnid-submit-active-bg);
-  color: var(--dnid-submit-active-fg);
-  cursor: pointer;
-  opacity: 1;
-}
-
-.submitBtn.submitActive:hover {
-  filter: brightness(0.9);
-  box-shadow: 0 2px 10px color-mix(in srgb, var(--dnid-brand-500) 40%, transparent);
-}
-
 .disclaimer {
   font-size: 0.65rem;
   color: var(--ifm-font-color-base);
@@ -136,23 +106,3 @@
   cursor: pointer;
 }
 
-.resetBtn {
-  display: block;
-  margin: 0.5rem auto 0;
-  padding: 0.45rem 1.1rem;
-  border-radius: 8px;
-  border: 1px solid var(--dnid-border-strong);
-  background: transparent;
-  color: var(--ifm-font-color-base);
-  font-size: 0.78rem;
-  font-weight: 600;
-  font-family: inherit;
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    border-color 0.15s;
-}
-
-.resetBtn:hover {
-  background: var(--dnid-surface-muted);
-}

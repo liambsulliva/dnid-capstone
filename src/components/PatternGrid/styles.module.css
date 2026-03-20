@@ -23,7 +23,7 @@
   height: 100%;
   border-radius: 8px;
   overflow: hidden;
-  background: var(--dnid-surface-card);
+  background: var(--dnid-brand-200);
   border: 1px solid var(--dnid-border-card);
   transition: border 0.2s ease;
   display: flex;
@@ -82,7 +82,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--dnid-text-category);
+  color: var(--dnid-neutral-200);
   display: block;
 }
 

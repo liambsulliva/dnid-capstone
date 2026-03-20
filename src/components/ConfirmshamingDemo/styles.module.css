@@ -85,41 +85,6 @@
   margin-top: 0.5rem;
 }
 
-.btnYes,
-.btnNo {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    filter 0.15s ease,
-    transform 0.1s ease;
-  line-height: 1.2;
-}
-
-.btnYes:hover,
-.btnNo:hover {
-  filter: brightness(0.92);
-}
-
-.btnYes:active,
-.btnNo:active {
-  transform: scale(0.97);
-}
-
-.btnYes {
-  background: var(--dnid-semantic-danger-strong);
-  color: var(--dnid-neutral-0);
-}
-
-.btnNo {
-  background: var(--dnid-semantic-success);
-  color: var(--dnid-neutral-0);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;

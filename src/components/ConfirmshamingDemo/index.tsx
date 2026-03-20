@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 
 type Stage = "initial" | "confirming" | "retained";
@@ -86,12 +87,12 @@ export default function ConfirmshamingDemo() {
 
           {stage !== "retained" && (
             <div className={styles.actions}>
-              <button className={styles.btnYes} onClick={handleYes}>
+              <Button variant="confirmDanger" onClick={handleYes}>
                 {stage === "initial" ? "Yes, unsubscribe me" : "Yes, remove me"}
-              </button>
-              <button className={styles.btnNo} onClick={handleNo}>
+              </Button>
+              <Button variant="confirmSafe" onClick={handleNo}>
                 {stage === "initial" ? "No, keep me subscribed" : variant.noText}
-              </button>
+              </Button>
             </div>
           )}
         </div>

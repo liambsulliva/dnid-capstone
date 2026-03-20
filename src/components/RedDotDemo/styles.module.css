@@ -6,29 +6,6 @@
   user-select: none;
 }
 
-.appIcon {
-  position: relative;
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  transition: transform 0.12s ease;
-}
-
-.appIcon:hover {
-  transform: scale(1.06);
-}
-
-.appIcon:active {
-  transform: scale(0.94);
-}
-
 .appSymbol {
   width: 72px;
   height: 72px;

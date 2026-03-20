@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 
 interface AddOn {
@@ -140,18 +141,12 @@ export default function HighballingDemo() {
             </div>
 
             <div className={styles.addonActions}>
-              <button
-                className={styles.acceptBtn}
-                onClick={() => advance(true)}
-              >
+              <Button variant="addonAccept" onClick={() => advance(true)}>
                 Yes, add this to my plan →
-              </button>
-              <button
-                className={styles.skipBtn}
-                onClick={() => advance(false)}
-              >
+              </Button>
+              <Button variant="addonSkip" onClick={() => advance(false)}>
                 No thanks, skip
-              </button>
+              </Button>
             </div>
 
             {accepted.size > 0 && (
@@ -170,9 +165,9 @@ export default function HighballingDemo() {
             {acceptedItems.length === 0 ? (
               <div className={styles.emptyCheckout}>
                 <p className={styles.emptyText}>You didn't add any extras.</p>
-                <button className={styles.resetBtn} onClick={reset}>
+                <Button variant="resetMuted" onClick={reset}>
                   Start Over
-                </button>
+                </Button>
               </div>
             ) : (
               <>
@@ -204,12 +199,12 @@ export default function HighballingDemo() {
                     over.
                   </p>
                   <div className={styles.checkoutActions}>
-                    <button className={styles.resetBtn} onClick={reset}>
+                    <Button variant="resetMuted" onClick={reset}>
                       Start Over
-                    </button>
-                    <button className={styles.confirmBtn}>
+                    </Button>
+                    <Button variant="checkoutConfirm">
                       Confirm &amp; Pay
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </>

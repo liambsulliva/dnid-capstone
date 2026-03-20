@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 // @ts-ignore
 // import igIcon from "@site/docs/attention/img/ig-transparent.png";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 
 interface RedDotProps {
@@ -56,8 +57,8 @@ export default function RedDotDemo({ image, alt }: RedDotProps) {
 
   return (
     <div className={styles.appWrapper}>
-      <button
-        className={styles.appIcon}
+      <Button
+        variant="iconApp"
         onClick={() => badge.visible && dismissBadge()}
         aria-label={`Instagram${badge.visible ? `, ${badge.count} notification` : ""}`}
       >
@@ -77,7 +78,7 @@ export default function RedDotDemo({ image, alt }: RedDotProps) {
             {badge.count}
           </span>
         )}
-      </button>
+      </Button>
     </div>
   );
 }

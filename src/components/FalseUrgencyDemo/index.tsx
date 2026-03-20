@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 // @ts-ignore
 import falseUrgency from "@site/docs/coercion/img/false-urgency.png";
@@ -43,13 +44,6 @@ export default function FalseUrgencyDemo() {
     }, 3000);
     return () => clearInterval(id);
   }, [expired, purchased]);
-
-  const reset = () => {
-    setSecondsLeft(INITIAL_SECONDS);
-    setExpired(false);
-    setPurchased(false);
-    setViewers(7);
-  };
 
   const isUrgent = secondsLeft < 120;
 
@@ -119,12 +113,9 @@ export default function FalseUrgencyDemo() {
                 </span>
               </div>
 
-              <button
-                className={styles.buyBtn}
-                onClick={() => setPurchased(true)}
-              >
+              <Button variant="buy" onClick={() => setPurchased(true)}>
                 Buy Now — $79.99
-              </button>
+              </Button>
               <p className={styles.subtext}>
                 Free 2-day shipping · 30-day returns
               </p>

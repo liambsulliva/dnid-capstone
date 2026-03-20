@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 
 const LOREM = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -29,23 +30,12 @@ export default function ForcedActionDemo() {
     setUnlocked(true);
   };
 
-  const reset = () => {
-    setUnlocked(false);
-    setEmail("");
-    setPassword("");
-  };
-
   return (
     <div className={styles.contentWrap}>
       <div className={`${styles.bodyText} ${!unlocked ? styles.blurred : ""}`}>
         {LOREM.split("\n\n").map((para, i) => (
           <p key={i}>{para}</p>
         ))}
-        {/*unlocked && (
-          <button className={styles.resetBtn} onClick={reset}>
-            Reset Demo
-          </button>
-        )*/}
       </div>
 
       {!unlocked && (
@@ -84,12 +74,9 @@ export default function ForcedActionDemo() {
                 autoComplete="current-password"
                 aria-label="Password"
               />
-              <button
-                type="submit"
-                className={`${styles.submitBtn} ${canSubmit ? styles.submitActive : ""}`}
-              >
+              <Button variant="submit" type="submit" active={canSubmit}>
                 Continue reading
-              </button>
+              </Button>
             </form>
 
             <p className={styles.disclaimer}>

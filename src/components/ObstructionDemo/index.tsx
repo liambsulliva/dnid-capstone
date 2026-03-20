@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 
 type Layer = "snippet" | "modal" | "full";
@@ -52,9 +53,9 @@ export default function ObstructionDemo() {
             <span className={styles.author}>{REVIEW.author}</span>
           </div>
           <p className={styles.snippetText}>{REVIEW.preview}</p>
-          <button className={styles.linkBtn} onClick={() => advance("modal")}>
+          <Button variant="snippetLink" onClick={() => advance("modal")}>
             See full review
-          </button>
+          </Button>
         </div>
       )}
 
@@ -77,12 +78,12 @@ export default function ObstructionDemo() {
             </div>
             <p className={styles.modalText}>{REVIEW.expanded}</p>
             <div className={styles.readMoreRow}>
-              <button
-                className={styles.readMoreBtn}
+              <Button
+                variant="readMoreOutline"
                 onClick={() => advance("full")}
               >
                 Read More
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -109,9 +110,13 @@ export default function ObstructionDemo() {
             {/*<div className={styles.layerBadge}>
               Full review unlocked after 3 clicks
             </div>*/}
-            <button className={styles.resetBtn} onClick={reset}>
+            <Button
+              variant="resetOutline"
+              className={styles.resetAlignStart}
+              onClick={reset}
+            >
               Start over
-            </button>
+            </Button>
           </div>
         </div>
       )}

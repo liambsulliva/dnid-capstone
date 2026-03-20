@@ -111,45 +111,6 @@
   line-height: 1.4;
 }
 
-/* Toggle switch */
-.toggle {
-  position: relative;
-  width: 44px;
-  height: 26px;
-  border-radius: 99px;
-  border: none;
-  background: var(--dnid-control-track-off);
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.2s ease;
-  padding: 0;
-}
-
-.toggle:focus-visible {
-  outline: 2px solid var(--dnid-brand-300);
-  outline-offset: 2px;
-}
-
-.toggleOn {
-  background: var(--dnid-toggle-on);
-}
-
-.toggleThumb {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--dnid-neutral-0);
-  box-shadow: var(--dnid-shadow-umbra);
-  transition: transform 0.2s ease;
-}
-
-.toggleOn .toggleThumb {
-  transform: translateX(18px);
-}
-
 .footer {
   padding: 0.75rem 1.25rem;
   background: var(--dnid-neutral-50);
@@ -163,25 +124,3 @@
   color: var(--dnid-text-card);
 }
 
-.resetBtn {
-  background: var(--dnid-surface-subtle);
-  color: var(--dnid-brand-500);
-  border: 1px solid var(--dnid-brand-100);
-  border-radius: 7px;
-  padding: 0.35rem 0.95rem;
-  font-size: 0.83rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    color 0.18s,
-    border-color 0.15s,
-    box-shadow 0.18s;
-}
-
-.resetBtn:hover,
-.resetBtn:focus-visible {
-  background: var(--dnid-brand-100);
-  border: 1px solid var(--dnid-brand-100);
-  color: var(--dnid-neutral-0);
-}

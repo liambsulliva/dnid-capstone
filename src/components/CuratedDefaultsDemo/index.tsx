@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 
 interface NotificationOption {
@@ -113,15 +114,14 @@ export default function CuratedDefaultsDemo() {
                   </span>
                   <span className={styles.rowDesc}>{opt.description}</span>
                 </div>
-                <button
+                <Button
+                  variant="toggle"
                   role="switch"
                   aria-checked={isOn}
                   aria-label={`Toggle ${opt.label} notifications`}
-                  className={`${styles.toggle} ${isOn ? styles.toggleOn : ""}`}
+                  pressed={isOn}
                   onClick={() => toggle(opt.id)}
-                >
-                  <span className={styles.toggleThumb} />
-                </button>
+                />
               </li>
             );
           })}
@@ -129,9 +129,9 @@ export default function CuratedDefaultsDemo() {
 
         <div className={styles.footer}>
           {dirty ? (
-            <button className={styles.resetBtn} onClick={reset}>
+            <Button variant="resetCurated" onClick={reset}>
               Restore defaults
-            </button>
+            </Button>
           ) : (
             <span className={styles.footerHint}>
               Showing platform defaults — 5 of 7 enabled

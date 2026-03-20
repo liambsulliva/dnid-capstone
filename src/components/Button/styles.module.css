@@ -1,0 +1,355 @@
+/* Toggle switch (CuratedDefaults) */
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  border-radius: 99px;
+  border: none;
+  background: var(--dnid-control-track-off);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+  padding: 0;
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--dnid-brand-300);
+  outline-offset: 2px;
+}
+
+.toggleOn { 
+  background: var(--dnid-toggle-on);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--dnid-neutral-0);
+  box-shadow: var(--dnid-shadow-umbra);
+  transition: transform 0.2s ease;
+}
+
+.toggleOn .toggleThumb {
+  transform: translateX(18px);
+}
+
+.resetCurated {
+  background: var(--dnid-surface-subtle);
+  color: var(--dnid-brand-500);
+  border: 1px solid var(--dnid-brand-100);
+  border-radius: 7px;
+  padding: 0.35rem 0.95rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.18s,
+    border-color 0.15s,
+    box-shadow 0.18s;
+}
+
+.resetCurated:hover,
+.resetCurated:focus-visible {
+  background: var(--dnid-brand-100);
+  border: 1px solid var(--dnid-brand-100);
+  color: var(--dnid-neutral-0);
+}
+
+.resetOutline {
+  background: none;
+  border: 1px solid var(--dnid-border-strong);
+  border-radius: 7px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--dnid-text-card);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.resetOutline:hover {
+  background: var(--dnid-surface-subtle);
+  color: var(--dnid-text-card);
+}
+
+/* Checkout / form-style outline reset (Highballing, ForcedAction patterns) */
+.resetMuted {
+  flex: 0 0 auto;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--dnid-border-strong);
+  background: transparent;
+  color: var(--dnid-text-card);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.resetMuted:hover {
+  background: var(--dnid-surface-muted);
+}
+
+.submit {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--dnid-control-track-off);
+  color: var(--dnid-text-card);
+  font-size: 0.88rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: not-allowed;
+  opacity: 0.5;
+  transition:
+    filter 0.15s,
+    opacity 0.15s,
+    box-shadow 0.15s;
+}
+
+.submitActive {
+  background: var(--dnid-submit-active-bg);
+  color: var(--dnid-submit-active-fg);
+  cursor: pointer;
+  opacity: 1;
+}
+
+.submitActive:hover {
+  filter: brightness(0.9);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--dnid-brand-500) 40%, transparent);
+}
+
+.iconApp {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.12s ease;
+}
+
+.iconApp:hover {
+  transform: scale(1.06);
+}
+
+.iconApp:active {
+  transform: scale(0.94);
+}
+
+.confirmDanger,
+.confirmSafe {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    filter 0.15s ease,
+    transform 0.1s ease;
+  line-height: 1.2;
+}
+
+.confirmDanger:hover,
+.confirmSafe:hover {
+  filter: brightness(0.92);
+}
+
+.confirmDanger:active,
+.confirmSafe:active {
+  transform: scale(0.97);
+}
+
+.confirmDanger {
+  background: var(--dnid-semantic-danger-strong);
+  color: var(--dnid-neutral-0);
+}
+
+.confirmSafe {
+  background: var(--dnid-semantic-success);
+  color: var(--dnid-neutral-0);
+}
+
+.snippetLink {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dnid-text-card);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: opacity 0.15s;
+}
+
+.snippetLink:hover {
+  opacity: 0.7;
+}
+
+.readMoreOutline {
+  padding: 0.5rem 1.1rem;
+  border-radius: 7px;
+  background: transparent;
+  border: 1px solid var(--dnid-border-strong);
+  color: var(--dnid-text-card);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.readMoreOutline:hover {
+  background: var(--dnid-surface-subtle);
+  color: var(--dnid-text-card);
+}
+
+.buy {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
+  border: none;
+  background: var(--dnid-semantic-danger);
+  color: var(--dnid-neutral-0);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+  margin-bottom: 0.5rem;
+}
+
+.buy:hover {
+  background: var(--dnid-semantic-danger-hover);
+  box-shadow: 0 2px 10px var(--dnid-danger-glow);
+}
+
+.nagClose {
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--dnid-text-card);
+  padding: 2px 4px;
+  border-radius: 4px;
+  line-height: 1;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.nagClose:hover {
+  color: var(--dnid-modal-close-hover-fg);
+  background: var(--dnid-modal-close-hover-bg);
+}
+
+.nagCta,
+.nagDismiss {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    filter 0.15s ease,
+    transform 0.1s ease;
+  line-height: 1.2;
+}
+
+.nagCta:hover,
+.nagDismiss:hover {
+  filter: brightness(0.92);
+}
+
+.nagCta:active,
+.nagDismiss:active {
+  transform: scale(0.97);
+}
+
+.nagCta {
+  background: var(--dnid-cta-blue);
+  color: var(--dnid-neutral-0);
+}
+
+.nagDismiss {
+  background: var(--dnid-modal-dismiss-bg);
+  color: var(--dnid-modal-dismiss-fg);
+}
+
+.addonAccept {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 9px;
+  border: none;
+  background: var(--dnid-brand-500);
+  color: var(--dnid-neutral-0);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+}
+
+.addonAccept:hover {
+  background: var(--dnid-brand-600);
+  box-shadow: 0 2px 8px var(--dnid-accent-glow);
+}
+
+.addonSkip {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--dnid-text-card);
+  opacity: 0.4;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: opacity 0.15s;
+}
+
+.addonSkip:hover {
+  opacity: 0.7;
+}
+
+.checkoutConfirm {
+  flex: 1;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--dnid-brand-500);
+  color: var(--dnid-neutral-0);
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+}
+
+.checkoutConfirm:hover {
+  background: var(--dnid-brand-600);
+  box-shadow: 0 2px 8px var(--dnid-accent-glow);
+}

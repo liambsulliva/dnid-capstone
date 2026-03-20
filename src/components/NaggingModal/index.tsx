@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Button } from "../Button";
 import styles from "./styles.module.css";
 
 interface NagVariant {
@@ -94,13 +95,13 @@ export default function NaggingModal() {
       >
         <div className={styles.header}>
           <span className={styles.eyebrow}>{variant.eyebrow}</span>
-          <button
-            className={styles.closeBtn}
+          <Button
+            variant="nagClose"
             onClick={dismiss}
             aria-label="Close"
           >
             ✕
-          </button>
+          </Button>
         </div>
 
         <div className={styles.body}>
@@ -109,12 +110,12 @@ export default function NaggingModal() {
         </div>
 
         <div className={styles.footer}>
-          <button className={styles.ctaBtn} onClick={dismiss}>
+          <Button variant="nagCta" onClick={dismiss}>
             {variant.cta}
-          </button>
-          <button className={styles.dismissBtn} onClick={dismiss}>
+          </Button>
+          <Button variant="nagDismiss" onClick={dismiss}>
             {variant.dismiss}
-          </button>
+          </Button>
         </div>
 
         {/*<p className={styles.counter}>
