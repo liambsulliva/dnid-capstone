@@ -1,41 +1,74 @@
-# Website
+<div align="center" style="padding: 20px;">
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+![Banner](./static/img/banner-raster.png)
 
-## Installation
+<div style="padding: 10px;">
 
-```bash
-yarn
-```
+![GitHub stars](https://img.shields.io/github/stars/liambsulliva/dnid-capstone)&nbsp;&nbsp;
+![GitHub forks](https://img.shields.io/github/forks/liambsulliva/dnid-capstone)&nbsp;&nbsp;
+![GitHub watchers](https://img.shields.io/github/watchers/liambsulliva/dnid-capstone)&nbsp;&nbsp;
+![GitHub issues](https://img.shields.io/github/issues/liambsulliva/dnid-capstone)
 
-## Local Development
+</div>
 
-```bash
-yarn start
-```
+</div>
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+# The Invisible Hand of UX
 
-## Build
+The Invisible Hand of UX is a Docusaurus site that tallies persuasive and manipulative interface patterns and explains them through short blurbs, relevant images, and interactive demos. It organizes examples categorically so readers can quickly understand how specific UX choices influence attention, behavior, decision-making, and autonomy.
 
-```bash
-yarn build
-```
+## At a Glance
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+- TypeScript + React + Docusaurus documentation site
+- Glossary-style content with interactive component demos (MDX)
+- Category-based navigation via a header menu
+- Built and deployed through GitHub Actions
 
-## Deployment
+## Main Categories
 
-Using SSH:
+- [Attention](https://uxwiki.liambsullivan.com/docs/attention/introduction)
+- [Behavior](https://uxwiki.liambsullivan.com/docs/behavior/introduction)
+- [Coercion](https://uxwiki.liambsullivan.com/docs/coercion/introduction)
+- [Priming](https://uxwiki.liambsullivan.com/docs/priming/introduction)
+- [Anchoring](https://uxwiki.liambsullivan.com/docs/anchoring/introduction)
 
-```bash
-USE_SSH=true yarn deploy
-```
+## Repository Structure
 
-Not using SSH:
+- `docs/`
+  - Markdown and MDX-style docs for each pattern category
+- `src/components/`
+  - Interactive demo components embedded in docs pages
+- `src/pages/`
+  - Homepage and top-level site pages
+- `static/`
+  - Static assets (images, icons, manifest files)
+- `docusaurus.config.ts`
+  - Site metadata, navbar, docs/blog config, theme settings
+- `sidebars.ts`
+  - Auto-generated sidebar definitions per category
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+## Development
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+### To Run Locally
+
+- Install dependencies:
+  - `npm install`
+- Start local dev server:
+  - `npm start`
+- Build production bundle:
+  - `npm run build`
+- Serve built output locally:
+  - `npm run serve`
+- Type-check TypeScript:
+  - `npm run typecheck`
+
+## Contributions
+
+To propose a change:
+
+- Click the "Edit this page" button at the bottom of the page you'd like to edit
+- Click "Edit this page" in the top right corner of the markdown file
+- Fork the repository and make your changes in a new branch
+- Create a pull request for the main repository
+- Wait for the pull request to be approved and merged
+- View the changes live at [https://uxwiki.liambsullivan.com](https://uxwiki.liambsullivan.com)!
