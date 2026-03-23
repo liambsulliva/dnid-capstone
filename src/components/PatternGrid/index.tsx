@@ -19,20 +19,20 @@ const PatternList: PatternCard[] = [
     path: "/docs/anchoring/highballing",
   },
   {
+    title: "Centre Stage Effect",
+    category: "Anchoring",
+    path: "/docs/anchoring/centre-stage-effect",
+  },
+  {
+    title: "Framing",
+    category: "Anchoring",
+    path: "/docs/anchoring/framing",
+  },
+  {
     title: "Partitioning",
     category: "Anchoring",
     path: "/docs/anchoring/partitioning",
     image: require("@site/docs/anchoring/img/servingsize.jpeg").default,
-  },
-  {
-    title: "Pricing",
-    category: "Anchoring",
-    path: "/docs/anchoring/pricing",
-  },
-  {
-    title: "Comparison",
-    category: "Anchoring",
-    path: "/docs/anchoring/comparison",
   },
   {
     title: "Salience Bias",
@@ -61,6 +61,16 @@ const PatternList: PatternCard[] = [
     category: "Behavior",
     path: "/docs/behavior/AB-Testing",
     image: require("@site/docs/behavior/img/ab-testing.webp").default,
+  },
+  {
+    title: "Autonomy Bias",
+    category: "Behavior",
+    path: "/docs/behavior/autonomy-bias",
+  },
+  {
+    title: "Loss Aversion",
+    category: "Behavior",
+    path: "/docs/behavior/loss-aversion",
   },
   {
     title: "Reachability",
@@ -108,6 +118,21 @@ const PatternList: PatternCard[] = [
     title: "Curated Defaults",
     category: "Priming",
     path: "/docs/priming/curated-defaults",
+  },
+  {
+    title: "Availability Heuristic",
+    category: "Priming",
+    path: "/docs/priming/availability-heuristic",
+  },
+  {
+    title: "Mere Exposure Effect",
+    category: "Priming",
+    path: "/docs/priming/mere-exposure-effect",
+  },
+  {
+    title: "Mood Congruence",
+    category: "Priming",
+    path: "/docs/priming/mood-congruence",
   },
 ];
 
