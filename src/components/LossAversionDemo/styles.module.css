@@ -1,0 +1,186 @@
+.scene {
+  display: flex;
+  align-items: center;
+}
+
+.window {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  background: var(--dnid-surface-card);
+  box-shadow: var(--dnid-shadow-1);
+  overflow: hidden;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: var(--dnid-surface-subtle);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dnid-border-strong);
+}
+
+.dot[data-color="close"] {
+  background: var(--dnid-traffic-close);
+}
+
+.dot[data-color="minimize"] {
+  background: var(--dnid-traffic-minimize);
+}
+
+.dot[data-color="maximize"] {
+  background: var(--dnid-traffic-maximize);
+}
+
+.body {
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.iconArea {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.125rem;
+}
+
+.docIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--ifm-color-primary);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dnid-text-card);
+  line-height: 1.35;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--dnid-text-card-faint, var(--dnid-text-card));
+  line-height: 1.55;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.saveBtn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.saveBtn:hover {
+  filter: brightness(1.1);
+}
+
+.discardBtn {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1.5px solid var(--dnid-border-default);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--dnid-text-card);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.discardBtn:hover {
+  border-color: var(--dnid-border-strong);
+  background: var(--dnid-surface-subtle);
+}
+
+.discardDestructive {
+  color: var(--dnid-traffic-close, #ff5f57);
+  border-color: color-mix(in srgb, var(--dnid-traffic-close, #ff5f57) 35%, transparent);
+}
+
+.discardDestructive:hover {
+  background: color-mix(in srgb, var(--dnid-traffic-close, #ff5f57) 8%, transparent);
+  border-color: var(--dnid-traffic-close, #ff5f57);
+}
+
+.resultState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  animation: fadeUp 0.25s ease forwards;
+}
+
+.resultState[data-result="saved"] .resultIcon {
+  color: var(--ifm-color-primary);
+}
+
+.resultState[data-result="discarded"] .resultIcon {
+  color: var(--dnid-traffic-close, #ff5f57);
+}
+
+.resultIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.resultText {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dnid-text-card);
+  line-height: 1.4;
+}
+
+.resetBtn {
+  margin-top: 0.25rem;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--dnid-text-card-faint, var(--dnid-text-card));
+  cursor: pointer;
+  text-decoration: underline;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.resetBtn:hover {
+  opacity: 1;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
