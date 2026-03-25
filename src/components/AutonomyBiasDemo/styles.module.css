@@ -1,0 +1,237 @@
+.scene {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.window {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 12px;
+  background: var(--dnid-surface-card);
+  box-shadow: var(--dnid-shadow-1);
+  overflow: hidden;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: var(--dnid-surface-subtle);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dnid-border-strong);
+}
+
+.dot[data-color="close"] {
+  background: var(--dnid-traffic-close);
+}
+
+.dot[data-color="minimize"] {
+  background: var(--dnid-traffic-minimize);
+}
+
+.dot[data-color="maximize"] {
+  background: var(--dnid-traffic-maximize);
+}
+
+.body {
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.iconArea {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.heroIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--dnid-accent, #2e7d32);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dnid-text-card);
+  line-height: 1.35;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--dnid-text-card-faint, var(--dnid-text-card));
+  line-height: 1.55;
+}
+
+.primaryBtn {
+  margin-top: 0.375rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s, filter 0.15s;
+}
+
+.primaryBtn:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.resetBtn {
+  align-self: center;
+  margin-top: 0.25rem;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--dnid-text-card-faint, var(--dnid-text-card));
+  cursor: pointer;
+  text-decoration: underline;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.resetBtn:hover {
+  opacity: 1;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.optionCard {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  background: var(--dnid-surface-subtle);
+  border: 1.5px solid var(--dnid-border-default);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.optionCard:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.optionSelected {
+  border-color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 8%, transparent);
+}
+
+.optionRadio {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--dnid-border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+}
+
+.optionSelected .optionRadio {
+  border-color: var(--ifm-color-primary);
+}
+
+.optionRadioDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+}
+
+.optionText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.optionLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dnid-text-card);
+}
+
+.optionDesc {
+  font-size: 0.78rem;
+  color: var(--dnid-text-card-faint, var(--dnid-text-card));
+  line-height: 1.4;
+}
+
+.recommendedBadge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 25%, transparent);
+  border-radius: 99px;
+  padding: 1px 7px;
+}
+
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  animation: fadeUp 0.25s ease forwards;
+}
+
+.checkIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--ifm-color-primary);
+}
+
+.successText {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dnid-text-card);
+  line-height: 1.4;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
