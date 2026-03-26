@@ -157,7 +157,7 @@ export default function InfiniteScrollDemo() {
       (entries) => {
         if (entries[0].isIntersecting) loadMore();
       },
-      { root: container, threshold: 0.1 },
+      { root: container, threshold: 1.0 },
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
