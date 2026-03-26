@@ -1,8 +1,59 @@
-import type { ReactNode } from "react";
+import type { ComponentType, ReactNode } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
+import {
+  HighballingGraphic,
+  CentreStageEffectGraphic,
+  FramingGraphic,
+  PartitioningGraphic,
+  SalienceBiasGraphic,
+  VisualHierarchyGraphic,
+  InfiniteScrollGraphic,
+  RedDotEffectGraphic,
+  ABTestingGraphic,
+  AutonomyBiasGraphic,
+  LossAversionGraphic,
+  ReachabilityGraphic,
+  FeedbackLoopGraphic,
+  ConfirmshamingGraphic,
+  BreakageGraphic,
+  NaggingGraphic,
+  ObstructionGraphic,
+  ForcedActionGraphic,
+  FalseUrgencyGraphic,
+  CuratedDefaultsGraphic,
+  AvailabilityHeuristicGraphic,
+  MereExposureEffectGraphic,
+  MoodCongruenceGraphic,
+} from "./graphics";
+
+const graphicMap: Record<string, ComponentType> = {
+  Highballing: HighballingGraphic,
+  "Centre Stage Effect": CentreStageEffectGraphic,
+  Framing: FramingGraphic,
+  Partitioning: PartitioningGraphic,
+  "Salience Bias": SalienceBiasGraphic,
+  "Visual Hierarchy": VisualHierarchyGraphic,
+  "Infinite Scroll": InfiniteScrollGraphic,
+  "Red Dot Effect": RedDotEffectGraphic,
+  "A/B Testing": ABTestingGraphic,
+  "Autonomy Bias": AutonomyBiasGraphic,
+  /*"Loss Aversion": LossAversionGraphic,*/
+  Reachability: ReachabilityGraphic,
+  /*"Feedback Loop": FeedbackLoopGraphic,*/
+  /*Confirmshaming: ConfirmshamingGraphic,*/
+  /*Breakage: BreakageGraphic,*/
+  Nagging: NaggingGraphic,
+  /*Obstruction: ObstructionGraphic,*/
+  /*"Forced Action": ForcedActionGraphic,*/
+  "False Urgency": FalseUrgencyGraphic,
+  /*"Curated Defaults": CuratedDefaultsGraphic,*/
+  /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
+  /*"Mere Exposure Effect": MereExposureEffectGraphic,*/
+  /*"Mood Congruence": MoodCongruenceGraphic,*/
+};
 
 type PatternCard = {
   title: string;
@@ -32,7 +83,6 @@ const PatternList: PatternCard[] = [
     title: "Partitioning",
     category: "Anchoring",
     path: "/docs/anchoring/partitioning",
-    image: require("@site/docs/anchoring/img/servingsize.jpeg").default,
   },
   {
     title: "Salience Bias",
@@ -48,19 +98,16 @@ const PatternList: PatternCard[] = [
     title: "Infinite Scroll",
     category: "Attention",
     path: "/docs/attention/infinite-scroll",
-    image: require("@site/docs/attention/img/infinite-scroll.png").default,
   },
   {
     title: "Red Dot Effect",
     category: "Attention",
     path: "/docs/attention/red-dot-effect",
-    image: require("@site/docs/attention/img/red-dot.jpg").default,
   },
   {
     title: "A/B Testing",
     category: "Behavior",
     path: "/docs/behavior/AB-Testing",
-    image: require("@site/docs/behavior/img/ab-testing.webp").default,
   },
   {
     title: "Autonomy Bias",
@@ -76,7 +123,6 @@ const PatternList: PatternCard[] = [
     title: "Reachability",
     category: "Behavior",
     path: "/docs/behavior/reachability",
-    image: require("@site/docs/behavior/img/reachability.png").default,
   },
   {
     title: "Feedback Loop",
@@ -92,7 +138,6 @@ const PatternList: PatternCard[] = [
     title: "Breakage",
     category: "Coercion",
     path: "/docs/coercion/breakage",
-    image: require("@site/docs/coercion/img/breakage.png").default,
   },
   {
     title: "Nagging",
@@ -136,20 +181,19 @@ const PatternList: PatternCard[] = [
   },
 ];
 
-function PatternCard({ title, category, path, image }: PatternCard) {
+function PatternCard({ title, category, path }: PatternCard) {
+  const Graphic = graphicMap[title];
   return (
     <div className={clsx("col", "col--3", styles.patternCard)}>
       <Link to={path} className={styles.cardLink}>
         <div className={styles.card}>
-          {image ? (
-            <div className={styles.cardImage}>
-              <img src={image} alt={title} />
-            </div>
-          ) : (
-            <div className={styles.cardPlaceholder}>
+          <div className={styles.cardPlaceholder}>
+            {Graphic ? (
+              <Graphic />
+            ) : (
               <span className={styles.categoryIcon}>{category.charAt(0)}</span>
-            </div>
-          )}
+            )}
+          </div>
           <div className={styles.cardContent}>
             <span className={styles.cardCategory}>{category}</span>
             <Heading as="h3" className={styles.cardTitle}>
