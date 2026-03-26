@@ -14,8 +14,8 @@ export function HighballingGraphic(): ReactNode {
           transform-box: fill-box;
           transform-origin: center;
         }
-        :is(svg:hover, svg.active) .hb-tag { transform: scale(1.08); }
-        :is(svg:hover, svg.active) .hb-arrow { transform: translateY(-8px); }
+        :is(.patternGridCard:hover svg, svg.active) .hb-tag { transform: scale(1.08); }
+        :is(.patternGridCard:hover svg, svg.active) .hb-arrow { transform: translateY(-8px); }
       `}</style>
 
       {/* Price tag body */}
@@ -76,8 +76,8 @@ export function CentreStageEffectGraphic(): ReactNode {
           transform-origin: center;
         }
         .cs-side { transition: opacity 0.3s ease; }
-        :is(svg:hover, svg.active) .cs-mid { transform: scaleY(1.1) scaleX(1.05); }
-        :is(svg:hover, svg.active) .cs-side { opacity: 0.4; }
+        :is(.patternGridCard:hover svg, svg.active) .cs-mid { transform: scaleY(1.1) scaleX(1.05); }
+        :is(.patternGridCard:hover svg, svg.active) .cs-side { opacity: 0.4; }
       `}</style>
 
       {/* Left option */}
@@ -236,10 +236,10 @@ export function FramingGraphic(): ReactNode {
         }
         .fr-ll { transition: fill 0.35s ease; }
         .fr-lr { transition: fill 0.35s ease; }
-        :is(svg:hover, svg.active) .fr-wl { transform: scaleY(1.14); }
-        :is(svg:hover, svg.active) .fr-wr { transform: scaleY(0.8); }
-        :is(svg:hover, svg.active) .fr-ll { fill: rgba(80,220,120,0.95); }
-        :is(svg:hover, svg.active) .fr-lr { fill: rgba(255,100,100,0.95); }
+        :is(.patternGridCard:hover svg, svg.active) .fr-wl { transform: scaleY(1.14); }
+        :is(.patternGridCard:hover svg, svg.active) .fr-wr { transform: scaleY(0.8); }
+        :is(.patternGridCard:hover svg, svg.active) .fr-ll { fill: rgba(80,220,120,0.95); }
+        :is(.patternGridCard:hover svg, svg.active) .fr-lr { fill: rgba(255,100,100,0.95); }
       `}</style>
 
       {/* Left glass */}
@@ -289,12 +289,12 @@ export function PartitioningGraphic(): ReactNode {
     >
       <style>{`
         .pt-p { transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); }
-        :is(svg:hover, svg.active) .pt-p1 { transform: translate(-13px, -9px); }
-        :is(svg:hover, svg.active) .pt-p2 { transform: translate(0px, -12px); }
-        :is(svg:hover, svg.active) .pt-p3 { transform: translate(13px, -9px); }
-        :is(svg:hover, svg.active) .pt-p4 { transform: translate(-13px, 9px); }
-        :is(svg:hover, svg.active) .pt-p5 { transform: translate(0px, 12px); }
-        :is(svg:hover, svg.active) .pt-p6 { transform: translate(13px, 9px); }
+        :is(.patternGridCard:hover svg, svg.active) .pt-p1 { transform: translate(-13px, -9px); }
+        :is(.patternGridCard:hover svg, svg.active) .pt-p2 { transform: translate(0px, -12px); }
+        :is(.patternGridCard:hover svg, svg.active) .pt-p3 { transform: translate(13px, -9px); }
+        :is(.patternGridCard:hover svg, svg.active) .pt-p4 { transform: translate(-13px, 9px); }
+        :is(.patternGridCard:hover svg, svg.active) .pt-p5 { transform: translate(0px, 12px); }
+        :is(.patternGridCard:hover svg, svg.active) .pt-p6 { transform: translate(13px, 9px); }
       `}</style>
 
       {/* Row 1 */}

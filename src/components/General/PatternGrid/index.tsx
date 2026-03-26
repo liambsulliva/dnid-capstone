@@ -211,7 +211,10 @@ function PatternCard({ title, category, path }: PatternCard) {
   return (
     <div className={clsx("col", "col--3", styles.patternCard)}>
       <Link to={path} className={styles.cardLink}>
-        <div ref={cardRef} className={styles.card}>
+        <div
+          ref={cardRef}
+          className={clsx(styles.card, "patternGridCard")}
+        >
           <div className={styles.cardPlaceholder}>
             {Graphic ? (
               <Graphic />

@@ -20,10 +20,10 @@ export function ConfirmshamingGraphic(): ReactNode {
           opacity: 0;
         }
         .co-normal { transition: opacity 0.3s ease; }
-        :is(svg:hover, svg.active) .co-yes { transform: scale(1.06); }
-        :is(svg:hover, svg.active) .co-no { opacity: 0.55; }
-        :is(svg:hover, svg.active) .co-shame { opacity: 1; }
-        :is(svg:hover, svg.active) .co-normal { opacity: 0; }
+        :is(.patternGridCard:hover svg, svg.active) .co-yes { transform: scale(1.06); }
+        :is(.patternGridCard:hover svg, svg.active) .co-no { opacity: 0.55; }
+        :is(.patternGridCard:hover svg, svg.active) .co-shame { opacity: 1; }
+        :is(.patternGridCard:hover svg, svg.active) .co-normal { opacity: 0; }
       `}</style>
 
       {/* Modal box */}
@@ -139,8 +139,8 @@ export function BreakageGraphic(): ReactNode {
         .br-cancel {
           transition: transform 0.4s ease, opacity 0.4s ease;
         }
-        :is(svg:hover, svg.active) .br-extra { opacity: 1; }
-        :is(svg:hover, svg.active) .br-cancel { transform: translate(30px, 20px) scale(0.7); opacity: 0.4; }
+        :is(.patternGridCard:hover svg, svg.active) .br-extra { opacity: 1; }
+        :is(.patternGridCard:hover svg, svg.active) .br-cancel { transform: translate(30px, 20px) scale(0.7); opacity: 0.4; }
       `}</style>
 
       {/* Subscription card */}
@@ -253,7 +253,7 @@ export function NaggingGraphic(): ReactNode {
           opacity: 0.2;
           transform: scale(0.9);
         }
-        :is(svg:hover, svg.active) .ng-popup3 { opacity: 1; transform: scale(1); }
+        :is(.patternGridCard:hover svg, svg.active) .ng-popup3 { opacity: 1; transform: scale(1); }
       `}</style>
 
       {/* Popup 3 (appears on hover, front) */}
@@ -347,8 +347,8 @@ export function ObstructionGraphic(): ReactNode {
           transition: opacity 0.4s ease;
           opacity: 0;
         }
-        :is(svg:hover, svg.active) .ob-block { transform: scaleX(1.1); }
-        :is(svg:hover, svg.active) .ob-extra { opacity: 1; }
+        :is(.patternGridCard:hover svg, svg.active) .ob-block { transform: scaleX(1.1); }
+        :is(.patternGridCard:hover svg, svg.active) .ob-extra { opacity: 1; }
       `}</style>
 
       {/* Start marker */}
@@ -521,8 +521,8 @@ export function ForcedActionGraphic(): ReactNode {
           transform-box: fill-box;
           transform-origin: center;
         }
-        :is(svg:hover, svg.active) .fa-modal { animation: fa-shake 0.6s ease; }
-        :is(svg:hover, svg.active) .fa-cta { animation: fa-pulse 0.8s ease-in-out infinite; }
+        :is(.patternGridCard:hover svg, svg.active) .fa-modal { animation: fa-shake 0.6s ease; }
+        :is(.patternGridCard:hover svg, svg.active) .fa-cta { animation: fa-pulse 0.8s ease-in-out infinite; }
       `}</style>
 
       {/* Dimmed background */}
@@ -654,11 +654,11 @@ export function FalseUrgencyGraphic(): ReactNode {
           transform-origin: start;
           transform: rotate(50deg);
         }
-        svg:not(:hover):not(.active) .fu-clock-min {
+        .patternGridCard:not(:hover) svg:not(.active) .fu-clock-min {
           transform: rotate(0deg);
           transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        :is(svg:hover, svg.active) .fu-clock-min {
+        :is(.patternGridCard:hover svg, svg.active) .fu-clock-min {
           animation: fu-minute-rotate 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
         .fu-clock-hr {
@@ -666,11 +666,11 @@ export function FalseUrgencyGraphic(): ReactNode {
           transform-origin: ${cx}px ${cy}px;
           transform: rotate(15deg);
         }
-        svg:not(:hover):not(.active) .fu-clock-hr {
+        .patternGridCard:not(:hover) svg:not(.active) .fu-clock-hr {
           transform: rotate(0deg);
           transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        :is(svg:hover, svg.active) .fu-clock-hr {
+        :is(.patternGridCard:hover svg, svg.active) .fu-clock-hr {
           animation: fu-hour-rotate 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
       `}</style>

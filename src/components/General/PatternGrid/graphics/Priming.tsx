@@ -22,8 +22,8 @@ export function CuratedDefaultsGraphic(): ReactNode {
         .cd-row-hi rect.cd-box {
           transition: stroke 0.35s ease, fill 0.35s ease;
         }
-        :is(svg:hover, svg.active) .cd-row-hi { filter: drop-shadow(0 0 5px var(--dnid-brand-300)); }
-        :is(svg:hover, svg.active) .cd-box-hi { stroke: var(--dnid-brand-300); fill: var(--dnid-brand-300); }
+        :is(.patternGridCard:hover svg, svg.active) .cd-row-hi { filter: drop-shadow(0 0 5px var(--dnid-brand-300)); }
+        :is(.patternGridCard:hover svg, svg.active) .cd-box-hi { stroke: var(--dnid-brand-300); fill: var(--dnid-brand-300); }
       `}</style>
 
       {options.map((opt, i) => (
@@ -114,11 +114,11 @@ export function AvailabilityHeuristicGraphic(): ReactNode {
           transform-origin: center;
         }
         .ah-dim { transition: opacity 0.4s ease; }
-        :is(svg:hover, svg.active) .ah-bright {
+        :is(.patternGridCard:hover svg, svg.active) .ah-bright {
           filter: drop-shadow(0 0 8px rgba(255,200,50,0.75));
           transform: scale(1.12);
         }
-        :is(svg:hover, svg.active) .ah-dim { opacity: 0.3; }
+        :is(.patternGridCard:hover svg, svg.active) .ah-dim { opacity: 0.3; }
       `}</style>
 
       {/* Brain outline */}
@@ -225,8 +225,8 @@ export function MereExposureEffectGraphic(): ReactNode {
           transition: opacity 0.4s ease;
           opacity: 0;
         }
-        :is(svg:hover, svg.active) .me-extra { opacity: 1; transform: translateX(0) scale(1); }
-        :is(svg:hover, svg.active) .me-label { opacity: 1; }
+        :is(.patternGridCard:hover svg, svg.active) .me-extra { opacity: 1; transform: translateX(0) scale(1); }
+        :is(.patternGridCard:hover svg, svg.active) .me-label { opacity: 1; }
       `}</style>
 
       {/* Label */}
@@ -368,11 +368,11 @@ export function MoodCongruenceGraphic(): ReactNode {
           transform-box: fill-box;
           transform-origin: center;
         }
-        :is(svg:hover, svg.active) .mc-happy { opacity: 0; }
-        :is(svg:hover, svg.active) .mc-sad { opacity: 1; }
-        :is(svg:hover, svg.active) .mc-warm { fill: rgba(150,160,180,0.6); }
-        :is(svg:hover, svg.active) .mc-rays { opacity: 0; }
-        :is(svg:hover, svg.active) .mc-cool { opacity: 1; }
+        :is(.patternGridCard:hover svg, svg.active) .mc-happy { opacity: 0; }
+        :is(.patternGridCard:hover svg, svg.active) .mc-sad { opacity: 1; }
+        :is(.patternGridCard:hover svg, svg.active) .mc-warm { fill: rgba(150,160,180,0.6); }
+        :is(.patternGridCard:hover svg, svg.active) .mc-rays { opacity: 0; }
+        :is(.patternGridCard:hover svg, svg.active) .mc-cool { opacity: 1; }
       `}</style>
 
       {/* Sun rays */}
