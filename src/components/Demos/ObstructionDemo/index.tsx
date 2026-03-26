@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Button } from "../Button";
-import { WindowChrome } from "../WindowChrome";
+import { Button } from "../../General/Button";
+import { WindowChrome } from "../../General/WindowChrome";
 import styles from "./styles.module.css";
 
 type Layer = "snippet" | "modal" | "full";
@@ -72,10 +72,7 @@ export default function ObstructionDemo() {
             </div>
             <p className={styles.modalText}>{REVIEW.expanded}</p>
             <div className={styles.readMoreRow}>
-              <Button
-                variant="readMoreOutline"
-                onClick={() => advance("full")}
-              >
+              <Button variant="readMoreOutline" onClick={() => advance("full")}>
                 Read More
               </Button>
             </div>

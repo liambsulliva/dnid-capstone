@@ -1,5 +1,5 @@
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
-import { Button } from "../Button";
+import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 // @ts-ignore
 import falseUrgency from "@site/docs/coercion/img/false-urgency.png";

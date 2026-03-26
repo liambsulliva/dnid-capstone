@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../Button";
+import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 
 interface AddOn {
@@ -202,9 +202,7 @@ export default function HighballingDemo() {
                     <Button variant="resetMuted" onClick={reset}>
                       Start Over
                     </Button>
-                    <Button variant="checkoutConfirm">
-                      Confirm &amp; Pay
-                    </Button>
+                    <Button variant="checkoutConfirm">Confirm &amp; Pay</Button>
                   </div>
                 </div>
               </>

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Button } from "../Button";
-import { WindowChrome } from "../WindowChrome";
+import { Button } from "../../General/Button";
+import { WindowChrome } from "../../General/WindowChrome";
 import styles from "./styles.module.css";
 
 type Stage = "initial" | "confirming" | "retained";
@@ -12,11 +12,13 @@ interface ConfirmVariant {
 
 const VARIANTS: ConfirmVariant[] = [
   {
-    subtitle: "You'll permanently lose access to exclusive deals and member perks.",
+    subtitle:
+      "You'll permanently lose access to exclusive deals and member perks.",
     noText: "No, I want to keep my perks",
   },
   {
-    subtitle: "Thousands of members save money every month with our newsletter.",
+    subtitle:
+      "Thousands of members save money every month with our newsletter.",
     noText: "No, I don't want to miss out",
   },
   {
@@ -61,7 +63,9 @@ export default function ConfirmshamingDemo() {
 
   return (
     <div className={styles.scene}>
-      <div className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}>
+      <div
+        className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}
+      >
         <WindowChrome />
 
         <div className={styles.body}>
@@ -88,7 +92,9 @@ export default function ConfirmshamingDemo() {
                 {stage === "initial" ? "Yes, unsubscribe me" : "Yes, remove me"}
               </Button>
               <Button variant="confirmSafe" onClick={handleNo}>
-                {stage === "initial" ? "No, keep me subscribed" : variant.noText}
+                {stage === "initial"
+                  ? "No, keep me subscribed"
+                  : variant.noText}
               </Button>
             </div>
           )}

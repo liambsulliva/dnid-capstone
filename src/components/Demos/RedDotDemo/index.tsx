@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 // @ts-ignore
 // import igIcon from "@site/docs/attention/img/ig-transparent.png";
-import { Button } from "../Button";
+import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 
 interface RedDotProps {

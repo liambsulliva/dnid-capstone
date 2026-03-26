@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-import AutonomyBiasDemo from '@site/src/components/AutonomyBiasDemo';
+import AutonomyBiasDemo from '@site/src/components/Demos/AutonomyBiasDemo';
 
 # Autonomy Bias
 

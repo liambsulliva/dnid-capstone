@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-import HighballingDemo from '@site/src/components/HighballingDemo';
+import HighballingDemo from '@site/src/components/Demos/HighballingDemo';
 
 # Highballing
 

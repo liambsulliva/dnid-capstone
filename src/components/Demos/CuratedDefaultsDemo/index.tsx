@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../Button";
+import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 
 interface NotificationOption {
@@ -109,9 +109,7 @@ export default function CuratedDefaultsDemo() {
             return (
               <li key={opt.id} className={styles.row}>
                 <div className={styles.rowText}>
-                  <span className={styles.rowLabel}>
-                    {opt.label}
-                  </span>
+                  <span className={styles.rowLabel}>{opt.label}</span>
                   <span className={styles.rowDesc}>{opt.description}</span>
                 </div>
                 <Button

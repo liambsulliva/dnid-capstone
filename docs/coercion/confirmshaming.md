@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-import ConfirmshamingDemo from '@site/src/components/ConfirmshamingDemo';
+import ConfirmshamingDemo from '@site/src/components/Demos/ConfirmshamingDemo';
 
 # Confirmshaming
 

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-import ABTestDemo from '@site/src/components/ABTestDemo';
+import ABTestDemo from '@site/src/components/Demos/ABTestDemo';
 
 # A/B Testing
 

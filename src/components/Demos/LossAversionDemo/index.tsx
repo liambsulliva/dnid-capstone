@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { WindowChrome } from "../WindowChrome";
+import { WindowChrome } from "../../General/WindowChrome";
 import styles from "./styles.module.css";
 
 export type LossAversionDemoVariant = "neutral" | "loss-framed";
@@ -39,7 +39,13 @@ function DialogWindow({
                   fill="none"
                   aria-hidden="true"
                 >
-                  <circle cx="20" cy="20" r="20" fill="var(--dnid-semantic-success)" opacity="0.12" />
+                  <circle
+                    cx="20"
+                    cy="20"
+                    r="20"
+                    fill="var(--dnid-semantic-success)"
+                    opacity="0.12"
+                  />
                   <path
                     d="M12 20l6 6 10-12"
                     stroke="var(--dnid-semantic-success)"
@@ -58,7 +64,13 @@ function DialogWindow({
                   fill="none"
                   aria-hidden="true"
                 >
-                  <circle cx="20" cy="20" r="20" fill="currentColor" opacity="0.12" />
+                  <circle
+                    cx="20"
+                    cy="20"
+                    r="20"
+                    fill="currentColor"
+                    opacity="0.12"
+                  />
                   <path
                     d="M14 14l12 12M26 14L14 26"
                     stroke="currentColor"
@@ -148,8 +160,8 @@ export default function LossAversionDemo({ variant }: LossAversionDemoProps) {
           title="Don't lose your work!"
           subtitle={
             <>
-              Your unsaved changes will be{" "}
-              <u>permanently lost</u> if you don&apos;t save now.
+              Your unsaved changes will be <u>permanently lost</u> if you
+              don&apos;t save now.
             </>
           }
           saveBtnLabel="Save"

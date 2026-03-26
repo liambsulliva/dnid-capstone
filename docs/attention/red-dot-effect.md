@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-import RedDotDemo from '@site/src/components/RedDotDemo';
+import RedDotDemo from '@site/src/components/Demos/RedDotDemo';
 import igIcon from './img/ig-transparent.png';
 
 # Red Dot Effect

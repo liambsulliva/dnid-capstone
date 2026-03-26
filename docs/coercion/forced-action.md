@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-import ForcedActionDemo from '@site/src/components/ForcedActionDemo';
+import ForcedActionDemo from '@site/src/components/Demos/ForcedActionDemo';
 
 # Forced Action
 

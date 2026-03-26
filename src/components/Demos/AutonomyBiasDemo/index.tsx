@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WindowChrome } from "../WindowChrome";
+import { WindowChrome } from "../../General/WindowChrome";
 import styles from "./styles.module.css";
 
 export type AutonomyBiasDemoVariant = "no-choice" | "with-choice";

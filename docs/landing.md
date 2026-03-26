@@ -4,7 +4,7 @@ sidebar_position: 1
 
 <!-- imports are ignored by Docusaurus -->
 
-import PatternGrid from '@site/src/components/PatternGrid';
+import PatternGrid from '@site/src/components/General/PatternGrid';
 
 <div style={{ marginTop: '2rem' }}>
 

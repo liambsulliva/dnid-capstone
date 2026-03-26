@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-import CuratedDefaultsDemo from '@site/src/components/CuratedDefaultsDemo';
+import CuratedDefaultsDemo from '@site/src/components/Demos/CuratedDefaultsDemo';
 
 # Curated Defaults
 
