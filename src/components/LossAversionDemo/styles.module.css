@@ -84,47 +84,44 @@
 
 .saveBtn {
   width: 100%;
-  padding: 0.6rem 1rem;
+  padding: 0.65rem 1rem;
   border: none;
   border-radius: 8px;
-  background: var(--ifm-color-primary);
-  color: #fff;
+  background: var(--dnid-semantic-success);
+  color: var(--dnid-neutral-0);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
-  transition: filter 0.15s;
+  transition: filter 0.15s ease, transform 0.1s ease;
 }
 
 .saveBtn:hover {
-  filter: brightness(1.1);
+  filter: brightness(0.92);
+}
+
+.saveBtn:active {
+  transform: scale(0.97);
 }
 
 .discardBtn {
   width: 100%;
-  padding: 0.6rem 1rem;
-  border: 1.5px solid var(--dnid-border-default);
+  padding: 0.65rem 1rem;
+  border: none;
   border-radius: 8px;
-  background: transparent;
-  color: var(--dnid-text-card);
+  background: var(--dnid-semantic-danger-strong);
+  color: var(--dnid-neutral-0);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
+  transition: filter 0.15s ease, transform 0.1s ease;
 }
 
 .discardBtn:hover {
-  border-color: var(--dnid-border-strong);
-  background: var(--dnid-surface-subtle);
+  filter: brightness(0.92);
 }
 
-.discardDestructive {
-  color: var(--dnid-traffic-close, #ff5f57);
-  border-color: color-mix(in srgb, var(--dnid-traffic-close, #ff5f57) 35%, transparent);
-}
-
-.discardDestructive:hover {
-  background: color-mix(in srgb, var(--dnid-traffic-close, #ff5f57) 8%, transparent);
-  border-color: var(--dnid-traffic-close, #ff5f57);
+.discardBtn:active {
+  transform: scale(0.97);
 }
 
 .resultState {

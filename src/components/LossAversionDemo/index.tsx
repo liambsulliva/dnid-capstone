@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import styles from "./styles.module.css";
 
 export type LossAversionDemoVariant = "neutral" | "loss-framed";
@@ -24,13 +24,11 @@ function DialogWindow({
   subtitle,
   saveBtnLabel,
   discardBtnLabel,
-  discardDestructive,
 }: {
   title: string;
-  subtitle: string;
+  subtitle: ReactNode;
   saveBtnLabel: string;
   discardBtnLabel: string;
-  discardDestructive: boolean;
 }) {
   const [result, setResult] = useState<DialogResult>(null);
 
@@ -50,10 +48,10 @@ function DialogWindow({
                   fill="none"
                   aria-hidden="true"
                 >
-                  <circle cx="20" cy="20" r="20" fill="currentColor" opacity="0.12" />
+                  <circle cx="20" cy="20" r="20" fill="var(--dnid-semantic-success)" opacity="0.12" />
                   <path
                     d="M12 20l6 6 10-12"
-                    stroke="currentColor"
+                    stroke="var(--dnid-semantic-success)"
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -131,7 +129,7 @@ function DialogWindow({
                 {saveBtnLabel}
               </button>
               <button
-                className={`${styles.discardBtn} ${discardDestructive ? styles.discardDestructive : ""}`}
+                className={styles.discardBtn}
                 onClick={() => setResult("discarded")}
               >
                 {discardBtnLabel}
@@ -153,15 +151,18 @@ export default function LossAversionDemo({ variant }: LossAversionDemoProps) {
           subtitle="You have unsaved changes in this document."
           saveBtnLabel="Save"
           discardBtnLabel="Discard"
-          discardDestructive={false}
         />
       ) : (
         <DialogWindow
           title="Don't lose your work!"
-          subtitle="Your unsaved changes will be permanently lost if you don't save now."
+          subtitle={
+            <>
+              Your unsaved changes will be{" "}
+              <u>permanently lost</u> if you don&apos;t save now.
+            </>
+          }
           saveBtnLabel="Save"
           discardBtnLabel="Don't Save"
-          discardDestructive={true}
         />
       )}
     </div>
