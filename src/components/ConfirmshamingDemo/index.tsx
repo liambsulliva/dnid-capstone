@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "../Button";
+import { WindowChrome } from "../WindowChrome";
 import styles from "./styles.module.css";
 
 type Stage = "initial" | "confirming" | "retained";
@@ -61,11 +62,7 @@ export default function ConfirmshamingDemo() {
   return (
     <div className={styles.scene}>
       <div className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}>
-        <div className={styles.header}>
-          <span className={styles.headerDot} />
-          <span className={styles.headerDot} />
-          <span className={styles.headerDot} />
-        </div>
+        <WindowChrome />
 
         <div className={styles.body}>
           {stage === "retained" ? (

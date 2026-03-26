@@ -72,44 +72,6 @@
   overflow: hidden;
 }
 
-.modalHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 10px 14px;
-  background: var(--dnid-surface-subtle);
-  border-bottom: 1px solid var(--dnid-border-default);
-}
-
-.headerDots {
-  display: flex;
-  gap: 5px;
-}
-
-.dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--dnid-border-strong);
-}
-
-.dot:nth-child(1) {
-  background: var(--dnid-traffic-close);
-}
-.dot:nth-child(2) {
-  background: var(--dnid-traffic-minimize);
-}
-.dot:nth-child(3) {
-  background: var(--dnid-traffic-maximize);
-}
-
-.modalTitle {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--dnid-text-card);
-  letter-spacing: 0.01em;
-}
-
 .modalBody {
   padding: 1.4rem 1.5rem 1.25rem;
   display: flex;

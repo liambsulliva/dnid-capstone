@@ -1,20 +1,11 @@
 import { useState, type ReactNode } from "react";
+import { WindowChrome } from "../WindowChrome";
 import styles from "./styles.module.css";
 
 export type LossAversionDemoVariant = "neutral" | "loss-framed";
 
 interface LossAversionDemoProps {
   variant: LossAversionDemoVariant;
-}
-
-function WindowChrome() {
-  return (
-    <div className={styles.chrome}>
-      <span className={styles.dot} data-color="close" />
-      <span className={styles.dot} data-color="minimize" />
-      <span className={styles.dot} data-color="maximize" />
-    </div>
-  );
 }
 
 type DialogResult = "saved" | "discarded" | null;

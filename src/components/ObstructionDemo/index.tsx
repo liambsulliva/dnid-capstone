@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "../Button";
+import { WindowChrome } from "../WindowChrome";
 import styles from "./styles.module.css";
 
 type Layer = "snippet" | "modal" | "full";
@@ -63,14 +64,7 @@ export default function ObstructionDemo() {
         <div
           className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}
         >
-          <div className={styles.modalHeader}>
-            <div className={styles.headerDots}>
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-            </div>
-            <span className={styles.modalTitle}>Customer Review</span>
-          </div>
+          <WindowChrome title="Customer Review" />
           <div className={styles.modalBody}>
             <div className={styles.modalMeta}>
               <Stars count={REVIEW.rating} />
@@ -93,14 +87,7 @@ export default function ObstructionDemo() {
         <div
           className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}
         >
-          <div className={styles.modalHeader}>
-            <div className={styles.headerDots}>
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-            </div>
-            <span className={styles.modalTitle}>Customer Review</span>
-          </div>
+          <WindowChrome title="Customer Review" />
           <div className={styles.modalBody}>
             <div className={styles.modalMeta}>
               <Stars count={REVIEW.rating} />
