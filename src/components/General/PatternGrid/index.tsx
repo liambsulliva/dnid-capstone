@@ -234,7 +234,7 @@ function PatternCard({ title, category, path }: PatternCard) {
 export default function PatternGrid(): ReactNode {
   return (
     <section className={styles.patternGrid}>
-      <div className="container">
+      <div className={styles.patternGridInner}>
         <div className="row">
           {PatternList.map((props, idx) => (
             <PatternCard key={idx} {...props} />
