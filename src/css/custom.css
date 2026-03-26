@@ -428,3 +428,17 @@ code[class*="language-"] *,
   border-color: var(--dnid-pagination-bg-hover) !important;
   color: var(--dnid-pagination-fg) !important;
 }
+
+@keyframes logo-recoil {
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(-20deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.navbar__logo img {
+  transform-origin: bottom left;
+}
+
+.navbar__brand:hover .navbar__logo img {
+  animation: logo-recoil 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
