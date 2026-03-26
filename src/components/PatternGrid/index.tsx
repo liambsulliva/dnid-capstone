@@ -1,4 +1,5 @@
 import type { ComponentType, ReactNode } from "react";
+import { useRef, useEffect } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Heading from "@theme/Heading";
@@ -183,10 +184,34 @@ const PatternList: PatternCard[] = [
 
 function PatternCard({ title, category, path }: PatternCard) {
   const Graphic = graphicMap[title];
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const cardEl = cardRef.current;
+    if (!cardEl) return;
+
+    const isMobile = window.matchMedia(
+      "(hover: none) and (pointer: coarse)"
+    ).matches;
+    if (!isMobile) return;
+
+    const svgEl = cardEl.querySelector("svg");
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (svgEl) svgEl.classList.toggle("active", entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(cardEl);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className={clsx("col", "col--3", styles.patternCard)}>
       <Link to={path} className={styles.cardLink}>
-        <div className={styles.card}>
+        <div ref={cardRef} className={styles.card}>
           <div className={styles.cardPlaceholder}>
             {Graphic ? (
               <Graphic />

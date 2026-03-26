@@ -22,8 +22,8 @@ export function CuratedDefaultsGraphic(): ReactNode {
         .cd-row-hi rect.cd-box {
           transition: stroke 0.35s ease, fill 0.35s ease;
         }
-        svg:hover .cd-row-hi { filter: drop-shadow(0 0 5px var(--dnid-brand-300)); }
-        svg:hover .cd-box-hi { stroke: var(--dnid-brand-300); fill: var(--dnid-brand-300); }
+        :is(svg:hover, svg.active) .cd-row-hi { filter: drop-shadow(0 0 5px var(--dnid-brand-300)); }
+        :is(svg:hover, svg.active) .cd-box-hi { stroke: var(--dnid-brand-300); fill: var(--dnid-brand-300); }
       `}</style>
 
       {options.map((opt, i) => (
@@ -114,11 +114,11 @@ export function AvailabilityHeuristicGraphic(): ReactNode {
           transform-origin: center;
         }
         .ah-dim { transition: opacity 0.4s ease; }
-        svg:hover .ah-bright {
+        :is(svg:hover, svg.active) .ah-bright {
           filter: drop-shadow(0 0 8px rgba(255,200,50,0.75));
           transform: scale(1.12);
         }
-        svg:hover .ah-dim { opacity: 0.3; }
+        :is(svg:hover, svg.active) .ah-dim { opacity: 0.3; }
       `}</style>
 
       {/* Brain outline */}
@@ -225,8 +225,8 @@ export function MereExposureEffectGraphic(): ReactNode {
           transition: opacity 0.4s ease;
           opacity: 0;
         }
-        svg:hover .me-extra { opacity: 1; transform: translateX(0) scale(1); }
-        svg:hover .me-label { opacity: 1; }
+        :is(svg:hover, svg.active) .me-extra { opacity: 1; transform: translateX(0) scale(1); }
+        :is(svg:hover, svg.active) .me-label { opacity: 1; }
       `}</style>
 
       {/* Label */}
@@ -368,11 +368,11 @@ export function MoodCongruenceGraphic(): ReactNode {
           transform-box: fill-box;
           transform-origin: center;
         }
-        svg:hover .mc-happy { opacity: 0; }
-        svg:hover .mc-sad { opacity: 1; }
-        svg:hover .mc-warm { fill: rgba(150,160,180,0.6); }
-        svg:hover .mc-rays { opacity: 0; }
-        svg:hover .mc-cool { opacity: 1; }
+        :is(svg:hover, svg.active) .mc-happy { opacity: 0; }
+        :is(svg:hover, svg.active) .mc-sad { opacity: 1; }
+        :is(svg:hover, svg.active) .mc-warm { fill: rgba(150,160,180,0.6); }
+        :is(svg:hover, svg.active) .mc-rays { opacity: 0; }
+        :is(svg:hover, svg.active) .mc-cool { opacity: 1; }
       `}</style>
 
       {/* Sun rays */}

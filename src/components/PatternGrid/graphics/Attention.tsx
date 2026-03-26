@@ -24,8 +24,8 @@ export function SalienceBiasGraphic(): ReactNode {
           transform-box: fill-box;
           transform-origin: center;
         }
-        svg:hover .sb-dot { opacity: 0.25; }
-        svg:hover .sb-standout {
+        :is(svg:hover, svg.active) .sb-dot { opacity: 0.25; }
+        :is(svg:hover, svg.active) .sb-standout {
           transform: scale(1.4);
           filter: drop-shadow(0 0 6px rgba(255,80,80,0.8));
         }
@@ -76,13 +76,13 @@ export function VisualHierarchyGraphic(): ReactNode {
         .vh-r3 { transition-delay: 0.1s; }
         .vh-r4 { transition-delay: 0.15s; }
         .vh-r5 { transition-delay: 0.2s; }
-        svg:hover .vh-row { transform: scaleX(1); opacity: 1; }
+        :is(svg:hover, svg.active) .vh-row { transform: scaleX(1); opacity: 1; }
         .vh-row { transform: scaleX(0.7); opacity: 0.4; }
-        svg:hover .vh-r1 { transform: scaleX(1); opacity: 1; }
-        svg:hover .vh-r2 { transform: scaleX(1); opacity: 1; }
-        svg:hover .vh-r3 { transform: scaleX(1); opacity: 1; }
-        svg:hover .vh-r4 { transform: scaleX(1); opacity: 1; }
-        svg:hover .vh-r5 { transform: scaleX(1); opacity: 1; }
+        :is(svg:hover, svg.active) .vh-r1 { transform: scaleX(1); opacity: 1; }
+        :is(svg:hover, svg.active) .vh-r2 { transform: scaleX(1); opacity: 1; }
+        :is(svg:hover, svg.active) .vh-r3 { transform: scaleX(1); opacity: 1; }
+        :is(svg:hover, svg.active) .vh-r4 { transform: scaleX(1); opacity: 1; }
+        :is(svg:hover, svg.active) .vh-r5 { transform: scaleX(1); opacity: 1; }
       `}</style>
 
       {/* H1 */}
@@ -161,7 +161,7 @@ export function InfiniteScrollGraphic(): ReactNode {
         .is-feed {
           transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        svg:hover .is-feed { transform: translateY(-30px); }
+        :is(svg:hover, svg.active) .is-feed { transform: translateY(-30px); }
       `}</style>
 
       {/* Phone outline */}
@@ -264,7 +264,7 @@ export function RedDotEffectGraphic(): ReactNode {
           transform-box: fill-box;
           transform-origin: center;
         }
-        svg:hover .rd-badge-group {
+        :is(svg:hover, svg.active) .rd-badge-group {
           animation: rd-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
       `}</style>

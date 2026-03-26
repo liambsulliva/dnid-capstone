@@ -30,7 +30,8 @@
   flex-direction: column;
 }
 
-.card:hover {
+.card:hover,
+.card:active {
   border: 1px solid var(--dnid-card-border-hover);
 }
 

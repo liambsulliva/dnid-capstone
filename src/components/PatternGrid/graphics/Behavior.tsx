@@ -19,9 +19,9 @@ export function ABTestingGraphic(): ReactNode {
           transition: opacity 0.35s ease;
           opacity: 0;
         }
-        svg:hover .ab-b-side { filter: drop-shadow(0 0 8px var(--dnid-brand-400)); transform: scale(1.04); }
-        svg:hover .ab-a-side { opacity: 0.5; }
-        svg:hover .ab-winner { opacity: 1; }
+        :is(svg:hover, svg.active) .ab-b-side { filter: drop-shadow(0 0 8px var(--dnid-brand-400)); transform: scale(1.04); }
+        :is(svg:hover, svg.active) .ab-a-side { opacity: 0.5; }
+        :is(svg:hover, svg.active) .ab-winner { opacity: 1; }
       `}</style>
 
       {/* A side */}
@@ -152,8 +152,8 @@ export function AutonomyBiasGraphic(): ReactNode {
           transition: opacity 0.3s ease;
           opacity: 0;
         }
-        svg:hover .au-selected { transform: scale(1.08); opacity: 1; }
-        svg:hover .au-check { opacity: 1; }
+        :is(svg:hover, svg.active) .au-selected { transform: scale(1.08); opacity: 1; }
+        :is(svg:hover, svg.active) .au-check { opacity: 1; }
       `}</style>
 
       {/* Option rows */}
@@ -231,9 +231,9 @@ export function LossAversionGraphic(): ReactNode {
         .la-right-pan {
           transition: transform 0.5s ease;
         }
-        svg:hover .la-beam { transform: rotate(18deg); }
-        svg:hover .la-left-pan { transform: translateY(16px); }
-        svg:hover .la-right-pan { transform: translateY(-10px); }
+        :is(svg:hover, svg.active) .la-beam { transform: rotate(18deg); }
+        :is(svg:hover, svg.active) .la-left-pan { transform: translateY(16px); }
+        :is(svg:hover, svg.active) .la-right-pan { transform: translateY(-10px); }
       `}</style>
 
       {/* Pivot */}
@@ -370,7 +370,7 @@ export function ReachabilityGraphic(): ReactNode {
         .rch-z1 { transition-delay: 0s; }
         .rch-z2 { transition-delay: 0.1s; }
         .rch-z3 { transition-delay: 0.2s; }
-        svg:hover .rch-zone { opacity: 1; }
+        :is(svg:hover, svg.active) .rch-zone { opacity: 1; }
       `}</style>
 
       {/* Zone arcs clipped to phone area */}
@@ -447,7 +447,7 @@ export function FeedbackLoopGraphic(): ReactNode {
           transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
           transform-origin: 50% 50%;
         }
-        svg:hover .fl-path {
+        :is(svg:hover, svg.active) .fl-path {
           transform: rotate(0.5turn);
         }
       `}</style>
