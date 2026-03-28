@@ -220,130 +220,165 @@ export function LossAversionGraphic(): ReactNode {
       height="100%"
     >
       <style>{`
-        .la-beam {
-          transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-          transform-box: fill-box;
-          transform-origin: 100px 60px;
+        .la-scale {
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transform-origin: 100px 54px;
         }
-        .la-left-pan {
-          transition: transform 0.5s ease;
+        .la-left-side, .la-right-side {
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .la-right-pan {
-          transition: transform 0.5s ease;
+        :is(.patternGridCard:hover svg, svg.active) .la-scale {
+          transform: rotate(-20deg);
         }
-        :is(.patternGridCard:hover svg, svg.active) .la-beam { transform: rotate(18deg); }
-        :is(.patternGridCard:hover svg, svg.active) .la-left-pan { transform: translateY(16px); }
-        :is(.patternGridCard:hover svg, svg.active) .la-right-pan { transform: translateY(-10px); }
+        :is(.patternGridCard:hover svg, svg.active) .la-left-side {
+          transform: translate(3.38px, 19.15px);
+        }
+        :is(.patternGridCard:hover svg, svg.active) .la-right-side {
+          transform: translate(-3.38px, -19.15px);
+        }
       `}</style>
 
-      {/* Pivot */}
-      <line
-        x1="100"
-        y1="24"
-        x2="100"
-        y2="60"
-        stroke="rgba(255,255,255,0.5)"
-        strokeWidth="2"
-      />
-      <circle cx="100" cy="22" r="5" fill="rgba(255,255,255,0.6)" />
+      {/* === Antique base structure (static) === */}
 
-      {/* Beam */}
-      <g className="la-beam">
+      {/* Column shaft */}
+      <rect
+        x="96"
+        y="64"
+        width="8"
+        height="67"
+        rx="1"
+        fill="rgba(255,255,255,0.15)"
+        stroke="rgba(255,255,255,0.3)"
+        strokeWidth="1"
+      />
+      {/* Column decorative ring (mid) */}
+      <rect
+        x="93"
+        y="93"
+        width="14"
+        height="5"
+        rx="2"
+        fill="rgba(255,255,255,0.2)"
+        stroke="rgba(255,255,255,0.35)"
+        strokeWidth="1"
+      />
+
+      {/* Capital (top of column, sits below beam) */}
+      <rect
+        x="82"
+        y="57"
+        width="36"
+        height="8"
+        rx="3"
+        fill="rgba(255,255,255,0.22)"
+        stroke="rgba(255,255,255,0.45)"
+        strokeWidth="1.5"
+      />
+
+      {/* Finial ball (pivot point) */}
+      <circle
+        cx="100"
+        cy="54"
+        r="5.5"
+        fill="rgba(255,255,255,0.45)"
+        stroke="rgba(255,255,255,0.65)"
+        strokeWidth="1.5"
+      />
+
+      {/* Base plinth (upper step) */}
+      <rect
+        x="83"
+        y="129"
+        width="34"
+        height="8"
+        rx="2"
+        fill="rgba(255,255,255,0.2)"
+        stroke="rgba(255,255,255,0.4)"
+        strokeWidth="1.5"
+      />
+      {/* Base foot (lower, widest step) */}
+      <rect
+        x="70"
+        y="135"
+        width="60"
+        height="11"
+        rx="4"
+        fill="rgba(255,255,255,0.17)"
+        stroke="rgba(255,255,255,0.35)"
+        strokeWidth="1.5"
+      />
+
+      {/* === Beam only — rotates on hover === */}
+      <g className="la-scale">
         <line
-          x1="30"
-          y1="60"
-          x2="170"
-          y2="60"
-          stroke="rgba(255,255,255,0.7)"
-          strokeWidth="2.5"
+          x1="44"
+          y1="54"
+          x2="156"
+          y2="54"
+          stroke="rgba(255,255,255,0.72)"
+          strokeWidth="3"
           strokeLinecap="round"
         />
-        {/* Left chain */}
-        <line
-          x1="45"
-          y1="60"
-          x2="45"
-          y2="80"
-          stroke="rgba(255,255,255,0.4)"
+        <circle
+          cx="44"
+          cy="54"
+          r="4"
+          fill="rgba(255,255,255,0.45)"
+          stroke="rgba(255,255,255,0.6)"
           strokeWidth="1.5"
         />
-        {/* Right chain */}
-        <line
-          x1="155"
-          y1="60"
-          x2="155"
-          y2="80"
-          stroke="rgba(255,255,255,0.4)"
+        <circle
+          cx="156"
+          cy="54"
+          r="4"
+          fill="rgba(255,255,255,0.45)"
+          stroke="rgba(255,255,255,0.6)"
           strokeWidth="1.5"
         />
       </g>
 
-      {/* Left pan (LOSS) */}
-      <g className="la-left-pan">
+      {/* === Left chain + pan — translates to follow rotated beam attachment === */}
+      <g className="la-left-side">
+        <line
+          x1="44"
+          y1="54"
+          x2="44"
+          y2="80"
+          stroke="rgba(255,255,255,0.38)"
+          strokeWidth="1.5"
+          strokeDasharray="2.5,2"
+        />
         <ellipse
-          cx="45"
-          cy="82"
-          rx="24"
-          ry="6"
-          fill="rgba(255,80,80,0.5)"
-          stroke="rgba(255,80,80,0.8)"
+          cx="44"
+          cy="83"
+          rx="23"
+          ry="5.5"
+          fill="rgba(255,255,255,0.15)"
+          stroke="rgba(255,255,255,0.3)"
           strokeWidth="1.5"
         />
-        <text
-          x="45"
-          y="100"
-          textAnchor="middle"
-          fill="rgba(255,100,100,0.9)"
-          fontSize="11"
-          fontWeight="bold"
-          fontFamily="Sora, sans-serif"
-        >
-          −$100
-        </text>
-        <text
-          x="45"
-          y="114"
-          textAnchor="middle"
-          fill="rgba(255,100,100,0.7)"
-          fontSize="7.5"
-          fontFamily="Sora, sans-serif"
-        >
-          LOSS
-        </text>
       </g>
 
-      {/* Right pan (GAIN) */}
-      <g className="la-right-pan">
+      {/* === Right chain + pan — translates to follow rotated beam attachment === */}
+      <g className="la-right-side">
+        <line
+          x1="156"
+          y1="54"
+          x2="156"
+          y2="80"
+          stroke="rgba(255,255,255,0.38)"
+          strokeWidth="1.5"
+          strokeDasharray="2.5,2"
+        />
         <ellipse
-          cx="155"
-          cy="82"
-          rx="24"
-          ry="6"
-          fill="rgba(80,200,120,0.4)"
-          stroke="rgba(80,200,120,0.6)"
+          cx="156"
+          cy="83"
+          rx="23"
+          ry="5.5"
+          fill="rgba(255,255,255,0.15)"
+          stroke="rgba(255,255,255,0.3)"
           strokeWidth="1.5"
         />
-        <text
-          x="155"
-          y="100"
-          textAnchor="middle"
-          fill="rgba(100,220,140,0.9)"
-          fontSize="11"
-          fontWeight="bold"
-          fontFamily="Sora, sans-serif"
-        >
-          +$50
-        </text>
-        <text
-          x="155"
-          y="114"
-          textAnchor="middle"
-          fill="rgba(100,220,140,0.7)"
-          fontSize="7.5"
-          fontFamily="Sora, sans-serif"
-        >
-          GAIN
-        </text>
       </g>
     </svg>
   );

@@ -41,7 +41,7 @@ const graphicMap: Record<string, ComponentType> = {
   "Red Dot Effect": RedDotEffectGraphic,
   "A/B Testing": ABTestingGraphic,
   "Autonomy Bias": AutonomyBiasGraphic,
-  /*"Loss Aversion": LossAversionGraphic,*/
+  "Loss Aversion": LossAversionGraphic,
   Reachability: ReachabilityGraphic,
   /*"Feedback Loop": FeedbackLoopGraphic,*/
   /*Confirmshaming: ConfirmshamingGraphic,*/
