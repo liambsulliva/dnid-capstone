@@ -33,7 +33,7 @@ export function ABTestingGraphic(): ReactNode {
           fill="rgba(255,255,255,0.7)"
           fontSize="16"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           A
         </text>
@@ -74,7 +74,7 @@ export function ABTestingGraphic(): ReactNode {
           fill="rgba(255,255,255,0.7)"
           fontSize="16"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           B
         </text>
@@ -123,7 +123,7 @@ export function ABTestingGraphic(): ReactNode {
           fill="white"
           fontSize="8"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           WINNER
         </text>
@@ -201,7 +201,7 @@ export function AutonomyBiasGraphic(): ReactNode {
             y={opt.y + 17.5}
             fill={opt.checked ? "white" : "rgba(255,255,255,0.6)"}
             fontSize="9"
-            fontFamily="sans-serif"
+            fontFamily="Sora, sans-serif"
           >
             {opt.label}
           </text>
@@ -296,7 +296,7 @@ export function LossAversionGraphic(): ReactNode {
           fill="rgba(255,100,100,0.9)"
           fontSize="11"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           −$100
         </text>
@@ -306,7 +306,7 @@ export function LossAversionGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,100,100,0.7)"
           fontSize="7.5"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           LOSS
         </text>
@@ -330,7 +330,7 @@ export function LossAversionGraphic(): ReactNode {
           fill="rgba(100,220,140,0.9)"
           fontSize="11"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           +$50
         </text>
@@ -340,7 +340,7 @@ export function LossAversionGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(100,220,140,0.7)"
           fontSize="7.5"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           GAIN
         </text>

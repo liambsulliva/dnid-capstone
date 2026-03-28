@@ -46,7 +46,7 @@ export function ConfirmshamingGraphic(): ReactNode {
         fill="white"
         fontSize="11"
         fontWeight="bold"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         Get 30% off today!
       </text>
@@ -56,7 +56,7 @@ export function ConfirmshamingGraphic(): ReactNode {
         textAnchor="middle"
         fill="rgba(255,255,255,0.6)"
         fontSize="8"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         Join our newsletter for exclusive deals
       </text>
@@ -78,7 +78,7 @@ export function ConfirmshamingGraphic(): ReactNode {
           fill="white"
           fontSize="9"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           YES, I LOVE SAVING MONEY!
         </text>
@@ -102,7 +102,7 @@ export function ConfirmshamingGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,255,255,0.5)"
           fontSize="7.5"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
           className="co-normal"
         >
           No thanks
@@ -113,7 +113,7 @@ export function ConfirmshamingGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,180,180,0.85)"
           fontSize="7"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
           className="co-shame"
         >
           No, I hate good deals
@@ -161,7 +161,7 @@ export function BreakageGraphic(): ReactNode {
         fill="white"
         fontSize="11"
         fontWeight="bold"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         Premium Plan
       </text>
@@ -171,7 +171,7 @@ export function BreakageGraphic(): ReactNode {
         textAnchor="middle"
         fill="rgba(255,255,255,0.6)"
         fontSize="9"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         $19.99 / month · Auto-renews
       </text>
@@ -181,7 +181,7 @@ export function BreakageGraphic(): ReactNode {
         textAnchor="middle"
         fill="rgba(255,255,255,0.4)"
         fontSize="7.5"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         Active since Jan 2023
       </text>
@@ -204,7 +204,7 @@ export function BreakageGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,120,120,0.9)"
           fontSize="8.5"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Cancel subscription
         </text>
@@ -228,7 +228,7 @@ export function BreakageGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,255,255,0.5)"
           fontSize="7"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Please call 1-800-555-0199 to cancel
         </text>
@@ -283,7 +283,7 @@ export function NaggingGraphic(): ReactNode {
           fill="var(--dnid-neutral-0)"
           fontSize="8"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Last chance!
         </text>
@@ -292,7 +292,7 @@ export function NaggingGraphic(): ReactNode {
           y="80"
           fill="rgba(255,255,255,0.75)"
           fontSize="7.5"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Your trial expires soon.
         </text>
@@ -301,7 +301,7 @@ export function NaggingGraphic(): ReactNode {
           y="92"
           fill="rgba(255,255,255,0.75)"
           fontSize="7.5"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Subscribe now!
         </text>
@@ -320,7 +320,7 @@ export function NaggingGraphic(): ReactNode {
           fill="#1a1a1a"
           fontSize="7"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Subscribe
         </text>
@@ -366,7 +366,7 @@ export function ObstructionGraphic(): ReactNode {
         textAnchor="middle"
         fill="white"
         fontSize="8"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         ▶
       </text>
@@ -418,7 +418,7 @@ export function ObstructionGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,100,100,0.7)"
           fontSize="7"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           VERIFY ID
         </text>
@@ -470,7 +470,7 @@ export function ObstructionGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,180,80,0.7)"
           fontSize="6"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           SURVEY
         </text>
@@ -483,7 +483,7 @@ export function ObstructionGraphic(): ReactNode {
         textAnchor="middle"
         fill="rgba(255,255,255,0.4)"
         fontSize="8"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         Goal blocked by required steps
       </text>
@@ -548,7 +548,7 @@ export function ForcedActionGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,255,255,0.08)"
           fontSize="14"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           ✕
         </text>
@@ -569,7 +569,7 @@ export function ForcedActionGraphic(): ReactNode {
           fill="white"
           fontSize="11"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Create an account
         </text>
@@ -579,7 +579,7 @@ export function ForcedActionGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,255,255,0.5)"
           fontSize="8"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           to continue using the app
         </text>
@@ -618,7 +618,7 @@ export function ForcedActionGraphic(): ReactNode {
             fill="white"
             fontSize="9"
             fontWeight="bold"
-            fontFamily="sans-serif"
+            fontFamily="Sora, sans-serif"
           >
             Sign Up — Required
           </text>

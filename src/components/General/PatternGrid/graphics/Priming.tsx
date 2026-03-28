@@ -67,7 +67,7 @@ export function CuratedDefaultsGraphic(): ReactNode {
               fill="var(--dnid-text-card)"
               fontSize="9"
               fontWeight="bold"
-              fontFamily="sans-serif"
+              fontFamily="Sora, sans-serif"
             >
               ✓
             </text>
@@ -81,7 +81,7 @@ export function CuratedDefaultsGraphic(): ReactNode {
                 : "var(--dnid-neutral-300)"
             }
             fontSize="8.5"
-            fontFamily="sans-serif"
+            fontFamily="Sora, sans-serif"
           >
             {opt.label}
           </text>
@@ -165,7 +165,7 @@ export function AvailabilityHeuristicGraphic(): ReactNode {
               textAnchor="middle"
               fill="rgba(255,220,100,0.9)"
               fontSize="7"
-              fontFamily="sans-serif"
+              fontFamily="Sora, sans-serif"
               fontWeight="bold"
             >
               {m.label}
@@ -187,7 +187,7 @@ export function AvailabilityHeuristicGraphic(): ReactNode {
               textAnchor="middle"
               fill="rgba(255,255,255,0.35)"
               fontSize="6"
-              fontFamily="sans-serif"
+              fontFamily="Sora, sans-serif"
             >
               {m.label}
             </text>
@@ -235,7 +235,7 @@ export function MereExposureEffectGraphic(): ReactNode {
         y="100"
         fill="rgba(255,255,255,0.3)"
         fontSize="7.5"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         1st
       </text>
@@ -244,7 +244,7 @@ export function MereExposureEffectGraphic(): ReactNode {
         y="100"
         fill="rgba(255,255,255,0.45)"
         fontSize="7.5"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         2nd
       </text>
@@ -253,7 +253,7 @@ export function MereExposureEffectGraphic(): ReactNode {
         y="100"
         fill="rgba(255,255,255,0.6)"
         fontSize="7.5"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         3rd
       </text>
@@ -262,7 +262,7 @@ export function MereExposureEffectGraphic(): ReactNode {
         y="100"
         fill="rgba(255,255,255,0.85)"
         fontSize="7.5"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         4th
       </text>
@@ -286,7 +286,7 @@ export function MereExposureEffectGraphic(): ReactNode {
             fill={`rgba(255,255,255,${inst.opacity})`}
             fontSize={inst.size * 0.55}
             fontWeight="bold"
-            fontFamily="sans-serif"
+            fontFamily="Sora, sans-serif"
           >
             B
           </text>
@@ -319,7 +319,7 @@ export function MereExposureEffectGraphic(): ReactNode {
           fill="rgba(255,200,50,0.95)"
           fontSize="18"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           B
         </text>
@@ -330,7 +330,7 @@ export function MereExposureEffectGraphic(): ReactNode {
         textAnchor="middle"
         fill="rgba(255,200,50,0.8)"
         fontSize="7.5"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
         className="me-label"
       >
         5th
@@ -342,7 +342,7 @@ export function MereExposureEffectGraphic(): ReactNode {
         textAnchor="middle"
         fill="rgba(255,255,255,0.35)"
         fontSize="8"
-        fontFamily="sans-serif"
+        fontFamily="Sora, sans-serif"
       >
         Familiarity breeds preference
       </text>
@@ -499,7 +499,7 @@ export function MoodCongruenceGraphic(): ReactNode {
             textAnchor="middle"
             fill="rgba(255,255,255,0.7)"
             fontSize="8"
-            fontFamily="sans-serif"
+            fontFamily="Sora, sans-serif"
           >
             {item.label}
           </text>

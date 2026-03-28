@@ -41,7 +41,7 @@ export function HighballingGraphic(): ReactNode {
           fill="white"
           fontSize="26"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
           letterSpacing="-1"
         >
           $999
@@ -52,7 +52,7 @@ export function HighballingGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,255,255,0.5)"
           fontSize="10"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           opening offer
         </text>
@@ -98,7 +98,7 @@ export function CentreStageEffectGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,255,255,0.65)"
           fontSize="9"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Basic
         </text>
@@ -109,7 +109,7 @@ export function CentreStageEffectGraphic(): ReactNode {
           fill="rgba(255,255,255,0.55)"
           fontSize="12"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           $9/mo
         </text>
@@ -142,7 +142,7 @@ export function CentreStageEffectGraphic(): ReactNode {
           fill="#1a1a1a"
           fontSize="7.5"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           POPULAR
         </text>
@@ -152,7 +152,7 @@ export function CentreStageEffectGraphic(): ReactNode {
           textAnchor="middle"
           fill="white"
           fontSize="10"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Pro
         </text>
@@ -163,7 +163,7 @@ export function CentreStageEffectGraphic(): ReactNode {
           fill="white"
           fontSize="14"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           $19/mo
         </text>
@@ -187,7 +187,7 @@ export function CentreStageEffectGraphic(): ReactNode {
           textAnchor="middle"
           fill="rgba(255,255,255,0.65)"
           fontSize="8.5"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           Enterprise
         </text>
@@ -198,7 +198,7 @@ export function CentreStageEffectGraphic(): ReactNode {
           fill="rgba(255,255,255,0.55)"
           fontSize="12"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           $49/mo
         </text>

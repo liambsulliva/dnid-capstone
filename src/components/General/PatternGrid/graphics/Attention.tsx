@@ -293,7 +293,7 @@ export function RedDotEffectGraphic(): ReactNode {
           fill="white"
           fontSize="10"
           fontWeight="bold"
-          fontFamily="sans-serif"
+          fontFamily="Sora, sans-serif"
         >
           9
         </text>
