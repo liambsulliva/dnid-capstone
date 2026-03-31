@@ -209,7 +209,7 @@ function PatternCard({ title, category, path }: PatternCard) {
   }, []);
 
   return (
-    <div className={clsx("col", "col--3", styles.patternCard)}>
+    <div className={styles.patternCard}>
       <Link to={path} className={styles.cardLink}>
         <div
           ref={cardRef}
@@ -238,7 +238,7 @@ export default function PatternGrid(): ReactNode {
   return (
     <section className={styles.patternGrid}>
       <div className={styles.patternGridInner}>
-        <div className="row">
+        <div className={styles.patternRow}>
           {PatternList.map((props, idx) => (
             <PatternCard key={idx} {...props} />
           ))}

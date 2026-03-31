@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import PatternGrid from "@site/src/components/General/PatternGrid";
 
 import styles from "./index.module.css";
 
@@ -11,17 +12,15 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <img
-          src="/img/banner-raster.png"
-          alt="The Invisible Hand of UX Banner"
-          className={styles.banner}
-        />
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/landing">
-            Let's Get Started!
-          </Link>
+        <div className={styles.bannerContainer}>
+          <img
+            src="/img/banner-raster.png"
+            alt="The Invisible Hand of UX Banner"
+            className={styles.banner}
+          />
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
         </div>
+        <PatternGrid />
       </div>
     </header>
   );

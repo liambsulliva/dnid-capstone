@@ -4,8 +4,6 @@ sidebar_position: 3
 
 # Reachability
 
-<img src={require('./img/reachability.png').default} alt="A screenshot of an iOS contact page" width="400" style={{ display: 'block', marginBottom: 'var(--ifm-leading, 1.25rem)' }} />
-
 <figure style={{ margin: '0', marginBottom: 'var(--ifm-leading, 1.25rem)' }}>
   <img src={require('./img/reachability-2.jpg').default} alt="A screenshot of the Samsung One UI quick menu" width="400" />
   <figcaption style={{ fontSize: '0.8rem', color: '#d0d0d0' }}>Courtesy of Roboflow Universe</figcaption>

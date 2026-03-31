@@ -5,15 +5,21 @@
 }
 
 .patternGridInner {
-  width: min(1200px, calc(100vw - 2rem));
+  width: 100%;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
 }
 
+.patternRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
 .patternCard {
-  margin-bottom: 2rem;
-  padding: 0 0.75rem;
+  min-width: 0;
 }
 
 .cardLink {
@@ -102,18 +108,15 @@
   line-height: 1.4;
 }
 
-/* Responsive design */
 @media (max-width: 996px) {
-  .patternCard {
-    width: 33.333%;
-    flex: 0 0 33.333%;
+  .patternRow {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .patternCard {
-    width: 50%;
-    flex: 0 0 50%;
+  .patternRow {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .cardImage,
@@ -122,14 +125,8 @@
   }
 }
 
-@media (max-width: 576px) {
-  .patternCard {
-    width: 100%;
-    flex: 0 0 100%;
-  }
-
-  .cardImage,
-  .cardPlaceholder {
-    height: 200px;
+@media (max-width: 480px) {
+  .patternRow {
+    grid-template-columns: 1fr;
   }
 }
