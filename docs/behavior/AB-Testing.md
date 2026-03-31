@@ -6,7 +6,7 @@ import ABTestDemo from '@site/src/components/Demos/ABTestDemo';
 
 # A/B Testing
 
-<figure style={{ margin: '0' }}>
+<figure style={{ margin: '0', marginBottom: 'var(--ifm-leading, 1.25rem)' }}>
   <img src={require('./img/ab-testing.webp').default} alt="A screenshot of the YouTube video dashboard" width="400" />
   <figcaption style={{ fontSize: '0.8rem', color: '#d0d0d0' }}>Courtesy of The Verge</figcaption>
 </figure>

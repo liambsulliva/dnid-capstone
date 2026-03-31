@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Breakage
 
-<img src={require('./img/breakage.png').default} alt="A screenshot of the Starbucks app payment screen" width="400" />
+<img src={require('./img/breakage.png').default} alt="A screenshot of the Starbucks app payment screen" width="400" style={{ display: 'block', marginBottom: 'var(--ifm-leading, 1.25rem)' }} />
 
 This artifact comes from the payment interface of the Starbucks app. The interface affords selecting **one** payment method (important). If the payment method is a gift card with an insufficient balance, it enables 2 drop downs in order to "reload" the gift card, asking for a source and to pick from pre-defined amounts. There is no additional drop down to cover the insufficient cost with an additional payment, only the ability to reload the payment method itself.
 

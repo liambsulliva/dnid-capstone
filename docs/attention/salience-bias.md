@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Salience Bias
 
-<img src={require('./img/salience-bias.png').default} alt="An example of a minimalist soda can design standing out amongst traditional soda can designs in a vending machine." width="400" />
+<img src={require('./img/salience-bias.png').default} alt="An example of a minimalist soda can design standing out amongst traditional soda can designs in a vending machine." width="400" style={{ display: 'block', marginBottom: 'var(--ifm-leading, 1.25rem)' }} />
 
 Salience is about introducing elements that are made to jump out, especially on an emotional level.
 

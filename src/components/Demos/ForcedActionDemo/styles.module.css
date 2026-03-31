@@ -1,5 +1,6 @@
 .contentWrap {
   position: relative;
+  margin-bottom: var(--ifm-leading, 1.25rem);
 }
 
 .bodyText {
