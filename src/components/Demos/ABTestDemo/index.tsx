@@ -102,7 +102,7 @@ function ArticleDense() {
       </p>
       <p>
         Product teams sometimes pair that dense style with subtle typographic
-        choices—tighter line height, smaller subheads—and measure whether
+        choices, tighter line height, smaller subheads and measure whether
         completion rate or perceived trust moves. The hypothesis is usually that
         “serious” presentation nudges people to treat the piece as definitive,
         not that the words themselves changed at all.

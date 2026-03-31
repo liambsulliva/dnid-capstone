@@ -81,9 +81,6 @@ function DialogWindow({
                 <p className={styles.resultText}>Changes were discarded.</p>
               </>
             )}
-            <button className={styles.resetBtn} onClick={reset}>
-              Reset
-            </button>
           </div>
         ) : (
           <>
