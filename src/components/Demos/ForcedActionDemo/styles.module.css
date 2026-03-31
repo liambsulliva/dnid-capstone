@@ -1,5 +1,6 @@
 .contentWrap {
   position: relative;
+  overflow: hidden;
   margin-bottom: var(--ifm-leading, 1.25rem);
 }
 
@@ -16,6 +17,7 @@
 .gate {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: flex;
   justify-content: center;
   background: linear-gradient(
