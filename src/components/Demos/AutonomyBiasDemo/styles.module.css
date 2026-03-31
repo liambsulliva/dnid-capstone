@@ -54,8 +54,8 @@
   padding: 0.6rem 1rem;
   border: none;
   border-radius: 8px;
-  background: var(--ifm-color-primary);
-  color: #fff;
+  background: var(--dnid-interactive-primary-bg);
+  color: var(--dnid-interactive-on-primary);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -110,12 +110,12 @@
 }
 
 .optionCard:hover {
-  border-color: var(--ifm-color-primary);
+  border-color: var(--dnid-border-strong);
 }
 
 .optionSelected {
-  border-color: var(--ifm-color-primary);
-  background: color-mix(in srgb, var(--ifm-color-primary) 8%, transparent);
+  border-color: var(--dnid-border-strong);
+  background: color-mix(in srgb, var(--dnid-border-strong) 12%, transparent);
 }
 
 .optionRadio {
@@ -131,14 +131,14 @@
 }
 
 .optionSelected .optionRadio {
-  border-color: var(--ifm-color-primary);
+  border-color: var(--dnid-border-strong);
 }
 
 .optionRadioDot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--ifm-color-primary);
+  background: var(--dnid-border-strong);
 }
 
 .optionText {
@@ -168,9 +168,9 @@
   font-weight: 700;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--ifm-color-primary);
-  background: color-mix(in srgb, var(--ifm-color-primary) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 25%, transparent);
+  color: var(--dnid-interactive-primary-bg);
+  background: color-mix(in srgb, var(--dnid-interactive-primary-bg) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--dnid-interactive-primary-bg) 25%, transparent);
   border-radius: 99px;
   padding: 1px 7px;
 }
@@ -188,7 +188,7 @@
 .checkIcon {
   width: 32px;
   height: 32px;
-  color: var(--ifm-color-primary);
+  color: var(--dnid-interactive-primary-bg);
 }
 
 .successText {
