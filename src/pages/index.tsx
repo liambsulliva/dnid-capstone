@@ -13,20 +13,17 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <div className={styles.bannerContainer}>
-          {typeof window !== "undefined" &&
-          window.matchMedia("(max-width: 600px)").matches ? (
-            <img
-              src="/img/print-logo-raster.png"
-              alt="The Invisible Hand of UX Banner"
-              className={styles.banner}
+          <picture>
+            <source
+              srcSet="/img/print-logo-raster.png"
+              media="(max-width: 600px)"
             />
-          ) : (
             <img
               src="/img/banner-raster.png"
               alt="The Invisible Hand of UX Banner"
               className={styles.banner}
             />
-          )}
+          </picture>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
         </div>
         <PatternGrid />
