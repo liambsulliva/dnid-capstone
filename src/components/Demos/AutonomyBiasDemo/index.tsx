@@ -38,7 +38,7 @@ function NoChoiceVariant() {
         {done ? (
           <div className={styles.successState}>
             <CheckIcon />
-            <p className={styles.successText}>All set — enjoy the app!</p>
+            <p className={styles.successText}>All set. Enjoy the app!</p>
           </div>
         ) : (
           <>
