@@ -17,7 +17,7 @@
   outline-offset: 2px;
 }
 
-.toggleOn { 
+.toggleOn {
   background: var(--dnid-toggle-on);
 }
 
@@ -96,7 +96,7 @@
 }
 
 .resetMuted:hover {
-  background: var(--dnid-surface-muted);
+  background: var(--dnid-neutral-100);
 }
 
 .submit {
@@ -126,7 +126,8 @@
 
 .submitActive:hover {
   filter: brightness(0.9);
-  box-shadow: 0 2px 10px color-mix(in srgb, var(--dnid-brand-500) 40%, transparent);
+  box-shadow: 0 2px 10px
+    color-mix(in srgb, var(--dnid-brand-500) 40%, transparent);
 }
 
 .iconApp {
