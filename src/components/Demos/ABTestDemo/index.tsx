@@ -22,7 +22,7 @@ export default function ABTestDemo() {
           onClick={() => setVariant("A")}
           aria-pressed={variant === "A"}
         >
-          A — Dense copy
+          A: Dense copy
         </button>
         <button
           type="button"
@@ -30,13 +30,14 @@ export default function ABTestDemo() {
           onClick={() => setVariant("B")}
           aria-pressed={variant === "B"}
         >
-          B — Scannable layout
+          B: Scannable layout
         </button>
       </div>
 
       <p className={styles.metaNote} aria-live="polite">
         Showing variant <strong>{variant}</strong>: the facts are identical;
-        only layout and emphasis change—like two cells in a real A/B test.
+        only layout and emphasis change. Sort of like two cells in a real A/B
+        test.
       </p>
 
       <div className={styles.article} aria-live="polite">
@@ -48,7 +49,7 @@ export default function ABTestDemo() {
           Which presentation fits this article best?
         </h3>
         <p className={styles.pollHint}>
-          There is no wrong answer—this mirrors how teams collect qualitative
+          There is no wrong answer. This mirrors how teams collect qualitative
           signal alongside metrics.
         </p>
         <div className={styles.pollChoices}>
@@ -96,9 +97,9 @@ function ArticleDense() {
         When the same article is set as uninterrupted paragraphs with only an
         occasional heading, readers often report that it feels thorough or
         authoritative even before they finish. The tradeoff is higher cognitive
-        load: people who are scanning for one fact may leave without finding
-        it, which shows up in metrics like bounce rate or time-to-first-scroll
-        in A/B tests.
+        load: people who are scanning for one fact may leave without finding it,
+        which shows up in metrics like bounce rate or time-to-first-scroll in
+        A/B tests.
       </p>
       <p>
         Product teams sometimes pair that dense style with subtle typographic
@@ -108,11 +109,11 @@ function ArticleDense() {
         not that the words themselves changed at all.
       </p>
       <p>
-        In practice, A/B testing this kind of layout means serving two
-        templates to randomly assigned visitors, then comparing outcomes: time
-        on page, scroll depth, shares, or downstream conversions. Feature flags
-        make it possible to roll the winning template out gradually instead of
-        flipping the whole site at once.
+        In practice, A/B testing this kind of layout means serving two templates
+        to randomly assigned visitors, then comparing outcomes: time on page,
+        scroll depth, shares, or downstream conversions. Feature flags make it
+        possible to roll the winning template out gradually instead of flipping
+        the whole site at once.
       </p>
     </div>
   );
@@ -133,7 +134,7 @@ function ArticleScannable() {
       <ul className={styles.scanList}>
         <li>
           <span className={styles.scanIcon} aria-hidden="true">
-            📌
+            -
           </span>
           <span>
             <strong>Dense prose</strong> can feel more authoritative upfront,
@@ -142,7 +143,7 @@ function ArticleScannable() {
         </li>
         <li>
           <span className={styles.scanIcon} aria-hidden="true">
-            📊
+            -
           </span>
           <span>
             <strong>Metrics</strong> such as bounce rate, time-to-first-scroll,
@@ -152,7 +153,7 @@ function ArticleScannable() {
         </li>
         <li>
           <span className={styles.scanIcon} aria-hidden="true">
-            🧪
+            -
           </span>
           <span>
             <strong>A/B tests</strong> randomize who sees each template, then
