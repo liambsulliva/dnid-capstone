@@ -15,6 +15,4 @@ A/B testing _feels_ jargon-y, but it's actually incredibly simple. Take an inter
 
 Multiple iterations of this process can be used to isolate specific features of a given interface. This is known as **[feature flagging](https://en.wikipedia.org/wiki/Feature_toggle)**, where a feature is only enabled for a subset of users. This allows businesses to test the effectiveness of a feature in isolation, and to roll out the feature to all users if it is successful.
 
-This can be exceedingly subtle...
-
 <ABTestDemo />
