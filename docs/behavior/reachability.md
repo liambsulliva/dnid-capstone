@@ -6,7 +6,7 @@ sidebar_position: 3
 
 <figure style={{ margin: '0', marginBottom: 'var(--ifm-leading, 1.25rem)' }}>
   <img src={require('./img/reachability-2.jpg').default} alt="A screenshot of the Samsung One UI quick menu" width="400" />
-  <figcaption style={{ fontSize: '0.8rem', color: '#d0d0d0' }}>Courtesy of Roboflow Universe</figcaption>
+  <figcaption style={{ fontSize: '0.8rem', color: 'var(--dnid-text-secondary)' }}>Courtesy of Roboflow Universe</figcaption>
 </figure>
 
 Reachability is a fundamentally physical problem. When you're using a mobile device, your thumb can only reach so far before you need to rely on your other hand to stabilize your device. Mobile interfaces keep this in mind, designing interface elements that are built to be interactive on the bottom-half of the screen.

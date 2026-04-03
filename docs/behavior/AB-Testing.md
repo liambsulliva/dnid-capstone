@@ -8,7 +8,7 @@ import ABTestDemo from '@site/src/components/Demos/ABTestDemo';
 
 <figure style={{ margin: '0', marginBottom: 'var(--ifm-leading, 1.25rem)' }}>
   <img src={require('./img/ab-testing.webp').default} alt="A screenshot of the YouTube video dashboard" width="400" />
-  <figcaption style={{ fontSize: '0.8rem', color: '#d0d0d0' }}>Courtesy of The Verge</figcaption>
+  <figcaption style={{ fontSize: '0.8rem', color: 'var(--dnid-text-secondary)' }}>Courtesy of The Verge</figcaption>
 </figure>
 
 A/B testing _feels_ jargon-y, but it's actually incredibly simple. Take an interface **A** and an interface **B**, and show them to users randomly. Then, assess users' behavior in reaction to each interface given a metric. You have done A/B testing! Businesses typically test users on click-through rates or conversions (money spent) to determine the best interface to suit their goals.
