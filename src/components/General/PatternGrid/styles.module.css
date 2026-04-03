@@ -213,7 +213,6 @@
 
 .carouselArrow:hover:not(:disabled) {
   border-color: var(--dnid-card-border-hover);
-  background: var(--dnid-surface-subtle);
 }
 
 .carouselArrow:disabled {
