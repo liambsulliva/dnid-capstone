@@ -26,7 +26,13 @@ function HomepageHeader() {
           </picture>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
         </div>
-        <PatternGrid />
+        <div className={styles.patternGrids}>
+          <PatternGrid category="anchoring" />
+          <PatternGrid category="attention" />
+          <PatternGrid category="behavior" />
+          <PatternGrid category="coercion" />
+          <PatternGrid category="priming" />
+        </div>
       </div>
     </header>
   );

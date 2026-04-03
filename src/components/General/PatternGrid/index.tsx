@@ -1,5 +1,5 @@
-import type { ComponentType, ReactNode } from "react";
-import { useRef, useEffect } from "react";
+import type { ComponentType, ReactNode, RefObject } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import Heading from "@theme/Heading";
@@ -17,17 +17,8 @@ import {
   AutonomyBiasGraphic,
   LossAversionGraphic,
   ReachabilityGraphic,
-  FeedbackLoopGraphic,
-  ConfirmshamingGraphic,
-  BreakageGraphic,
   NaggingGraphic,
-  ObstructionGraphic,
-  ForcedActionGraphic,
   FalseUrgencyGraphic,
-  CuratedDefaultsGraphic,
-  AvailabilityHeuristicGraphic,
-  MereExposureEffectGraphic,
-  MoodCongruenceGraphic,
 } from "./graphics";
 
 const graphicMap: Record<string, ComponentType> = {
@@ -54,6 +45,34 @@ const graphicMap: Record<string, ComponentType> = {
   /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
   /*"Mere Exposure Effect": MereExposureEffectGraphic,*/
   /*"Mood Congruence": MoodCongruenceGraphic,*/
+};
+
+export type PatternCategorySlug =
+  | "anchoring"
+  | "attention"
+  | "behavior"
+  | "coercion"
+  | "priming";
+
+const CATEGORY_LABEL: Record<PatternCategorySlug, string> = {
+  anchoring: "Anchoring",
+  attention: "Attention",
+  behavior: "Behavior",
+  coercion: "Coercion",
+  priming: "Priming",
+};
+
+const CATEGORY_DESCRIPTION: Record<PatternCategorySlug, string> = {
+  anchoring:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum posuere nibh, id pretium lacus tincidunt vel.",
+  attention:
+    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.",
+  behavior:
+    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.",
+  coercion:
+    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut.",
+  priming:
+    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.",
 };
 
 type PatternCard = {
@@ -182,7 +201,7 @@ const PatternList: PatternCard[] = [
   },
 ];
 
-function PatternCard({ title, category, path }: PatternCard) {
+function PatternCardItem({ title, category, path }: PatternCard) {
   const Graphic = graphicMap[title];
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -191,7 +210,7 @@ function PatternCard({ title, category, path }: PatternCard) {
     if (!cardEl) return;
 
     const isMobile = window.matchMedia(
-      "(hover: none) and (pointer: coarse)"
+      "(hover: none) and (pointer: coarse)",
     ).matches;
     if (!isMobile) return;
 
@@ -201,7 +220,7 @@ function PatternCard({ title, category, path }: PatternCard) {
       ([entry]) => {
         if (svgEl) svgEl.classList.toggle("active", entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
 
     observer.observe(cardEl);
@@ -211,10 +230,7 @@ function PatternCard({ title, category, path }: PatternCard) {
   return (
     <div className={styles.patternCard}>
       <Link to={path} className={styles.cardLink}>
-        <div
-          ref={cardRef}
-          className={clsx(styles.card, "patternGridCard")}
-        >
+        <div ref={cardRef} className={clsx(styles.card, "patternGridCard")}>
           <div className={styles.cardPlaceholder}>
             {Graphic ? (
               <Graphic />
@@ -234,15 +250,135 @@ function PatternCard({ title, category, path }: PatternCard) {
   );
 }
 
-export default function PatternGrid(): ReactNode {
+const CAROUSEL_VISIBLE_DESKTOP = 4;
+const GAP_PX = 24;
+
+function useCarouselScroll(scrollerRef: RefObject<HTMLDivElement | null>) {
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(false);
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    const maxScroll = scrollWidth - clientWidth;
+    setCanPrev(scrollLeft > 2);
+    setCanNext(scrollLeft < maxScroll - 2);
+  }, [scrollerRef]);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    const ro = new ResizeObserver(updateScrollState);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      ro.disconnect();
+    };
+  }, [scrollerRef, updateScrollState]);
+
+  const scrollStep = useCallback(
+    (direction: -1 | 1) => {
+      const el = scrollerRef.current;
+      if (!el) return;
+      const firstItem = el.querySelector<HTMLElement>("[data-carousel-card]");
+      const step =
+        firstItem != null
+          ? firstItem.offsetWidth + GAP_PX
+          : el.clientWidth * 0.85;
+      el.scrollBy({ left: direction * step, behavior: "smooth" });
+    },
+    [scrollerRef],
+  );
+
+  return { canPrev, canNext, scrollStep, updateScrollState };
+}
+
+export type PatternGridProps = {
+  category: PatternCategorySlug;
+};
+
+export default function PatternGrid({ category }: PatternGridProps): ReactNode {
+  const label = CATEGORY_LABEL[category];
+  const cards = PatternList.filter(
+    (p) => p.category.toLowerCase() === category,
+  );
+  const useCarousel = cards.length > CAROUSEL_VISIBLE_DESKTOP;
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const { canPrev, canNext, scrollStep, updateScrollState } =
+    useCarouselScroll(scrollerRef);
+
+  useEffect(() => {
+    updateScrollState();
+  }, [cards.length, updateScrollState]);
+
   return (
-    <section className={styles.patternGrid}>
+    <section
+      className={styles.patternGrid}
+      aria-labelledby={`pattern-${category}-title`}
+    >
       <div className={styles.patternGridInner}>
-        <div className={styles.patternRow}>
-          {PatternList.map((props, idx) => (
-            <PatternCard key={idx} {...props} />
-          ))}
-        </div>
+        <header className={styles.categoryHeader}>
+          <Heading
+            as="h2"
+            id={`pattern-${category}-title`}
+            className={styles.categoryTitle}
+          >
+            {label}
+          </Heading>
+          <p className={styles.categoryDescription}>
+            {CATEGORY_DESCRIPTION[category]}
+          </p>
+        </header>
+
+        {useCarousel ? (
+          <div className={styles.carouselOuter}>
+            <button
+              type="button"
+              className={clsx(styles.carouselArrow, styles.carouselArrowPrev)}
+              onClick={() => scrollStep(-1)}
+              disabled={!canPrev}
+              aria-label={`Previous ${label} patterns`}
+            >
+              <span aria-hidden>‹</span>
+            </button>
+            <div
+              ref={scrollerRef}
+              className={styles.carouselScroller}
+              tabIndex={0}
+              role="region"
+              aria-roledescription="carousel"
+              aria-label={`${label} pattern cards`}
+            >
+              {cards.map((props, idx) => (
+                <div
+                  key={`${props.path}-${idx}`}
+                  className={styles.carouselItem}
+                  data-carousel-card
+                >
+                  <PatternCardItem {...props} />
+                </div>
+              ))}
+            </div>
+            <button
+              type="button"
+              className={clsx(styles.carouselArrow, styles.carouselArrowNext)}
+              onClick={() => scrollStep(1)}
+              disabled={!canNext}
+              aria-label={`Next ${label} patterns`}
+            >
+              <span aria-hidden>›</span>
+            </button>
+          </div>
+        ) : (
+          <div className={styles.patternRow}>
+            {cards.map((props, idx) => (
+              <PatternCardItem key={`${props.path}-${idx}`} {...props} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
