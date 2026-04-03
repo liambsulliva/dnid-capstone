@@ -145,6 +145,12 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
+          sidebarId: "anchoringSidebar",
+          position: "left",
+          label: "Anchoring",
+        },
+        {
+          type: "docSidebar",
           sidebarId: "attentionSidebar",
           position: "left",
           label: "Attention",
@@ -166,12 +172,6 @@ const config: Config = {
           sidebarId: "primingSidebar",
           position: "left",
           label: "Priming",
-        },
-        {
-          type: "docSidebar",
-          sidebarId: "anchoringSidebar",
-          position: "left",
-          label: "Anchoring",
         },
         {
           href: "https://github.com/liambsulliva/dnid-capstone",
