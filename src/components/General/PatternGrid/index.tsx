@@ -64,15 +64,15 @@ const CATEGORY_LABEL: Record<PatternCategorySlug, string> = {
 
 const CATEGORY_DESCRIPTION: Record<PatternCategorySlug, string> = {
   anchoring:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum posuere nibh, id pretium lacus tincidunt vel.",
+    "Elements that present an option as a pivot point for comparison, rather than as a standalone decision.",
   attention:
-    "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.",
+    "Elements that are engineered to efficiently capture and hold user attention.",
   behavior:
-    "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.",
+    "Elements that subtly play on human impulse to influence user behavior.",
   coercion:
-    "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut.",
+    "Elements that are built to force users into decisions they may not otherwise make.",
   priming:
-    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.",
+    "Elements that leverage context clues to prepare users to make a decision.",
 };
 
 type PatternCard = {
