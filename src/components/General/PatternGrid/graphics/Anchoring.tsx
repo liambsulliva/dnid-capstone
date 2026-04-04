@@ -240,6 +240,8 @@ export function FramingGraphic(): ReactNode {
         :is(.patternGridCard:hover svg, svg.active) .fr-wr { transform: scaleY(0.8); }
         :is(.patternGridCard:hover svg, svg.active) .fr-ll { fill: rgba(80,220,120,0.95); }
         :is(.patternGridCard:hover svg, svg.active) .fr-lr { fill: rgba(255,100,100,0.95); }
+        .fr-wl, .fr-wr { fill: rgba(196, 231, 250, 0.4); }
+        [data-theme="dark"] .fr-wl, [data-theme="dark"] .fr-wr { fill: rgba(100,200,255,0.4); }
       `}</style>
 
       {/* Left glass */}
