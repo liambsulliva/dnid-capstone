@@ -105,6 +105,16 @@ const PatternList: PatternCard[] = [
     path: "/docs/anchoring/partitioning",
   },
   {
+    title: "Baseline Effect",
+    category: "Anchoring",
+    path: "/docs/anchoring/baseline-effect",
+  },
+  {
+    title: "Range Influence",
+    category: "Anchoring",
+    path: "/docs/anchoring/range-influence",
+  },
+  {
     title: "Salience Bias",
     category: "Attention",
     path: "/docs/attention/salience-bias",
@@ -125,6 +135,16 @@ const PatternList: PatternCard[] = [
     path: "/docs/attention/red-dot-effect",
   },
   {
+    title: "Banner Blindness",
+    category: "Attention",
+    path: "/docs/attention/banner-blindness",
+  },
+  {
+    title: "Peripheral Blindness",
+    category: "Attention",
+    path: "/docs/attention/peripheral-blindness",
+  },
+  {
     title: "A/B Testing",
     category: "Behavior",
     path: "/docs/behavior/AB-Testing",
@@ -143,6 +163,11 @@ const PatternList: PatternCard[] = [
     title: "Reachability",
     category: "Behavior",
     path: "/docs/behavior/reachability",
+  },
+  {
+    title: "Variable Reinforcement",
+    category: "Behavior",
+    path: "/docs/behavior/variable-reinforcement",
   },
   {
     title: "Feedback Loop",
@@ -198,6 +223,16 @@ const PatternList: PatternCard[] = [
     title: "Mood Congruence",
     category: "Priming",
     path: "/docs/priming/mood-congruence",
+  },
+  {
+    title: "Association Triggering",
+    category: "Priming",
+    path: "/docs/priming/association-triggering",
+  },
+  {
+    title: "Perceptual Fluency",
+    category: "Priming",
+    path: "/docs/priming/perceptual-fluency",
   },
 ];
 
