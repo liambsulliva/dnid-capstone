@@ -3,7 +3,24 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   font-size: 4rem;
+}
+
+.container {
+  margin: 6rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.attributionList {
+  margin-bottom: 2rem;
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
