@@ -37,10 +37,10 @@ const graphicMap: Record<string, ComponentType> = {
   /*"Feedback Loop": FeedbackLoopGraphic,*/
   /*Confirmshaming: ConfirmshamingGraphic,*/
   /*Breakage: BreakageGraphic,*/
-  Nagging: NaggingGraphic,
+  /*Nagging: NaggingGraphic,*/
   /*Obstruction: ObstructionGraphic,*/
   /*"Forced Action": ForcedActionGraphic,*/
-  "False Urgency": FalseUrgencyGraphic,
+  /*"False Urgency": FalseUrgencyGraphic,*/
   /*"Curated Defaults": CuratedDefaultsGraphic,*/
   /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
   /*"Mere Exposure Effect": MereExposureEffectGraphic,*/
