@@ -430,9 +430,15 @@ code[class*="language-"] *,
 }
 
 @keyframes logo-recoil {
-  0%   { transform: rotate(0deg); }
-  10%  { transform: rotate(-20deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .navbar__logo img {
@@ -441,4 +447,30 @@ code[class*="language-"] *,
 
 .navbar__brand:hover .navbar__logo img {
   animation: logo-recoil 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.footer__brand-col .footer__title {
+  display: none;
+}
+
+.footer__brand-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  color: var(--ifm-footer-title-color);
+  font: bold var(--ifm-h4-font-size) / var(--ifm-heading-line-height)
+    var(--ifm-font-family-base);
+}
+
+.footer__brand-heading img {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+.footer__copyright {
+  font-size: 0.8em;
+  margin: 0;
 }

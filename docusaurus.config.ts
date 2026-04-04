@@ -181,7 +181,76 @@ const config: Config = {
       ],
     },
     footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} The Invisible Hand of UX.<br/>Logo: Rundvald, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">CC BY-SA 4.0</a>, via Wikimedia Commons. Horizontal transformation applied.`,
+      style: "dark",
+      links: [
+        {
+          title: null,
+          className: "footer__brand-col",
+          items: [
+            {
+              html: `<div class="footer__brand-heading"><img src="/img/favicon-96x96.png" alt="The Invisible Hand of UX logo" width="32" height="32" decoding="async" loading="lazy" /><span>The Invisible Hand of UX</span></div>`,
+            },
+            {
+              html: `<p class="footer__copyright">Copyright © ${new Date().getFullYear()} Liam Sullivan.</p>`,
+            },
+          ],
+        },
+        {
+          title: "Docs",
+          items: [
+            {
+              label: "Anchoring",
+              to: "/docs/Anchoring/highballing",
+            },
+            {
+              label: "Attention",
+              to: "/docs/Attention/salience-bias",
+            },
+            {
+              label: "Behavior",
+              to: "/docs/behavior/AB-Testing",
+            },
+            {
+              label: "Coercion",
+              to: "/docs/Coercion/confirmshaming",
+            },
+            {
+              label: "Priming",
+              to: "/docs/Priming/curated-defaults",
+            },
+          ],
+        },
+        {
+          title: "Links",
+          items: [
+            {
+              label: "GitHub",
+              href: "https://github.com/liambsulliva/dnid-capstone",
+            },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/in/liambsulliva/",
+            },
+            {
+              label: "Portfolio",
+              href: "https://liambsullivan.com",
+            },
+          ],
+        },
+        {
+          title: "More",
+          items: [
+            {
+              label: "About",
+              to: "/about",
+            },
+            {
+              label: "Attribution",
+              to: "/attribution",
+            },
+          ],
+        },
+      ],
     },
     prism: {
       theme: prismThemes.github,
