@@ -10,6 +10,31 @@ export default function Home(): ReactNode {
       description="Description will go into a meta tag in <head />"
     >
       <h1 className={styles.title}>Attribution</h1>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "2rem",
+          maxWidth: "800px",
+          margin: "0 auto",
+        }}
+      >
+        <ol style={{ listStyleType: "decimal", paddingLeft: "1.5rem" }}>
+          <li>
+            <strong>Logo</strong> - Rundvald, 
+            <a
+              href="https://creativecommons.org/licenses/by-sa/4.0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CC BY-SA 4.0
+            </a>
+            , via Wikimedia Commons. Horizontal transformation applied.
+          </li>
+        </ol>
+        {/* <ol start={6} style={{ listStyleType: "decimal", paddingLeft: "1.5rem" }}>
+        </ol> */}
+      </div>
     </Layout>
   );
 }
