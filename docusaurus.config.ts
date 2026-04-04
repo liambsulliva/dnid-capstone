@@ -200,11 +200,11 @@ const config: Config = {
           items: [
             {
               label: "Anchoring",
-              to: "/docs/Anchoring/highballing",
+              to: "/docs/anchoring/highballing",
             },
             {
               label: "Attention",
-              to: "/docs/Attention/salience-bias",
+              to: "/docs/attention/salience-bias",
             },
             {
               label: "Behavior",
@@ -212,11 +212,11 @@ const config: Config = {
             },
             {
               label: "Coercion",
-              to: "/docs/Coercion/confirmshaming",
+              to: "/docs/coercion/confirmshaming",
             },
             {
               label: "Priming",
-              to: "/docs/Priming/curated-defaults",
+              to: "/docs/priming/curated-defaults",
             },
           ],
         },
