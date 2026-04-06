@@ -1,0 +1,175 @@
+.ladder {
+  display: grid;
+  grid-template-columns: repeat(var(--tier-count, 3), 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: var(--ifm-leading, 1.25rem);
+}
+
+/* Stack vertically on narrow screens */
+@media (max-width: 640px) {
+  .ladder {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Tier card ──────────────────────────────────────────── */
+
+.tier {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  background: var(--dnid-surface-card);
+  box-shadow: var(--dnid-shadow-1);
+  border: 1.5px solid var(--dnid-border-default);
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.tier:hover {
+  border-color: var(--dnid-border-strong);
+}
+
+.tierHighlighted {
+  border-color: var(--dnid-brand-500);
+  box-shadow: var(--dnid-shadow-1), 0 0 0 1px var(--dnid-brand-500);
+}
+
+.tierHighlighted:hover {
+  border-color: var(--dnid-brand-400);
+}
+
+/* ── Badge ──────────────────────────────────────────────── */
+
+.badgeRow {
+  display: flex;
+  justify-content: center;
+  padding: 0.55rem 1rem 0;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dnid-brand-500);
+  background: color-mix(in srgb, var(--dnid-brand-500) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--dnid-brand-500) 25%, transparent);
+  border-radius: 99px;
+  padding: 2px 10px;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
+
+.tierHeader {
+  padding: 1.1rem 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.tierName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dnid-text-card);
+  opacity: 0.55;
+  margin: 0;
+}
+
+.tierHighlighted .tierName {
+  color: var(--dnid-brand-500);
+  opacity: 1;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  margin-top: 0.25rem;
+}
+
+.priceCurrency {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dnid-text-card);
+  line-height: 1;
+  align-self: flex-start;
+  margin-top: 0.3rem;
+}
+
+.priceAmount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--dnid-text-card);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.priceSuffix {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--dnid-text-card);
+  opacity: 0.5;
+  margin-left: 2px;
+  align-self: flex-end;
+  padding-bottom: 0.2rem;
+}
+
+.tierDescription {
+  font-size: 0.8rem;
+  color: var(--dnid-text-card);
+  opacity: 0.6;
+  line-height: 1.5;
+  margin: 0.35rem 0 0;
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+
+.tierDivider {
+  height: 1px;
+  background: var(--dnid-border-default);
+  margin: 0 1.25rem;
+}
+
+/* ── Bullets ─────────────────────────────────────────────── */
+
+.bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--dnid-text-card);
+  line-height: 1.4;
+}
+
+.bulletCheck {
+  color: var(--dnid-brand-500);
+  font-weight: 700;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+
+.tierFooter {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.ctaBtn {
+  width: 100%;
+}
