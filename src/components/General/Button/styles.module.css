@@ -4,7 +4,7 @@
   padding: 0.6rem 1.1rem;
   border-radius: 8px;
   border: 1px solid var(--dnid-border-strong);
-  background: var(--dnid-neutral-0, #fff);
+  background: var(--dnid-surface-card);
   color: var(--dnid-text-card, #1a1a1a);
   font-size: 0.88rem;
   font-weight: 600;
