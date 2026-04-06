@@ -474,3 +474,8 @@ code[class*="language-"] *,
   font-size: 0.8em;
   margin: 0;
 }
+
+.theme-doc-markdown a,
+.markdown a {
+  text-decoration: underline;
+}

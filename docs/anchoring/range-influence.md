@@ -33,7 +33,7 @@ description: "Premium plan",
 bullets: ["30 users", "30GB storage", "Email support"],
 }]} />
 
-Seems relatively fair, right? Each option is just a tiny bit more expensive than the last. It's called a "pricing ladder" because the price slowly creeps up as you pick higher tiered plans. If you can justify spending money on Basic, you might be able to justify spending that little bit extra for Pro. And if you're already paying for Pro, you might as well go Premium.
+Seems relatively fair, right? Each option is just a tiny bit more expensive than the last. It's called a "pricing ladder" because the price slowly creeps up as you pick higher tiered plans. If you can justify spending money on Basic, you might be able to justify spending that little bit extra for Pro. And if you're already paying for Pro, you might as well go Premium. [Apple](https://www.apple.com/iphone) has a track record of using this model to great success.
 
 But what if we shifted the table a bit?
 

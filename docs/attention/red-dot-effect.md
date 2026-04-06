@@ -11,7 +11,7 @@ import igIcon from './img/ig-transparent.png';
 
 The red dot effect is something you likely see on a daily basis. It's the backbone of Apple's Notification System and acts as a succinct visual indicator of an unresolved issue.
 
-In some sense, it's a form of **[salience bias](/docs/attention/salience-bias)**, as it is quite literally designed to stand out. Red is a highly emotionally charged color, and it prods at our brain to pay attention to it.
+In some sense, it's a form of [salience bias](/docs/attention/salience-bias), as it is quite literally designed to stand out. Red is a highly emotionally charged color, and it prods at our brain to pay attention to it.
 
 #### How does this make you feel?
 
