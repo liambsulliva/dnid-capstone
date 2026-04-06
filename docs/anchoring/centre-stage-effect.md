@@ -2,7 +2,11 @@
 sidebar_position: 5
 ---
 
+import { CentreStageEffectGraphic } from '@site/src/components/General/PatternGrid/graphics/Anchoring';
+
 # Centre Stage Effect
+
+<CentreStageEffectGraphic />
 
 Putting a design element in the center of the screen is the easiest way to make it stand out. This is used in a number of ways...
 
