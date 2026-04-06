@@ -174,7 +174,8 @@
 .acceptedBar {
   padding: 0.5rem 1.25rem;
   background: color-mix(in srgb, var(--dnid-brand-500) 8%, transparent);
-  border-top: 1px solid color-mix(in srgb, var(--dnid-brand-500) 18%, transparent);
+  border-top: 1px solid
+    color-mix(in srgb, var(--dnid-brand-500) 18%, transparent);
   font-size: 0.72rem;
   font-weight: 600;
   color: var(--dnid-brand-500);
@@ -284,4 +285,23 @@
   color: var(--dnid-text-card);
   opacity: 0.6;
   margin: 0;
+}
+
+.skipBtn {
+  font-weight: 500;
+  opacity: 0.4;
+  padding: 0.25rem 0.5rem;
+}
+
+.confirmBtn {
+  flex: 1;
+  width: auto;
+}
+
+.resetBtn {
+  display: block;
+  margin: 0.75rem auto 0;
+  font-weight: 500;
+  opacity: 0.4;
+  padding: 0.25rem 0.5rem;
 }

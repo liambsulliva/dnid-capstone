@@ -95,7 +95,12 @@ export default function NaggingModal() {
       >
         <div className={styles.header}>
           <span className={styles.eyebrow}>{variant.eyebrow}</span>
-          <Button variant="closeIcon" onClick={dismiss} aria-label="Close">
+          <Button
+            variant="ghost"
+            className={styles.closeBtn}
+            onClick={dismiss}
+            aria-label="Close"
+          >
             ✕
           </Button>
         </div>
@@ -106,12 +111,10 @@ export default function NaggingModal() {
         </div>
 
         <div className={styles.footer}>
-          <Button variant="ctaPrimary" onClick={dismiss}>
+          <Button variant="primary" onClick={dismiss}>
             {variant.cta}
           </Button>
-          <Button variant="ctaSecondary" onClick={dismiss}>
-            {variant.dismiss}
-          </Button>
+          <Button onClick={dismiss}>{variant.dismiss}</Button>
         </div>
 
         {/*<p className={styles.counter}>

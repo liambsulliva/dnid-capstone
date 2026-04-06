@@ -66,7 +66,6 @@ export default function ConfirmshamingDemo() {
       <WindowContainer
         className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}
       >
-
         <div className={styles.body}>
           {stage === "retained" ? (
             <p className={styles.title}>Thanks for staying subscribed! 🎉</p>
@@ -87,13 +86,13 @@ export default function ConfirmshamingDemo() {
 
           {stage !== "retained" && (
             <div className={styles.actions}>
-              <Button variant="danger" onClick={handleYes}>
-                {stage === "initial" ? "Yes, unsubscribe me" : "Yes, remove me"}
-              </Button>
-              <Button variant="success" onClick={handleNo}>
+              <Button variant="primary" onClick={handleNo}>
                 {stage === "initial"
                   ? "No, keep me subscribed"
                   : variant.noText}
+              </Button>
+              <Button onClick={handleYes}>
+                {stage === "initial" ? "Yes, unsubscribe me" : "Yes, remove me"}
               </Button>
             </div>
           )}

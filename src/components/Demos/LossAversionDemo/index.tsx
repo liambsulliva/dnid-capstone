@@ -122,16 +122,10 @@ function DialogWindow({
             <p className={styles.subtitle}>{subtitle}</p>
 
             <div className={styles.actions}>
-              <Button
-                variant="success"
-                onClick={() => setResult("saved")}
-              >
+              <Button variant="primary" onClick={() => setResult("saved")}>
                 {saveBtnLabel}
               </Button>
-              <Button
-                variant="danger"
-                onClick={() => setResult("discarded")}
-              >
+              <Button onClick={() => setResult("discarded")}>
                 {discardBtnLabel}
               </Button>
             </div>

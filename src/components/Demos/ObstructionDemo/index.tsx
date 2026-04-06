@@ -54,7 +54,7 @@ export default function ObstructionDemo() {
             <span className={styles.author}>{REVIEW.author}</span>
           </div>
           <p className={styles.snippetText}>{REVIEW.preview}</p>
-          <Button variant="link" onClick={() => advance("modal")}>
+          <Button variant="ghost" style={{ textAlign: "left" }} onClick={() => advance("modal")}>
             See full review
           </Button>
         </div>
@@ -72,9 +72,7 @@ export default function ObstructionDemo() {
             </div>
             <p className={styles.modalText}>{REVIEW.expanded}</p>
             <div className={styles.readMoreRow}>
-              <Button variant="outline" onClick={() => advance("full")}>
-                Read More
-              </Button>
+              <Button onClick={() => advance("full")}>Read More</Button>
             </div>
           </div>
         </WindowContainer>
@@ -94,11 +92,7 @@ export default function ObstructionDemo() {
             {/*<div className={styles.layerBadge}>
               Full review unlocked after 3 clicks
             </div>*/}
-            <Button
-              variant="outlineSm"
-              className={styles.resetAlignStart}
-              onClick={reset}
-            >
+            <Button className={styles.resetAlignStart} onClick={reset}>
               Start over
             </Button>
           </div>

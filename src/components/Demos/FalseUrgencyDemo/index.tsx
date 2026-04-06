@@ -158,7 +158,7 @@ export default function FalseUrgencyDemo() {
       </div>
 
       <Button
-        variant="dangerCta"
+        variant="danger"
         className={styles.buyWithGlyph}
         disabled={buyPhase !== "idle"}
         onClick={() => setBuyPhase("loading")}

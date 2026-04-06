@@ -141,10 +141,14 @@ export default function HighballingDemo() {
             </div>
 
             <div className={styles.addonActions}>
-              <Button variant="ctaBrand" onClick={() => advance(true)}>
+              <Button variant="primary" onClick={() => advance(true)}>
                 Yes, add this to my plan →
               </Button>
-              <Button variant="textMuted" onClick={() => advance(false)}>
+              <Button
+                variant="ghost"
+                className={styles.skipBtn}
+                onClick={() => advance(false)}
+              >
                 No thanks, skip
               </Button>
             </div>
@@ -165,9 +169,7 @@ export default function HighballingDemo() {
             {acceptedItems.length === 0 ? (
               <div className={styles.emptyCheckout}>
                 <p className={styles.emptyText}>You didn't add any extras.</p>
-                <Button variant="outlineMuted" onClick={reset}>
-                  Start Over
-                </Button>
+                <Button onClick={reset}>Start Over</Button>
               </div>
             ) : (
               <>
@@ -199,10 +201,10 @@ export default function HighballingDemo() {
                     over.
                   </p>
                   <div className={styles.checkoutActions}>
-                    <Button variant="outlineMuted" onClick={reset}>
-                      Start Over
+                    <Button onClick={reset}>Start Over</Button>
+                    <Button variant="primary" className={styles.confirmBtn}>
+                      Confirm &amp; Pay
                     </Button>
-                    <Button variant="brandConfirm">Confirm &amp; Pay</Button>
                   </div>
                 </div>
               </>

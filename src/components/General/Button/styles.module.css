@@ -3,8 +3,8 @@
 .default {
   padding: 0.6rem 1.1rem;
   border-radius: 8px;
-  border: none;
-  background: var(--dnid-neutral-100, #f0f0f0);
+  border: 1px solid var(--dnid-border-strong);
+  background: var(--dnid-neutral-0, #fff);
   color: var(--dnid-text-card, #1a1a1a);
   font-size: 0.88rem;
   font-weight: 600;
@@ -20,6 +20,10 @@
 
 .default:active {
   transform: scale(0.97);
+}
+
+.default p {
+  margin: 0.25rem;
 }
 
 /* ─── Toggle switch ─── */
@@ -62,36 +66,11 @@
   transform: translateX(18px);
 }
 
-/* ─── Ghost Brand ─── */
-
-.ghostBrand {
-  background: var(--dnid-surface-subtle);
-  color: var(--dnid-brand-500);
-  border: 1px solid var(--dnid-brand-100);
-  border-radius: 7px;
-  padding: 0.35rem 0.95rem;
-  font-size: 0.83rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    color 0.18s,
-    border-color 0.15s,
-    box-shadow 0.18s;
-}
-
-.ghostBrand:hover,
-.ghostBrand:focus-visible {
-  background: var(--dnid-brand-100);
-  border: 1px solid var(--dnid-brand-100);
-  color: var(--dnid-neutral-0);
-}
-
 /* ─── Outline ─── */
 
 .outline {
-  padding: 0.5rem 1.1rem;
-  border-radius: 7px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   background: transparent;
   border: 1px solid var(--dnid-border-strong);
   color: var(--dnid-text-card);
@@ -105,50 +84,11 @@
 
 .outline:hover {
   background: var(--dnid-surface-subtle);
-  color: var(--dnid-text-card);
 }
 
-.outlineSm {
-  background: none;
-  border: 1px solid var(--dnid-border-strong);
-  border-radius: 7px;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--dnid-text-card);
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    color 0.15s;
-}
+/* ─── Ghost (unstyled text button) ─── */
 
-.outlineSm:hover {
-  background: var(--dnid-surface-subtle);
-  color: var(--dnid-text-card);
-}
-
-.outlineMuted {
-  flex: 0 0 auto;
-  padding: 0.55rem 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--dnid-border-strong);
-  background: transparent;
-  color: var(--dnid-text-card);
-  font-size: 0.83rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    border-color 0.15s;
-}
-
-.outlineMuted:hover {
-  background: var(--dnid-neutral-100);
-}
-
-/* ─── Link / Text ─── */
-
-.link {
+.ghost {
   background: none;
   border: none;
   padding: 0;
@@ -156,48 +96,11 @@
   font-weight: 600;
   color: var(--dnid-text-card);
   cursor: pointer;
-  align-self: flex-start;
   transition: opacity 0.15s;
 }
 
-.link:hover {
+.ghost:hover {
   opacity: 0.7;
-}
-
-.textMuted {
-  background: none;
-  border: none;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--dnid-text-card);
-  opacity: 0.4;
-  cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  transition: opacity 0.15s;
-}
-
-.textMuted:hover {
-  opacity: 0.7;
-}
-
-.closeIcon {
-  appearance: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.75rem;
-  color: var(--dnid-text-card);
-  padding: 2px 4px;
-  border-radius: 4px;
-  line-height: 1;
-  transition:
-    color 0.15s ease,
-    background 0.15s ease;
-}
-
-.closeIcon:hover {
-  color: var(--dnid-modal-close-hover-fg);
-  background: var(--dnid-modal-close-hover-bg);
 }
 
 /* ─── Submit ─── */
@@ -259,81 +162,9 @@
   cursor: default;
 }
 
-/* ─── Action buttons (full-width, colored) ─── */
-
-.danger,
-.success {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    filter 0.15s ease,
-    transform 0.1s ease;
-  line-height: 1.2;
-}
-
-.danger:hover,
-.success:hover {
-  filter: brightness(0.92);
-}
-
-.danger:active,
-.success:active {
-  transform: scale(0.97);
-}
+/* ─── Danger (with glow) ─── */
 
 .danger {
-  background: var(--dnid-semantic-danger-strong);
-  color: var(--dnid-neutral-0);
-}
-
-.success {
-  background: var(--dnid-semantic-success);
-  color: var(--dnid-neutral-0);
-}
-
-.ctaPrimary,
-.ctaSecondary {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    filter 0.15s ease,
-    transform 0.1s ease;
-  line-height: 1.2;
-}
-
-.ctaPrimary:hover,
-.ctaSecondary:hover {
-  filter: brightness(0.92);
-}
-
-.ctaPrimary:active,
-.ctaSecondary:active {
-  transform: scale(0.97);
-}
-
-.ctaPrimary {
-  background: var(--dnid-cta-blue);
-  color: var(--dnid-neutral-0);
-}
-
-.ctaSecondary {
-  background: var(--dnid-modal-dismiss-bg);
-  color: var(--dnid-modal-dismiss-fg);
-}
-
-/* ─── CTA (with glow) ─── */
-
-.dangerCta {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 9px;
@@ -349,49 +180,9 @@
   margin-bottom: 0.5rem;
 }
 
-.dangerCta:hover {
+.danger:hover {
   background: var(--dnid-semantic-danger-hover);
   box-shadow: 0 2px 10px var(--dnid-danger-glow);
-}
-
-.ctaBrand {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 9px;
-  border: none;
-  background: var(--dnid-brand-500);
-  color: var(--dnid-neutral-0);
-  font-size: 0.9rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    box-shadow 0.15s;
-}
-
-.ctaBrand:hover {
-  background: var(--dnid-brand-600);
-  box-shadow: 0 2px 8px var(--dnid-accent-glow);
-}
-
-.brandConfirm {
-  flex: 1;
-  padding: 0.55rem 1rem;
-  border-radius: 8px;
-  border: none;
-  background: var(--dnid-brand-500);
-  color: var(--dnid-neutral-0);
-  font-size: 0.83rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    background 0.15s,
-    box-shadow 0.15s;
-}
-
-.brandConfirm:hover {
-  background: var(--dnid-brand-600);
-  box-shadow: 0 2px 8px var(--dnid-accent-glow);
 }
 
 /* ─── Icon ─── */
