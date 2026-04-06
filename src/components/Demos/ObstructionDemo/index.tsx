@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "../../General/Button";
-import { WindowChrome } from "../../General/WindowChrome";
+import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
 type Layer = "snippet" | "modal" | "full";
@@ -61,10 +61,10 @@ export default function ObstructionDemo() {
       )}
 
       {layer === "modal" && (
-        <div
+        <WindowContainer
+          title="Customer Review"
           className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}
         >
-          <WindowChrome title="Customer Review" />
           <div className={styles.modalBody}>
             <div className={styles.modalMeta}>
               <Stars count={REVIEW.rating} />
@@ -77,14 +77,14 @@ export default function ObstructionDemo() {
               </Button>
             </div>
           </div>
-        </div>
+        </WindowContainer>
       )}
 
       {layer === "full" && (
-        <div
+        <WindowContainer
+          title="Customer Review"
           className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}
         >
-          <WindowChrome title="Customer Review" />
           <div className={styles.modalBody}>
             <div className={styles.modalMeta}>
               <Stars count={REVIEW.rating} />
@@ -102,7 +102,7 @@ export default function ObstructionDemo() {
               Start over
             </Button>
           </div>
-        </div>
+        </WindowContainer>
       )}
 
       <div className={styles.steps}>

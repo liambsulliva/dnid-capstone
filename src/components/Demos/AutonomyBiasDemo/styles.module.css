@@ -8,10 +8,6 @@
 .window {
   width: 100%;
   max-width: 380px;
-  border-radius: 12px;
-  background: var(--dnid-surface-card);
-  box-shadow: var(--dnid-shadow-1);
-  overflow: hidden;
 }
 
 .body {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "../../General/Button";
-import { WindowChrome } from "../../General/WindowChrome";
+import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
 type Stage = "initial" | "confirming" | "retained";
@@ -63,10 +63,9 @@ export default function ConfirmshamingDemo() {
 
   return (
     <div className={styles.scene}>
-      <div
+      <WindowContainer
         className={`${styles.modal} ${animating ? styles.fadeOut : styles.fadeIn}`}
       >
-        <WindowChrome />
 
         <div className={styles.body}>
           {stage === "retained" ? (
@@ -99,7 +98,7 @@ export default function ConfirmshamingDemo() {
             </div>
           )}
         </div>
-      </div>
+      </WindowContainer>
     </div>
   );
 }

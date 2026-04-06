@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from "react";
-import { WindowChrome } from "../../General/WindowChrome";
+import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
 export type LossAversionDemoVariant = "neutral" | "loss-framed";
@@ -26,8 +26,7 @@ function DialogWindow({
   const reset = () => setResult(null);
 
   return (
-    <div className={styles.window}>
-      <WindowChrome />
+    <WindowContainer className={styles.window}>
       <div className={styles.body}>
         {result ? (
           <div className={styles.resultState} data-result={result}>
@@ -138,7 +137,7 @@ function DialogWindow({
           </>
         )}
       </div>
-    </div>
+    </WindowContainer>
   );
 }
 

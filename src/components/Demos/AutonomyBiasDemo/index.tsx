@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WindowChrome } from "../../General/WindowChrome";
+import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
 export type AutonomyBiasDemoVariant = "no-choice" | "with-choice";
@@ -32,8 +32,7 @@ function NoChoiceVariant() {
   const [done, setDone] = useState(false);
 
   return (
-    <div className={styles.window}>
-      <WindowChrome />
+    <WindowContainer className={styles.window}>
       <div className={styles.body}>
         {done ? (
           <div className={styles.successState}>
@@ -77,7 +76,7 @@ function NoChoiceVariant() {
           </>
         )}
       </div>
-    </div>
+    </WindowContainer>
   );
 }
 
@@ -97,8 +96,7 @@ function WithChoiceVariant() {
   };
 
   return (
-    <div className={styles.window}>
-      <WindowChrome />
+    <WindowContainer className={styles.window}>
       <div className={styles.body}>
         {confirmed ? (
           <div className={styles.successState}>
@@ -167,7 +165,7 @@ function WithChoiceVariant() {
           </>
         )}
       </div>
-    </div>
+    </WindowContainer>
   );
 }
 
