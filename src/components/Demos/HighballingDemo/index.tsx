@@ -145,7 +145,7 @@ export default function HighballingDemo() {
                 Yes, add this to my plan →
               </Button>
               <Button
-                variant="ghost"
+                variant="link"
                 className={styles.skipBtn}
                 onClick={() => advance(false)}
               >

@@ -96,7 +96,7 @@ export default function NaggingModal() {
         <div className={styles.header}>
           <span className={styles.eyebrow}>{variant.eyebrow}</span>
           <Button
-            variant="ghost"
+            variant="link"
             className={styles.closeBtn}
             onClick={dismiss}
             aria-label="Close"

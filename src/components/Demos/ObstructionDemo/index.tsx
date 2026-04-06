@@ -54,7 +54,7 @@ export default function ObstructionDemo() {
             <span className={styles.author}>{REVIEW.author}</span>
           </div>
           <p className={styles.snippetText}>{REVIEW.preview}</p>
-          <Button variant="ghost" style={{ textAlign: "left" }} onClick={() => advance("modal")}>
+          <Button variant="link" style={{ textAlign: "left" }} onClick={() => advance("modal")}>
             See full review
           </Button>
         </div>

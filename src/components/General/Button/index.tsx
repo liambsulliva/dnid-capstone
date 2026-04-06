@@ -4,8 +4,7 @@ import styles from "./styles.module.css";
 const VARIANT_CLASS = {
   default: styles.default,
   toggle: styles.toggle,
-  outline: styles.outline,
-  ghost: styles.ghost,
+  link: styles.link,
   submit: styles.submit,
   primary: styles.primary,
   danger: styles.danger,
