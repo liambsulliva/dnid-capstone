@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(var(--tier-count, 3), 1fr);
   gap: 1rem;
-  align-items: start;
+  align-items: center;
   margin-bottom: var(--ifm-leading, 1.25rem);
 }
 

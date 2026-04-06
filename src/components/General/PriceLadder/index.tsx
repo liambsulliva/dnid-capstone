@@ -41,12 +41,11 @@ export function PriceLadder({ tiers, className }: PriceLadderProps) {
             tier.highlighted && styles.tierHighlighted,
           )}
         >
-          {tier.badge && (
+          {/*tier.badge && (
             <div className={styles.badgeRow}>
               <span className={styles.badge}>{tier.badge}</span>
             </div>
-          )}
-
+          )*/}
           <div className={styles.tierHeader}>
             <p className={styles.tierName}>{tier.name}</p>
             <div className={styles.priceRow}>
