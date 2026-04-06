@@ -44,44 +44,8 @@
   line-height: 1.55;
 }
 
-.primaryBtn {
+.primarySpacing {
   margin-top: 0.375rem;
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 8px;
-  background: var(--dnid-interactive-primary-bg);
-  color: var(--dnid-interactive-on-primary);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.15s, filter 0.15s;
-}
-
-.primaryBtn:hover:not(:disabled) {
-  filter: brightness(1.1);
-}
-
-.primaryBtn:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.resetBtn {
-  align-self: center;
-  margin-top: 0.25rem;
-  background: none;
-  border: none;
-  font-size: 0.8rem;
-  color: var(--dnid-text-card-faint, var(--dnid-text-card));
-  cursor: pointer;
-  text-decoration: underline;
-  opacity: 0.7;
-  transition: opacity 0.15s;
-}
-
-.resetBtn:hover {
-  opacity: 1;
 }
 
 .options {
@@ -89,29 +53,6 @@
   flex-direction: column;
   gap: 0.5rem;
   margin-top: 0.25rem;
-}
-
-.optionCard {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  width: 100%;
-  padding: 0.75rem 0.875rem;
-  background: var(--dnid-surface-subtle);
-  border: 1.5px solid var(--dnid-border-default);
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: left;
-  transition: border-color 0.15s, background 0.15s;
-}
-
-.optionCard:hover {
-  border-color: var(--dnid-border-strong);
-}
-
-.optionSelected {
-  border-color: var(--dnid-border-strong);
-  background: color-mix(in srgb, var(--dnid-border-strong) 12%, transparent);
 }
 
 .optionRadio {
@@ -124,10 +65,6 @@
   align-items: center;
   justify-content: center;
   transition: border-color 0.15s;
-}
-
-.optionSelected .optionRadio {
-  border-color: var(--dnid-border-strong);
 }
 
 .optionRadioDot {
@@ -165,8 +102,13 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--dnid-interactive-primary-bg);
-  background: color-mix(in srgb, var(--dnid-interactive-primary-bg) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--dnid-interactive-primary-bg) 25%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--dnid-interactive-primary-bg) 12%,
+    transparent
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--dnid-interactive-primary-bg) 25%, transparent);
   border-radius: 99px;
   padding: 1px 7px;
 }

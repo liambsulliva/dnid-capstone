@@ -52,48 +52,6 @@
   margin-top: 0.5rem;
 }
 
-.saveBtn {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border: none;
-  border-radius: 8px;
-  background: var(--dnid-semantic-success);
-  color: var(--dnid-neutral-0);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: filter 0.15s ease, transform 0.1s ease;
-}
-
-.saveBtn:hover {
-  filter: brightness(0.92);
-}
-
-.saveBtn:active {
-  transform: scale(0.97);
-}
-
-.discardBtn {
-  width: 100%;
-  padding: 0.65rem 1rem;
-  border: none;
-  border-radius: 8px;
-  background: var(--dnid-semantic-danger-strong);
-  color: var(--dnid-neutral-0);
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: filter 0.15s ease, transform 0.1s ease;
-}
-
-.discardBtn:hover {
-  filter: brightness(0.92);
-}
-
-.discardBtn:active {
-  transform: scale(0.97);
-}
-
 .resultState {
   display: flex;
   flex-direction: column;
@@ -123,22 +81,6 @@
   font-weight: 600;
   color: var(--dnid-text-card);
   line-height: 1.4;
-}
-
-.resetBtn {
-  margin-top: 0.25rem;
-  background: none;
-  border: none;
-  font-size: 0.8rem;
-  color: var(--dnid-text-card-faint, var(--dnid-text-card));
-  cursor: pointer;
-  text-decoration: underline;
-  opacity: 0.7;
-  transition: opacity 0.15s;
-}
-
-.resetBtn:hover {
-  opacity: 1;
 }
 
 @keyframes fadeUp {

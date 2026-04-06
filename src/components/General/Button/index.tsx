@@ -2,24 +2,40 @@ import type { ButtonHTMLAttributes } from "react";
 import styles from "./styles.module.css";
 
 const VARIANT_CLASS = {
+  default: styles.default,
   toggle: styles.toggle,
-  resetCurated: styles.resetCurated,
-  resetOutline: styles.resetOutline,
-  resetMuted: styles.resetMuted,
+  ghostBrand: styles.ghostBrand,
+  outline: styles.outline,
+  outlineSm: styles.outlineSm,
+  outlineMuted: styles.outlineMuted,
   submit: styles.submit,
-  iconApp: styles.iconApp,
-  confirmDanger: styles.confirmDanger,
-  confirmSafe: styles.confirmSafe,
-  snippetLink: styles.snippetLink,
-  readMoreOutline: styles.readMoreOutline,
-  buy: styles.buy,
-  nagClose: styles.nagClose,
-  nagCta: styles.nagCta,
-  nagDismiss: styles.nagDismiss,
-  addonAccept: styles.addonAccept,
-  addonSkip: styles.addonSkip,
-  checkoutConfirm: styles.checkoutConfirm,
+  primary: styles.primary,
+  danger: styles.danger,
+  success: styles.success,
+  ctaPrimary: styles.ctaPrimary,
+  ctaSecondary: styles.ctaSecondary,
+  dangerCta: styles.dangerCta,
+  ctaBrand: styles.ctaBrand,
+  brandConfirm: styles.brandConfirm,
+  icon: styles.icon,
+  link: styles.link,
+  textMuted: styles.textMuted,
+  closeIcon: styles.closeIcon,
+  selectCard: styles.selectCard,
+  tab: styles.tab,
+  chip: styles.chip,
 } as const;
+
+const ACTIVE_CLASS: Partial<Record<ButtonVariant, string>> = {
+  submit: styles.submitActive,
+};
+
+const PRESSED_CLASS: Partial<Record<ButtonVariant, string>> = {
+  toggle: styles.toggleOn,
+  selectCard: styles.selectCardSelected,
+  tab: styles.tabActive,
+  chip: styles.chipSelected,
+};
 
 export type ButtonVariant = keyof typeof VARIANT_CLASS;
 
@@ -28,13 +44,13 @@ function cx(...parts: (string | false | undefined)[]) {
 }
 
 export type ButtonProps = {
-  variant: ButtonVariant;
+  variant?: ButtonVariant;
   active?: boolean;
   pressed?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({
-  variant,
+  variant = "default",
   active,
   pressed,
   className,
@@ -43,12 +59,14 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const v = VARIANT_CLASS[variant];
+  const activeClass = active ? ACTIVE_CLASS[variant] : undefined;
+  const pressedClass = pressed ? PRESSED_CLASS[variant] : undefined;
 
   if (variant === "toggle") {
     return (
       <button
         type={type ?? "button"}
-        className={cx(v, pressed && styles.toggleOn, className)}
+        className={cx(v, pressedClass, className)}
         {...rest}
       >
         <span className={styles.toggleThumb} />
@@ -56,20 +74,12 @@ export function Button({
     );
   }
 
-  if (variant === "submit") {
-    return (
-      <button
-        type={type ?? "submit"}
-        className={cx(v, active && styles.submitActive, className)}
-        {...rest}
-      >
-        {children}
-      </button>
-    );
-  }
-
   return (
-    <button type={type ?? "button"} className={cx(v, className)} {...rest}>
+    <button
+      type={type ?? (variant === "submit" ? "submit" : "button")}
+      className={cx(v, activeClass, pressedClass, className)}
+      {...rest}
+    >
       {children}
     </button>
   );

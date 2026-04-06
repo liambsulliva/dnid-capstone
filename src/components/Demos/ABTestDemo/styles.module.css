@@ -12,38 +12,6 @@
   border: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-300) 55%, transparent);
 }
 
-.toggleBtn {
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.45rem 0.85rem;
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
-  color: var(--ifm-font-color-base);
-  background: transparent;
-  opacity: 0.68;
-  transition:
-    background 0.2s ease,
-    opacity 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.toggleBtn:hover {
-  opacity: 1;
-}
-
-.toggleBtn:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-.toggleBtnActive {
-  opacity: 1;
-  background: var(--ifm-background-color);
-  box-shadow: 0 1px 3px color-mix(in srgb, #000 12%, transparent);
-}
-
 .metaNote {
   margin: 0.9rem 0 0;
   font-size: 0.88rem;
@@ -169,37 +137,6 @@
   gap: 0.5rem;
 }
 
-.pollBtn {
-  font: inherit;
-  font-size: 0.84rem;
-  font-weight: 600;
-  padding: 0.55rem 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-  color: var(--ifm-font-color-base);
-  background: var(--dnid-surface-muted);
-  border: 1.5px solid color-mix(in srgb, var(--ifm-color-emphasis-300) 55%, transparent);
-  transition:
-    border-color 0.2s ease,
-    background 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.pollBtn:hover {
-  border-color: var(--ifm-color-emphasis-400);
-}
-
-.pollBtn:focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 2px;
-}
-
-.pollBtnSelected {
-  border-color: var(--ifm-color-primary);
-  background: color-mix(in srgb, var(--ifm-color-primary) 14%, transparent);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--ifm-color-primary) 35%, transparent);
-}
-
 .pollThanks {
   margin: 1rem 0 0;
   font-size: 0.88rem;
@@ -209,9 +146,3 @@
   font-style: italic;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .toggleBtn,
-  .pollBtn {
-    transition: none;
-  }
-}

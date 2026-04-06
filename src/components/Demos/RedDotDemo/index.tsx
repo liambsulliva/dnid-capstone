@@ -58,7 +58,7 @@ export default function RedDotDemo({ image, alt }: RedDotProps) {
   return (
     <div className={styles.appWrapper}>
       <Button
-        variant="iconApp"
+        variant="icon"
         onClick={() => badge.visible && dismissBadge()}
         aria-label={`Instagram${badge.visible ? `, ${badge.count} notification` : ""}`}
       >

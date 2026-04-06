@@ -127,7 +127,7 @@ export default function CuratedDefaultsDemo() {
 
         <div className={styles.footer}>
           {dirty ? (
-            <Button variant="resetCurated" onClick={reset}>
+            <Button variant="ghostBrand" onClick={reset}>
               Restore defaults
             </Button>
           ) : (

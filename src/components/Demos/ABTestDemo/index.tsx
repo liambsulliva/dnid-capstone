@@ -1,4 +1,5 @@
 import { useId, useState } from "react";
+import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 
 type Variant = "A" | "B";
@@ -16,22 +17,22 @@ export default function ABTestDemo() {
         role="group"
         aria-label="Switch article presentation"
       >
-        <button
-          type="button"
-          className={`${styles.toggleBtn} ${variant === "A" ? styles.toggleBtnActive : ""}`}
+        <Button
+          variant="tab"
+          pressed={variant === "A"}
           onClick={() => setVariant("A")}
           aria-pressed={variant === "A"}
         >
           A: Dense copy
-        </button>
-        <button
-          type="button"
-          className={`${styles.toggleBtn} ${variant === "B" ? styles.toggleBtnActive : ""}`}
+        </Button>
+        <Button
+          variant="tab"
+          pressed={variant === "B"}
           onClick={() => setVariant("B")}
           aria-pressed={variant === "B"}
         >
           B: Scannable layout
-        </button>
+        </Button>
       </div>
 
       <p className={styles.metaNote} aria-live="polite">
@@ -53,27 +54,27 @@ export default function ABTestDemo() {
           signal alongside metrics.
         </p>
         <div className={styles.pollChoices}>
-          <button
-            type="button"
-            className={`${styles.pollBtn} ${preference === "A" ? styles.pollBtnSelected : ""}`}
+          <Button
+            variant="chip"
+            pressed={preference === "A"}
             onClick={() => setPreference("A")}
           >
             Prefer A (dense)
-          </button>
-          <button
-            type="button"
-            className={`${styles.pollBtn} ${preference === "B" ? styles.pollBtnSelected : ""}`}
+          </Button>
+          <Button
+            variant="chip"
+            pressed={preference === "B"}
             onClick={() => setPreference("B")}
           >
             Prefer B (scannable)
-          </button>
-          <button
-            type="button"
-            className={`${styles.pollBtn} ${preference === "tie" ? styles.pollBtnSelected : ""}`}
+          </Button>
+          <Button
+            variant="chip"
+            pressed={preference === "tie"}
             onClick={() => setPreference("tie")}
           >
             No strong preference
-          </button>
+          </Button>
         </div>
         {preference !== null && (
           <p className={styles.pollThanks} role="status">

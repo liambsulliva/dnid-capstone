@@ -87,10 +87,10 @@ export default function ConfirmshamingDemo() {
 
           {stage !== "retained" && (
             <div className={styles.actions}>
-              <Button variant="confirmDanger" onClick={handleYes}>
+              <Button variant="danger" onClick={handleYes}>
                 {stage === "initial" ? "Yes, unsubscribe me" : "Yes, remove me"}
               </Button>
-              <Button variant="confirmSafe" onClick={handleNo}>
+              <Button variant="success" onClick={handleNo}>
                 {stage === "initial"
                   ? "No, keep me subscribed"
                   : variant.noText}

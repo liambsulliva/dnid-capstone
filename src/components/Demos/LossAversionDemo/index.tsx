@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { Button } from "../../General/Button";
 import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
@@ -121,18 +122,18 @@ function DialogWindow({
             <p className={styles.subtitle}>{subtitle}</p>
 
             <div className={styles.actions}>
-              <button
-                className={styles.saveBtn}
+              <Button
+                variant="success"
                 onClick={() => setResult("saved")}
               >
                 {saveBtnLabel}
-              </button>
-              <button
-                className={styles.discardBtn}
+              </Button>
+              <Button
+                variant="danger"
                 onClick={() => setResult("discarded")}
               >
                 {discardBtnLabel}
-              </button>
+              </Button>
             </div>
           </>
         )}

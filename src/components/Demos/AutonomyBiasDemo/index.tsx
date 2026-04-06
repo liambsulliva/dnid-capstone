@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button } from "../../General/Button";
 import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
@@ -70,9 +71,9 @@ function NoChoiceVariant() {
             <p className={styles.subtitle}>
               Our defaults are optimised for most users. You're all set.
             </p>
-            <button className={styles.primaryBtn} onClick={() => setDone(true)}>
+            <Button variant="primary" className={styles.primarySpacing} onClick={() => setDone(true)}>
               Continue
-            </button>
+            </Button>
           </>
         )}
       </div>
@@ -115,8 +116,9 @@ function WithChoiceVariant() {
               later.
             </p>
             <div className={styles.options}>
-              <button
-                className={`${styles.optionCard} ${chosen === "simple" ? styles.optionSelected : ""}`}
+              <Button
+                variant="selectCard"
+                pressed={chosen === "simple"}
                 onClick={() => setChosen("simple")}
                 aria-pressed={chosen === "simple"}
               >
@@ -134,10 +136,11 @@ function WithChoiceVariant() {
                     Sensible defaults, ready in seconds.
                   </span>
                 </span>
-              </button>
+              </Button>
 
-              <button
-                className={`${styles.optionCard} ${chosen === "advanced" ? styles.optionSelected : ""}`}
+              <Button
+                variant="selectCard"
+                pressed={chosen === "advanced"}
                 onClick={() => setChosen("advanced")}
                 aria-pressed={chosen === "advanced"}
               >
@@ -152,16 +155,17 @@ function WithChoiceVariant() {
                     Fine-tune every preference yourself.
                   </span>
                 </span>
-              </button>
+              </Button>
             </div>
 
-            <button
-              className={styles.primaryBtn}
+            <Button
+              variant="primary"
+              className={styles.primarySpacing}
               disabled={!chosen}
               onClick={handleConfirm}
             >
               Continue
-            </button>
+            </Button>
           </>
         )}
       </div>
