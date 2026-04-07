@@ -33,42 +33,44 @@ export default function PeripheralBlindnessDemo() {
         onMouseLeave={handleMouseLeave}
       >
         <div className={styles.content}>
-          <h2 className={styles.heading}>Lorem Ipsum</h2>
+          <h2 className={styles.heading}>On Priorities</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Ok, sorry. I know you're probably upset. This effect is incredibly
+            annoying. I know.
           </p>
           <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum. Pellentesque habitant morbi tristique senectus
-            et netus et malesuada fames ac turpis egestas.
-          </p>
-          <h3 className={styles.subheading}>De Finibus Bonorum et Malorum</h3>
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit.
+            But hey, it does keep your eyes on the page! That's kind of the
+            point. As people, we can't focus on everything at once, so we
+            prioritize. Things that exist in our periphery are less relevant to
+            us, and are thus often ignored.
           </p>
           <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati cupiditate non
-            provident, similique sunt in culpa qui officia deserunt mollitia
-            animi.
+            This is true both in our eyeballs and in the content we consume. We
+            can't read every word on the page at once, so we start at the top
+            left and scan through each line until it breaks, after which we
+            start again at the left side of the next line.
           </p>
-          <h3 className={styles.subheading}>Quis Nostrud Exercitation</h3>
+          <h3 className={styles.subheading}>Positioning is Everything</h3>
           <p>
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit quo minus id quod maxime placeat facere possimus, omnis
-            voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-            quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-            eveniet ut et voluptates repudiandae sint.
+            This means that the information that exists front and center is
+            super important to us. It's what we're most likely to read and
+            remember. Static content that sits at the edges of our vision is
+            prime to be ignored.
+          </p>
+          <p>
+            Some features of a page buck this trend, though. Smart uses of color
+            can be very effective at drawing attention to important information
+            without being overly intrusive. Same goes for font weight. Bolding
+            text to draw attention to it may as well be the oldest trick in the
+            book.
+          </p>
+          <h3 className={styles.subheading}>Motion is King</h3>
+          <p>
+            But motion topples all. Humans have evolved to notice movement in
+            our periphery as a mechanism to help us hunt and avoid predators.
+            Introducing a springy animation can alert a user to the prescence of
+            something important, as demonstrated countless times on this
+            website. Its power is undeniable.
           </p>
         </div>
         <div
