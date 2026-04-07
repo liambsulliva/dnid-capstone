@@ -33,8 +33,8 @@ export default function Home(): ReactNode {
               , via Wikimedia Commons. Horizontal transformation applied.
             </li>
             <li>
-              <strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
+              <strong>Tesla Cybertruck sighting in Dayton, Ohio</strong> -
+              Bennett1203 via Wikimedia Commons
             </li>
             <li>
               <strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet,
