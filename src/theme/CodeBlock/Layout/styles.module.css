@@ -1,0 +1,115 @@
+.codeContainer {
+  margin: 1.5rem 0;
+}
+
+.languageLabel {
+  text-transform: uppercase;
+  color: var(--dnid-text-card);
+}
+
+.chromeTitleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.tab {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+  color: var(--dnid-text-card-faint);
+}
+
+.tab:hover {
+  color: var(--dnid-text-card);
+  background: var(--dnid-border-default);
+}
+
+.tabActive {
+  color: var(--dnid-text-card);
+  background: var(--dnid-border-strong);
+}
+
+.previewWrapper {
+  padding: 1rem;
+}
+
+.previewInner {
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.12);
+}
+
+.previewFrame {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeContent {
+  position: relative;
+  direction: ltr;
+  overflow: hidden;
+}
+
+/* Let Prism's own background variable drive the colour so it adapts to both Ayu Light (light mode) and Ayu Dark (dark mode) automatically. */
+.codeContent :global(.prism-code) {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: var(--prism-background-color) !important;
+  font-family: var(--ifm-font-family-monospace) !important;
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.65 !important;
+}
+
+.codeContent :global(.token-line) {
+  font-family: var(--ifm-font-family-monospace) !important;
+}
+
+.codeContent :global(.prism-code::-webkit-scrollbar) {
+  height: 6px;
+}
+
+.codeContent :global(.prism-code::-webkit-scrollbar-track) {
+  background: var(--prism-background-color);
+}
+
+.codeContent :global(.prism-code::-webkit-scrollbar-thumb) {
+  background: #c8ccd0;
+  border-radius: 3px;
+}
+
+.codeContent :global(.prism-code::-webkit-scrollbar-thumb:hover) {
+  background: #b0b5ba;
+}
+
+[data-theme="dark"] .codeContent :global(.prism-code::-webkit-scrollbar-thumb) {
+  background: #253340;
+}
+
+[data-theme="dark"]
+  .codeContent
+  :global(.prism-code::-webkit-scrollbar-thumb:hover) {
+  background: #2e4055;
+}
+
+@media (max-width: 768px) {
+  .codeContent :global(.prism-code) {
+    font-size: 0.78rem !important;
+  }
+}

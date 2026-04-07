@@ -45,9 +45,9 @@
 
   --dnid-surface-page: var(--dnid-brand-300);
   --dnid-surface-card: var(--dnid-neutral-0);
-  --dnid-surface-code: var(--dnid-brand-800);
+  --dnid-surface-code: #fafafa;
   --dnid-text-on-page: var(--dnid-neutral-0);
-  --dnid-text-on-code: var(--dnid-neutral-0);
+  --dnid-text-on-code: #575f66;
   --dnid-border-footer: #24274d;
   --dnid-border-footer-on-brand: var(--dnid-brand-100);
 
@@ -145,7 +145,7 @@
   --ifm-background-surface-color: var(--dnid-surface-page);
   --ifm-code-background: var(--dnid-surface-code);
   --ifm-pre-background: var(--dnid-surface-code);
-  --ifm-color-emphasis-200: var(--dnid-surface-code);
+  --ifm-color-emphasis-200: var(--dnid-brand-800);
   --ifm-code-color: var(--dnid-text-on-code);
   --ifm-font-color-base: var(--dnid-text-on-page);
   --ifm-heading-color: var(--dnid-text-on-page);
@@ -168,7 +168,7 @@
 /* -------------------------------------------------------------------------- */
 [data-theme="dark"] {
   --dnid-surface-page: #25274d;
-  --dnid-surface-code: #464866;
+  --dnid-surface-code: #0a0e14;
   --dnid-surface-card: #2e2f40;
   --dnid-text-on-page: #ffffff;
   --dnid-text-on-code: #ffffff;
@@ -238,7 +238,7 @@
   --ifm-background-surface-color: var(--dnid-surface-page);
   --ifm-code-background: var(--dnid-surface-code);
   --ifm-pre-background: var(--dnid-surface-code);
-  --ifm-color-emphasis-200: var(--dnid-surface-code);
+  --ifm-color-emphasis-200: var(--dnid-neutral-100);
   --ifm-heading-color: var(--dnid-brand-300);
   --ifm-link-color: var(--dnid-brand-300);
   --ifm-footer-link-color: var(--dnid-brand-300);
@@ -335,6 +335,7 @@ code {
   background-color: var(--dnid-surface-code) !important;
   color: var(--dnid-text-on-code) !important;
   font-family: var(--ifm-font-family-monospace) !important;
+  font-weight: 700;
 }
 
 pre {
@@ -342,45 +343,18 @@ pre {
 }
 
 pre code {
-  color: var(--dnid-text-on-code) !important;
   background-color: transparent !important;
 }
 
-/* Override syntax highlighting colors (for now) */
+pre:not([class*="language-"]) code {
+  color: var(--dnid-text-on-code) !important;
+}
+
+/* Ayu Dark token colors — let prism-react-renderer styles pass through */
 pre[class*="language-"] code,
 pre[class*="language-"] code *,
-code[class*="language-"] *,
-.token {
-  color: var(--dnid-syntax-default) !important;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: var(--dnid-syntax-comment) !important;
-}
-
-.token.punctuation {
-  color: var(--dnid-syntax-punctuation) !important;
-}
-
-.token.keyword,
-.token.operator,
-.token.boolean,
-.token.number {
-  color: var(--dnid-syntax-keyword) !important;
-}
-
-.token.string,
-.token.char,
-.token.attr-value {
-  color: var(--dnid-syntax-string) !important;
-}
-
-.token.function,
-.token.class-name {
-  color: var(--dnid-syntax-default) !important;
+code[class*="language-"] * {
+  font-weight: 700;
 }
 
 :root .button--primary {

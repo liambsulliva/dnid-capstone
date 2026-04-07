@@ -1,6 +1,104 @@
-import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import type { PrismTheme } from "prism-react-renderer";
+
+const ayuLight: PrismTheme = {
+  plain: {
+    backgroundColor: "#fafafa",
+    color: "#575f66",
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "#adb6bf", fontStyle: "italic" },
+    },
+    {
+      types: ["namespace"],
+      style: { opacity: 0.7 },
+    },
+    {
+      types: ["string", "attr-value"],
+      style: { color: "#86b300" },
+    },
+    {
+      types: ["punctuation", "operator"],
+      style: { color: "#575f66" },
+    },
+    {
+      types: ["entity", "url", "symbol", "number", "boolean", "variable", "constant", "property", "regex", "inserted"],
+      style: { color: "#f2ae49" },
+    },
+    {
+      types: ["atrule", "keyword", "attr-name", "selector"],
+      style: { color: "#fa8d3e" },
+    },
+    {
+      types: ["function", "deleted", "tag"],
+      style: { color: "#55b4d4" },
+    },
+    {
+      types: ["function-variable"],
+      style: { color: "#f2ae49" },
+    },
+    {
+      types: ["tag", "selector", "keyword"],
+      style: { color: "#fa8d3e" },
+    },
+    {
+      types: ["builtin", "class-name", "char"],
+      style: { color: "#399ee6" },
+    },
+  ],
+};
+
+const ayuDark: PrismTheme = {
+  plain: {
+    backgroundColor: "#0a0e14",
+    color: "#b3b1ad",
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata"],
+      style: { color: "#626a73", fontStyle: "italic" },
+    },
+    {
+      types: ["namespace"],
+      style: { opacity: 0.7 },
+    },
+    {
+      types: ["string", "attr-value"],
+      style: { color: "#c2d94c" },
+    },
+    {
+      types: ["punctuation", "operator"],
+      style: { color: "#b3b1ad" },
+    },
+    {
+      types: ["entity", "url", "symbol", "number", "boolean", "variable", "constant", "property", "regex", "inserted"],
+      style: { color: "#e6b673" },
+    },
+    {
+      types: ["atrule", "keyword", "attr-name", "selector"],
+      style: { color: "#ff8f40" },
+    },
+    {
+      types: ["function", "deleted", "tag"],
+      style: { color: "#ffb454" },
+    },
+    {
+      types: ["function-variable"],
+      style: { color: "#ffb454" },
+    },
+    {
+      types: ["tag", "selector", "keyword"],
+      style: { color: "#39bae6" },
+    },
+    {
+      types: ["builtin", "class-name", "char"],
+      style: { color: "#39bae6" },
+    },
+  ],
+};
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -29,7 +127,7 @@ const config: Config = {
       tagName: "link",
       attributes: {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Martian+Mono:wght@700&display=swap",
       },
     },
     {
@@ -253,8 +351,8 @@ const config: Config = {
       ],
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: ayuLight,
+      darkTheme: ayuDark,
     },
   } satisfies Preset.ThemeConfig,
 };
