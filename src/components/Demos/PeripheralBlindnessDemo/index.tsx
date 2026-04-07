@@ -21,7 +21,7 @@ export default function PeripheralBlindnessDemo() {
 
   const overlayStyle = {
     background: mousePos
-      ? `radial-gradient(circle 160px at ${mousePos.x}px ${mousePos.y}px, transparent 0%, rgba(0,0,0,1) 80%)`
+      ? `radial-gradient(circle 200px at ${mousePos.x}px ${mousePos.y}px, transparent 0%, rgba(0,0,0,1) 80%)`
       : `radial-gradient(circle 1px at -9999px -9999px, transparent 0%, rgba(0,0,0,1) 80%)`,
   };
 

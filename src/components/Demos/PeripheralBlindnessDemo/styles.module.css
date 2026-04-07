@@ -1,13 +1,13 @@
 .root {
   position: relative;
-  cursor: crosshair;
-  user-select: none;
+  cursor: auto;
 }
 
 .content {
   padding: 2rem 2.25rem;
   background: var(--ifm-background-color, #fff);
   line-height: 1.7;
+  cursor: auto;
 }
 
 .heading {
