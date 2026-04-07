@@ -19,12 +19,4 @@ This is also a useful tool for accessibility. Screen readers will always read fr
 <h6>This is an H6 Heading</h6>
 ```
 
-```js
-console.log("Hello, world!");
-```
-
-```python
-print("Hello, world!")
-```
-
 When unstyled, HTML gives you this hierarchy straight out of the box. You can use CSS to override this default, but it is critically important to understand why it is useful. You may not need all 6 heading levels, but having a clear visual delineation between sections by physical size is useful for users scanning through your page.
