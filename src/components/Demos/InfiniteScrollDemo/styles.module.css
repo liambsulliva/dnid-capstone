@@ -1,26 +1,5 @@
-.scrollBox {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--dnid-demo-chrome-border);
-  margin-bottom: var(--ifm-leading, 1.25rem);
+.wrapper {
   margin: 1.5rem 0 2rem;
-  background: var(--dnid-demo-chrome-well);
-}
-
-.scrollLabel {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 18px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--dnid-demo-chrome-label);
-  border-bottom: 1px solid var(--dnid-demo-chrome-rule);
-  background: var(--dnid-demo-chrome-header-bg);
-  user-select: none;
 }
 
 .labelDot {
@@ -47,7 +26,7 @@
   overflow-y: scroll;
   padding: 24px 28px 12px;
   scrollbar-width: thin;
-  scrollbar-color: var(--dnid-demo-chrome-scrollbar) transparent;
+  scrollbar-color: var(--dnid-neutral-300) transparent;
 }
 
 .content::-webkit-scrollbar {
@@ -55,7 +34,7 @@
 }
 
 .content::-webkit-scrollbar-thumb {
-  background: var(--dnid-demo-chrome-scrollbar);
+  background: var(--dnid-neutral-300);
   border-radius: 2px;
 }
 
@@ -78,32 +57,32 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin: 1.6rem 0 0.5rem;
-  color: var(--dnid-demo-chrome-inverse);
+  color: var(--dnid-text-card);
   letter-spacing: -0.03em;
   padding-top: 0.5rem;
-  border-top: 1px solid var(--dnid-demo-chrome-rule-soft);
+  border-top: 1px solid var(--dnid-neutral-200);
 }
 
 .heading3 {
   font-size: 1rem;
   font-weight: 700;
   margin: 1.2rem 0 0.4rem;
-  color: var(--dnid-demo-chrome-body-soft);
+  color: color-mix(in srgb, var(--dnid-text-card) 70%, transparent);
   letter-spacing: -0.02em;
 }
 
 .para {
   font-size: 0.92rem;
   line-height: 1.75;
-  color: var(--dnid-demo-chrome-body);
+  color: var(--dnid-text-card);
   margin: 0 0 1rem;
 }
 
 .quote {
   margin: 0.5rem 0 1.2rem;
   padding: 14px 18px;
-  border-left: 3px solid var(--dnid-demo-chrome-quote-bar);
-  background: var(--dnid-demo-chrome-quote-bg);
+  border-left: 3px solid var(--dnid-neutral-400);
+  background: var(--dnid-neutral-50);
   border-radius: 0 6px 6px 0;
 }
 
@@ -111,20 +90,20 @@
   font-size: 0.9rem;
   line-height: 1.65;
   font-style: italic;
-  color: var(--dnid-demo-chrome-quote);
+  color: var(--dnid-text-card);
   margin: 0 0 8px;
 }
 
 .quote footer {
   font-size: 0.78rem;
-  color: var(--dnid-demo-chrome-caption);
+  color: color-mix(in srgb, var(--dnid-text-card) 55%, transparent);
   font-style: normal;
 }
 
 .list {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: var(--dnid-demo-chrome-body);
+  color: var(--dnid-text-card);
   padding-left: 1.4rem;
   margin: 0 0 1rem;
 }
@@ -152,7 +131,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--dnid-demo-chrome-loader);
+  background: var(--dnid-neutral-400);
   animation: pulse 0.9s ease-in-out infinite;
 }
 
@@ -178,7 +157,7 @@
 
 .endNote {
   font-size: 0.8rem;
-  color: var(--dnid-demo-chrome-end);
+  color: color-mix(in srgb, var(--dnid-text-card) 50%, transparent);
   text-align: center;
   font-style: italic;
   padding: 8px 0 4px;

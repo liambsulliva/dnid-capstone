@@ -1,5 +1,6 @@
 .scene {
   display: flex;
+  max-width: 420px;
   margin-bottom: var(--ifm-leading, 1.25rem);
 }
 
@@ -31,15 +32,6 @@
     opacity: 0;
     transform: translateY(6px);
   }
-}
-
-.panel {
-  width: 100%;
-  max-width: 420px;
-  border-radius: 14px;
-  background: var(--dnid-surface-card);
-  box-shadow: var(--dnid-shadow-1);
-  overflow: hidden;
 }
 
 .panelHeader {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "../../General/Button";
+import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
 interface AddOn {
@@ -99,21 +100,12 @@ export default function HighballingDemo() {
 
   return (
     <div className={styles.scene}>
-      <div
-        className={`${styles.panel} ${animating ? styles.fadeOut : styles.fadeIn}`}
+      <WindowContainer
+        title="Acme Pro"
+        className={animating ? styles.fadeOut : styles.fadeIn}
       >
         {!isCheckout ? (
           <>
-            <div className={styles.panelHeader}>
-              <div className={styles.storeBrand}>
-                <span className={styles.storeDot} />
-                <span className={styles.storeName}>Acme Pro</span>
-              </div>
-              <span className={styles.stepLabel}>
-                Step {stepIndex + 1} of {ADDONS.length}
-              </span>
-            </div>
-
             <div className={styles.progressTrack}>
               <div
                 className={styles.progressFill}
@@ -142,7 +134,7 @@ export default function HighballingDemo() {
 
             <div className={styles.addonActions}>
               <Button variant="primary" onClick={() => advance(true)}>
-                Yes, add this to my plan →
+                Yes, add this to my plan
               </Button>
               <Button
                 variant="link"
@@ -211,7 +203,7 @@ export default function HighballingDemo() {
             )}
           </>
         )}
-      </div>
+      </WindowContainer>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
 type Block =
@@ -164,11 +165,7 @@ export default function InfiniteScrollDemo() {
   }, [loadMore]);
 
   return (
-    <div className={styles.scrollBox}>
-      <div className={styles.scrollLabel}>
-        <span className={styles.labelDot} />
-        Scroll to read
-      </div>
+    <WindowContainer className={styles.wrapper}>
       <div className={styles.content} ref={containerRef}>
         {CONTENT.slice(0, visibleCount).map((block, idx) => (
           <div
@@ -219,6 +216,6 @@ export default function InfiniteScrollDemo() {
           )}
         </div>
       </div>
-    </div>
+    </WindowContainer>
   );
 }
