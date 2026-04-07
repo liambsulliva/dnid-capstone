@@ -55,8 +55,8 @@ const CONTENT: Block[] = [
   },
   {
     type: "heading",
-    level: 3,
-    text: "The Designer's Regret",
+    level: 2,
+    text: "Raskin's Regret",
   },
   {
     type: "quote",
