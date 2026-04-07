@@ -10,7 +10,7 @@ So it follows that Salience Bias is the way that people are bound to things that
 
 <img src={require('./img/cybertruck.jpg').default} alt="Elon Musk's Tesla Cybertruck." width="400" style={{ display: 'block', marginBottom: 'var(--ifm-leading, 1.25rem)' }} />
 
-There is no better parallel than Elon Musk's Cybertruck. It isn't particularly special in terms of acting as a truck, but its angular design is immediately salient and eye-catching. Despite poor rear visibility, exorbitant repair costs, and a lack of crumple zones for safety, it has still managed to sell a decent number of units on the merit of its uniqueness.
+There is no better parallel than [Elon Musk's Cybertruck](https://www.tesla.com/cybertruck). It isn't particularly special in terms of acting as a truck, but its angular design is immediately salient and eye-catching. Despite poor rear visibility, exorbitant repair costs, and a lack of crumple zones for safety, it has still managed to sell a decent number of units on the merit of its uniqueness.
 
 Salience can be achieved in a few ways, including but not limited to:
 
