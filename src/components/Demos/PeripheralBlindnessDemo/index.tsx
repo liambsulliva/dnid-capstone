@@ -4,29 +4,26 @@ import styles from "./styles.module.css";
 
 export default function PeripheralBlindnessDemo() {
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(
-    null
+    null,
   );
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      const rect = e.currentTarget.getBoundingClientRect();
-      setMousePos({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
-    },
-    []
-  );
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  }, []);
 
   const handleMouseLeave = useCallback(() => {
     setMousePos(null);
   }, []);
 
-  const overlayStyle = mousePos
-    ? {
-        background: `radial-gradient(circle 160px at ${mousePos.x}px ${mousePos.y}px, transparent 0%, rgba(0,0,0,0.88) 80%)`,
-      }
-    : { background: "rgba(0,0,0,0.88)" };
+  const overlayStyle = {
+    background: mousePos
+      ? `radial-gradient(circle 160px at ${mousePos.x}px ${mousePos.y}px, transparent 0%, rgba(0,0,0,1) 80%)`
+      : `radial-gradient(circle 1px at -9999px -9999px, transparent 0%, rgba(0,0,0,1) 80%)`,
+  };
 
   return (
     <WindowContainer title="lorem-ipsum.txt">

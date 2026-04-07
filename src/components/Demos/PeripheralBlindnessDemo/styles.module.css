@@ -37,7 +37,6 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  transition: background 0.05s linear;
 }
 
 /* Hint shown in the gutters of the demo outside the overlay */
