@@ -36,9 +36,8 @@ export default function ABTestDemo() {
       </div>
 
       <p className={styles.metaNote} aria-live="polite">
-        Showing variant <strong>{variant}</strong>: the facts are identical;
-        only layout and emphasis change. Sort of like two cells in a real A/B
-        test.
+        Showing variant <strong>{variant}</strong>. Keep in mind - the
+        information is the same. All that's changed is layout and emphasis.
       </p>
 
       <div className={styles.article} aria-live="polite">
@@ -47,11 +46,10 @@ export default function ABTestDemo() {
 
       <section className={styles.poll} aria-labelledby={pollId}>
         <h3 className={styles.pollHeading} id={pollId}>
-          Which presentation fits this article best?
+          Which version fits this article best?
         </h3>
         <p className={styles.pollHint}>
-          There is no wrong answer. This mirrors how teams collect qualitative
-          signal alongside metrics.
+          There is no wrong answer. It's all up to preference.
         </p>
         <div className={styles.pollChoices}>
           <Button
@@ -66,18 +64,10 @@ export default function ABTestDemo() {
           >
             Prefer B (scannable)
           </Button>
-          <Button
-            pressed={preference === "tie"}
-            onClick={() => setPreference("tie")}
-          >
-            No strong preference
-          </Button>
         </div>
         {preference !== null && (
           <p className={styles.pollThanks} role="status">
-            {preference === "tie"
-              ? "Recorded: you’re neutral on layout—which is useful data too."
-              : `Recorded: you leaned toward variant ${preference}. In a live test, this would join click or dwell metrics to inform the winner.`}
+            You picked variant {preference}!
           </p>
         )}
       </section>
@@ -92,26 +82,24 @@ function ArticleDense() {
         How layout shapes what readers take away
       </h2>
       <p>
-        When the same article is set as uninterrupted paragraphs with only an
-        occasional heading, readers often report that it feels thorough or
-        authoritative even before they finish. The tradeoff is higher cognitive
-        load: people who are scanning for one fact may leave without finding it,
-        which shows up in metrics like bounce rate or time-to-first-scroll in
-        A/B tests.
+        When the same article is shown as full uninterrupted paragraphs, readers
+        often report that it feels thorough or authoritative even before they're
+        even done reading. This is helpful to communicate professionalism, but
+        it also makes it harder to quickly scan for specific pieces of
+        information unless they're highlighted in some way.
       </p>
       <p>
-        Product teams sometimes pair that dense style with subtle typographic
-        choices, tighter line height, smaller subheads and measure whether
-        completion rate or perceived trust moves. The hypothesis is usually that
-        “serious” presentation nudges people to treat the piece as definitive,
-        not that the words themselves changed at all.
+        Usually if a piece is that authoritative, it's because it's a news
+        article or some other type of piece that is trying to prove its worth.
+        Other characteristics like dense line heights and smaller subheads play
+        into this effect.
       </p>
       <p>
-        In practice, A/B testing this kind of layout means serving two templates
-        to randomly assigned visitors, then comparing outcomes: time on page,
-        scroll depth, shares, or downstream conversions. Feature flags make it
-        possible to roll the winning template out gradually instead of flipping
-        the whole site at once.
+        In practice, A/B testing this kind of layout means serving two different
+        versions of the same page to randomly assigned users, then comparing how
+        they react to the content. This could be time on the page, how far they
+        scroll, or how much they share it around. Whichever version wins will
+        eventually be rolled out to all users.
       </p>
     </div>
   );
@@ -121,9 +109,6 @@ function ArticleScannable() {
   return (
     <div className={styles.scannable}>
       <header className={styles.scanHeader}>
-        <span className={styles.scanKicker} aria-hidden="true">
-          📋
-        </span>
         <h2 className={styles.scanTitle}>
           How layout shapes what readers take away
         </h2>
@@ -135,8 +120,9 @@ function ArticleScannable() {
             -
           </span>
           <span>
-            <strong>Dense prose</strong> can feel more authoritative upfront,
-            but it asks readers to work harder to find a single takeaway.
+            <strong>Dense prose</strong> can feel more authoritative right away,
+            but it asks readers to work harder to look for specific pieces of
+            information.
           </span>
         </li>
         <li>
@@ -144,9 +130,8 @@ function ArticleScannable() {
             -
           </span>
           <span>
-            <strong>Metrics</strong> such as bounce rate, time-to-first-scroll,
-            or completion rate often diverge between “wall of text” and
-            structured layouts—even when the copy is unchanged.
+            <strong>Metrics</strong> are often different between dense and
+            scannable layouts, even when the writing is fundamentally unchanged.
           </span>
         </li>
         <li>
@@ -154,8 +139,8 @@ function ArticleScannable() {
             -
           </span>
           <span>
-            <strong>A/B tests</strong> randomize who sees each template, then
-            compare behavior; feature flags let teams ship the winner in stages.
+            <strong>A/B tests</strong> randomize who sees each version and
+            compares how they react to the content.
           </span>
         </li>
       </ul>
