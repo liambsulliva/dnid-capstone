@@ -169,7 +169,7 @@ export default function InfiniteScrollDemo() {
   }, [loadMore]);
 
   return (
-    <WindowContainer className={styles.wrapper}>
+    <WindowContainer title="infinite-scroll.txt" className={styles.wrapper}>
       <div className={styles.content} ref={containerRef}>
         {CONTENT.slice(0, visibleCount).map((block, idx) => (
           <div

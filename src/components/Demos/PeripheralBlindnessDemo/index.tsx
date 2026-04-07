@@ -26,7 +26,7 @@ export default function PeripheralBlindnessDemo() {
   };
 
   return (
-    <WindowContainer title="lorem-ipsum.txt">
+    <WindowContainer title="peripheral-blindness.txt">
       <div
         className={styles.root}
         onMouseMove={handleMouseMove}
