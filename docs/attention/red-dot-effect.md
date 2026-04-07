@@ -13,7 +13,7 @@ The red dot effect is something you likely see on a daily basis. It's the backbo
 
 In some sense, it's a form of [salience bias](/docs/attention/salience-bias), as it is quite literally designed to stand out. Red is a highly emotionally charged color, and it prods at our brain to pay attention to it.
 
-#### How does this make you feel?
+So... how does this make you feel?
 
 <RedDotDemo image={igIcon} alt="The Instagram logo with an incrementing red circular badge" />
 <RedDotDemo image={igIcon} alt="The Instagram logo with an incrementing red circular badge" />
@@ -24,3 +24,5 @@ More than a little uncomfortable, right? Our brains are hardwired to notice thin
 1. **Color**: Red is a highly emotionally charged color, and it prods at our brain to pay attention to it.
 2. **Numerical Value**: The red dot is typically used to indicate a numerical value, such as the number of unread messages. This is a powerful tool for creating a sense of urgency or importance. If users see a number, they feel compelled to act.
 3. **Motion**: Sometimes, the red dot is animated, making it stand out and visually draws the eye in as new notifications arrive.
+
+All of these attributes band together to create a cohesive visual siren that is intensely distracting and impossible to ignore.
