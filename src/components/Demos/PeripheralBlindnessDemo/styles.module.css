@@ -1,0 +1,66 @@
+.root {
+  position: relative;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.content {
+  padding: 2rem 2.25rem;
+  background: var(--ifm-background-color, #fff);
+  line-height: 1.7;
+}
+
+.heading {
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.subheading {
+  font-size: 1.05rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.content p {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  color: var(--ifm-font-color-base, #1c1c1e);
+}
+
+.content p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Dark overlay with spotlight cut-out */
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: background 0.05s linear;
+}
+
+/* Hint shown in the gutters of the demo outside the overlay */
+.reducedMotionNotice {
+  display: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600, #666);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Reduced motion: hide the overlay entirely and show the plain notice */
+@media (prefers-reduced-motion: reduce) {
+  .overlay {
+    display: none;
+  }
+
+  .root {
+    cursor: default;
+  }
+
+  .reducedMotionNotice {
+    display: block;
+  }
+}
