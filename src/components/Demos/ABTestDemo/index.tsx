@@ -55,21 +55,18 @@ export default function ABTestDemo() {
         </p>
         <div className={styles.pollChoices}>
           <Button
-            variant="chip"
             pressed={preference === "A"}
             onClick={() => setPreference("A")}
           >
             Prefer A (dense)
           </Button>
           <Button
-            variant="chip"
             pressed={preference === "B"}
             onClick={() => setPreference("B")}
           >
             Prefer B (scannable)
           </Button>
           <Button
-            variant="chip"
             pressed={preference === "tie"}
             onClick={() => setPreference("tie")}
           >

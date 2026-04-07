@@ -248,7 +248,7 @@
   border: none;
   border-radius: 9px;
   cursor: pointer;
-  color: var(--ifm-font-color-base);
+  color: var(--dnid-text-card);
   background: transparent;
   opacity: 0.68;
   transition:
@@ -268,8 +268,7 @@
 
 .tabActive {
   opacity: 1;
-  background: var(--ifm-background-color);
-  box-shadow: 0 1px 3px color-mix(in srgb, #000 12%, transparent);
+  background: var(--dnid-neutral-200);
 }
 
 /* ─── Chip ─── */

@@ -8,8 +8,9 @@
   gap: 0.35rem;
   padding: 0.35rem;
   border-radius: 12px;
-  background: var(--dnid-surface-muted);
-  border: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-300) 55%, transparent);
+  background: var(--dnid-surface-card);
+  color: var(--dnid-text-card);
+  border: 1px solid var(--dnid-border-default);
 }
 
 .metaNote {
@@ -94,11 +95,11 @@
   margin: 0;
   padding: 1rem 1.1rem;
   border-radius: 12px;
-  background: color-mix(in srgb, var(--dnid-surface-muted) 88%, transparent);
-  border: 1px solid color-mix(in srgb, var(--ifm-color-emphasis-300) 35%, transparent);
+  background: var(--dnid-surface-card);
+  border: 1px solid var(--dnid-border-default);
   font-size: 0.95rem;
   line-height: 1.55;
-  color: var(--ifm-font-color-base);
+  color: var(--dnid-text-card);
 }
 
 .scanIcon {
@@ -145,4 +146,3 @@
   opacity: 0.82;
   font-style: italic;
 }
-
