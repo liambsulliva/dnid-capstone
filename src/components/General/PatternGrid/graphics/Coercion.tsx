@@ -500,129 +500,32 @@ export function ForcedActionGraphic(): ReactNode {
       height="100%"
     >
       <style>{`
-        @keyframes fa-shake {
-          0%, 100% { transform: translateX(0); }
-          15% { transform: translateX(-4px); }
-          30% { transform: translateX(4px); }
-          45% { transform: translateX(-3px); }
-          60% { transform: translateX(3px); }
-          75% { transform: translateX(-2px); }
-          90% { transform: translateX(2px); }
+        @keyframes fa-bounce {
+          0%   { transform: scale(1); }
+          60%  { transform: scale(1.35); }
+          80%  { transform: scale(0.9); }
+          100% { transform: scale(1); }
         }
-        @keyframes fa-pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.06); }
-        }
-        .fa-modal {
+        .fa-exclaim {
           transform-box: fill-box;
           transform-origin: center;
         }
-        .fa-cta {
-          transform-box: fill-box;
-          transform-origin: center;
+        :is(.patternGridCard:hover svg, svg.active) .fa-exclaim {
+          animation: fa-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
-        :is(.patternGridCard:hover svg, svg.active) .fa-modal { animation: fa-shake 0.6s ease; }
-        :is(.patternGridCard:hover svg, svg.active) .fa-cta { animation: fa-pulse 0.8s ease-in-out infinite; }
       `}</style>
 
-      {/* Dimmed background */}
-      <rect x="0" y="0" width="200" height="160" fill="rgba(0,0,0,0.3)" />
-
-      {/* Modal */}
-      <g className="fa-modal">
-        <rect
-          x="28"
-          y="22"
-          width="144"
-          height="116"
-          rx="8"
-          fill="rgba(30,35,60,0.92)"
-          stroke="rgba(255,255,255,0.4)"
-          strokeWidth="1.5"
+      <g className="fa-exclaim">
+        {/* Tapered stroke */}
+        <polygon
+          points="90,40 110,40 104,100 96,100"
+     
+     
+          fill="rgba(255,255,255,0.6)"
+          rx="2"
         />
-
-        {/* NO close button — intentionally absent */}
-        <text
-          x="165"
-          y="39"
-          textAnchor="middle"
-          fill="rgba(255,255,255,0.08)"
-          fontSize="14"
-          fontFamily="Sora, sans-serif"
-        >
-          ✕
-        </text>
-        <line
-          x1="158"
-          y1="32"
-          x2="172"
-          y2="32"
-          stroke="rgba(255,255,255,0.06)"
-          strokeWidth="1"
-        />
-
-        {/* Content */}
-        <text
-          x="100"
-          y="55"
-          textAnchor="middle"
-          fill="white"
-          fontSize="11"
-          fontWeight="bold"
-          fontFamily="Sora, sans-serif"
-        >
-          Create an account
-        </text>
-        <text
-          x="100"
-          y="70"
-          textAnchor="middle"
-          fill="rgba(255,255,255,0.5)"
-          fontSize="8"
-          fontFamily="Sora, sans-serif"
-        >
-          to continue using the app
-        </text>
-
-        <rect
-          x="40"
-          y="80"
-          width="120"
-          height="12"
-          rx="3"
-          fill="rgba(255,255,255,0.1)"
-        />
-        <rect
-          x="40"
-          y="98"
-          width="120"
-          height="12"
-          rx="3"
-          fill="rgba(255,255,255,0.1)"
-        />
-
-        {/* CTA button */}
-        <g className="fa-cta">
-          <rect
-            x="40"
-            y="116"
-            width="120"
-            height="16"
-            rx="5"
-            fill="rgba(100,180,255,0.8)"
-          />
-          <text
-            x="100"
-            y="128"
-            textAnchor="middle"
-            fill="white"
-            fontSize="9"
-            fontWeight="bold"
-            fontFamily="Sora, sans-serif"
-          >
-            Sign Up — Required
-          </text>
-        </g>
+        {/* Dot */}
+        <circle cx="100" cy="122" r="6" fill="rgba(255,255,255,0.6)" />
       </g>
     </svg>
   );

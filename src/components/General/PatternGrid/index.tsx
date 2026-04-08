@@ -19,6 +19,7 @@ import {
   ReachabilityGraphic,
   NaggingGraphic,
   FalseUrgencyGraphic,
+  ForcedActionGraphic,
 } from "./graphics";
 
 const graphicMap: Record<string, ComponentType> = {
@@ -37,9 +38,9 @@ const graphicMap: Record<string, ComponentType> = {
   /*"Feedback Loop": FeedbackLoopGraphic,*/
   /*Confirmshaming: ConfirmshamingGraphic,*/
   /*Breakage: BreakageGraphic,*/
-  /*Nagging: NaggingGraphic,*/
+  Nagging: NaggingGraphic,
   /*Obstruction: ObstructionGraphic,*/
-  /*"Forced Action": ForcedActionGraphic,*/
+  "Forced Action": ForcedActionGraphic,
   /*"False Urgency": FalseUrgencyGraphic,*/
   /*"Curated Defaults": CuratedDefaultsGraphic,*/
   /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
