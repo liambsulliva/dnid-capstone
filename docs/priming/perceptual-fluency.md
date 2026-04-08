@@ -2,7 +2,11 @@
 sidebar_position: 6
 ---
 
+import PerceptualFluencyDemo from '@site/src/components/Demos/PerceptualFluencyDemo';
+
 # Perceptual Fluency
+
+<PerceptualFluencyDemo />
 
 Perceptual fluency describes the concept that users will trust a UI more if it is easier to process.
 

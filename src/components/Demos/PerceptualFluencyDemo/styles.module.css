@@ -1,0 +1,306 @@
+.scene {
+  display: flex;
+  margin-bottom: var(--ifm-leading, 1.25rem);
+}
+
+.window {
+  width: 100%;
+  max-width: 420px;
+}
+
+.tabBar {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.45rem 0.6rem;
+  background: var(--dnid-surface-subtle);
+  border-bottom: 1px solid var(--dnid-border-default);
+}
+
+.formBody {
+  padding: 1.25rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.orderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.orderInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.orderName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dnid-text-card);
+}
+
+.orderDesc {
+  font-size: 0.72rem;
+  color: var(--dnid-text-card);
+  opacity: 0.5;
+}
+
+.orderAmount {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dnid-text-card);
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--dnid-border-default);
+  margin: 0;
+}
+
+.fieldBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fieldLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dnid-text-card);
+  opacity: 0.7;
+  letter-spacing: 0.01em;
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1.5px solid var(--dnid-border-default);
+  border-radius: 7px;
+  background: var(--dnid-surface-card);
+  color: var(--dnid-text-card);
+  font: inherit;
+  font-size: 0.88rem;
+  outline: none;
+  box-sizing: border-box;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.input:focus {
+  border-color: var(--dnid-brand-500);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--dnid-brand-500) 18%, transparent);
+}
+
+.cardGroup {
+  border: 1.5px solid var(--dnid-border-default);
+  border-radius: 7px;
+  overflow: hidden;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.cardGroup:focus-within {
+  border-color: var(--dnid-brand-500);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--dnid-brand-500) 18%, transparent);
+}
+
+.cardGroup .input {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.cardGroup .input:focus {
+  box-shadow: none;
+}
+
+.cardNumberRow {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1.5px solid var(--dnid-border-default);
+}
+
+.cardNumberInput {
+  flex: 1;
+  padding-right: 5.5rem;
+}
+
+.cardBrands {
+  position: absolute;
+  right: 0.75rem;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  pointer-events: none;
+}
+
+.cardBrand {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: var(--dnid-neutral-0);
+  line-height: 1.4;
+}
+
+.cardBrand[data-brand="visa"] {
+  background: #1a1f71;
+}
+
+.cardBrand[data-brand="mc"] {
+  background: #eb001b;
+}
+
+.cardBottomRow {
+  display: flex;
+}
+
+.expiryInput {
+  flex: 1;
+}
+
+.cvcInput {
+  flex: 1;
+}
+
+/* border between expiry and CVC — must come after .cardGroup .input { border: none } */
+.cardGroup .expiryInput {
+  border-right: 1.5px solid var(--dnid-border-default);
+}
+
+.payButton {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--dnid-interactive-primary-bg);
+  color: var(--dnid-interactive-on-primary);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    filter 0.15s,
+    transform 0.1s ease;
+}
+
+.payButton:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.payButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.payButton:disabled {
+  cursor: wait;
+  opacity: 1;
+}
+
+.glyphPad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glyphStack {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.spinnerShell,
+.checkShell {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.38s cubic-bezier(0.45, 0, 0.2, 1),
+    transform 0.42s cubic-bezier(0.34, 1.15, 0.64, 1);
+}
+
+.spinnerShell {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.spinnerMorphOut {
+  opacity: 0;
+  transform: scale(0.5) rotate(135deg);
+  pointer-events: none;
+}
+
+.spinnerSvg {
+  display: block;
+  animation: buySpin 0.65s linear infinite;
+}
+
+.spinnerMorphOut .spinnerSvg {
+  animation: none;
+}
+
+.spinnerArc {
+  stroke-dasharray: 15 46;
+}
+
+@keyframes buySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.checkShell {
+  opacity: 0;
+  transform: scale(0.55) rotate(-35deg);
+}
+
+.checkMorphIn {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.checkSvg {
+  display: block;
+}
+
+.checkPath {
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+  transition: stroke-dashoffset 0.48s cubic-bezier(0.45, 0, 0.2, 1) 0.06s;
+}
+
+.checkMorphIn .checkPath {
+  stroke-dashoffset: 0;
+}
+
+.secureNote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--dnid-text-card);
+  opacity: 0.45;
+  margin: 0;
+}
+
+.secureNote svg {
+  flex-shrink: 0;
+}
