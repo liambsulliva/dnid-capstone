@@ -238,6 +238,15 @@ export function BreakageGraphic(): ReactNode {
 }
 
 export function NaggingGraphic(): ReactNode {
+  const popups = [
+    { x: 10, y: 6, w: 72, h: 44 },
+    { x: 95, y: 2, w: 80, h: 48 },
+    { x: 32, y: 48, w: 76, h: 44 },
+    { x: 110, y: 52, w: 74, h: 46 },
+    { x: 6, y: 88, w: 84, h: 44 },
+    { x: 82, y: 98, w: 88, h: 48 },
+  ];
+
   return (
     <svg
       viewBox="0 0 200 160"
@@ -246,85 +255,64 @@ export function NaggingGraphic(): ReactNode {
       height="100%"
     >
       <style>{`
-        .ng-popup3 {
-          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+        .ng-pop {
+          transition: opacity 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
           transform-box: fill-box;
           transform-origin: center;
-          opacity: 0.2;
-          transform: scale(0.9);
+          opacity: 0;
+          transform: scale(0.7);
         }
-        :is(.patternGridCard:hover svg, svg.active) .ng-popup3 { opacity: 1; transform: scale(1); }
+        .ng-p0 { transition-delay: 0s; }
+        .ng-p1 { transition-delay: 0.06s; }
+        .ng-p2 { transition-delay: 0.12s; }
+        .ng-p3 { transition-delay: 0.18s; }
+        .ng-p4 { transition-delay: 0.24s; }
+        .ng-p5 { transition-delay: 0.30s; }
+        :is(.patternGridCard:hover svg, svg.active) .ng-pop {
+          opacity: 1;
+          transform: scale(1);
+        }
       `}</style>
 
-      {/* Popup 3 (appears on hover, front) */}
-      <g className="ng-popup3">
-        <rect
-          x="35"
-          y="48"
-          width="140"
-          height="70"
-          rx="6"
-          fill="rgba(255,255,255,0.18)"
-          stroke="var(--dnid-brand-400)"
-          strokeWidth="2"
-        />
-        <rect
-          x="35"
-          y="48"
-          width="140"
-          height="16"
-          rx="6"
-          fill="rgba(255,255,255,0.25)"
-        />
-        <text
-          x="105"
-          y="60"
-          textAnchor="middle"
-          fill="var(--dnid-neutral-0)"
-          fontSize="8"
-          fontWeight="bold"
-          fontFamily="Sora, sans-serif"
-        >
-          Last chance!
-        </text>
-        <text
-          x="43"
-          y="80"
-          fill="rgba(255,255,255,0.75)"
-          fontSize="7.5"
-          fontFamily="Sora, sans-serif"
-        >
-          Your trial expires soon.
-        </text>
-        <text
-          x="43"
-          y="92"
-          fill="rgba(255,255,255,0.75)"
-          fontSize="7.5"
-          fontFamily="Sora, sans-serif"
-        >
-          Subscribe now!
-        </text>
-        <rect
-          x="43"
-          y="100"
-          width="60"
-          height="12"
-          rx="3"
-          fill="var(--dnid-brand-400)"
-        />
-        <text
-          x="75"
-          y="110"
-          textAnchor="middle"
-          fill="#1a1a1a"
-          fontSize="7"
-          fontWeight="bold"
-          fontFamily="Sora, sans-serif"
-        >
-          Subscribe
-        </text>
-      </g>
+      {popups.map((p, i) => (
+        <g key={i} className={`ng-pop ng-p${i}`}>
+          <rect
+            x={p.x}
+            y={p.y}
+            width={p.w}
+            height={p.h}
+            rx="4"
+            fill="rgba(255,255,255,0.14)"
+            stroke="rgba(255,255,255,0.2)"
+            strokeWidth="1"
+          />
+          <rect
+            x={p.x + 5}
+            y={p.y + 5}
+            width={p.w * 0.35}
+            height={6}
+            rx="2"
+            fill="rgba(255,255,255,0.35)"
+          />
+          <rect
+            x={p.x + 5}
+            y={p.y + 15}
+            width={p.w * 0.75}
+            height={4}
+            rx="2"
+            fill="rgba(255,255,255,0.2)"
+          />
+          <rect
+            x={p.x + 5}
+            y={p.y + 23}
+            width={p.w * 0.55}
+            height={4}
+            rx="2"
+            fill="rgba(255,255,255,0.15)"
+          />
+        </g>
+      ))}
     </svg>
   );
 }
