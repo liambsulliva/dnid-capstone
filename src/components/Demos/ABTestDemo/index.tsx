@@ -17,22 +17,32 @@ export default function ABTestDemo() {
         role="group"
         aria-label="Switch article presentation"
       >
-        <Button
-          variant="tab"
-          pressed={variant === "A"}
-          onClick={() => setVariant("A")}
-          aria-pressed={variant === "A"}
-        >
-          A: Dense copy
-        </Button>
-        <Button
-          variant="tab"
-          pressed={variant === "B"}
-          onClick={() => setVariant("B")}
-          aria-pressed={variant === "B"}
-        >
-          B: Scannable layout
-        </Button>
+        <div className={styles.toggleTrack}>
+          <span
+            className={
+              variant === "B" ? styles.toggleSliderB : styles.toggleSlider
+            }
+            aria-hidden
+          />
+          <Button
+            variant="tab"
+            className={styles.toggleTab}
+            pressed={variant === "A"}
+            onClick={() => setVariant("A")}
+            aria-pressed={variant === "A"}
+          >
+            A: Dense copy
+          </Button>
+          <Button
+            variant="tab"
+            className={styles.toggleTab}
+            pressed={variant === "B"}
+            onClick={() => setVariant("B")}
+            aria-pressed={variant === "B"}
+          >
+            B: Scannable layout
+          </Button>
+        </div>
       </div>
 
       <p className={styles.metaNote} aria-live="polite">

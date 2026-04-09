@@ -66,7 +66,9 @@ export default function PerceptualFluencyDemo() {
           <div className={styles.orderRow}>
             <div className={styles.orderInfo}>
               <span className={styles.orderName}>Annual Plan</span>
-              <span className={styles.orderDesc}>acme.io · renews Jan 2027</span>
+              <span className={styles.orderDesc}>
+                acme.io · renews Jan 2027
+              </span>
             </div>
             <span className={styles.orderAmount}>$49.99</span>
           </div>

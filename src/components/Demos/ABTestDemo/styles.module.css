@@ -5,12 +5,71 @@
 .toggleBar {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
   padding: 0.35rem;
   border-radius: 12px;
   background: var(--dnid-surface-card);
   color: var(--dnid-text-card);
   border: 1px solid var(--dnid-border-default);
+}
+
+.toggleTrack {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.35rem;
+}
+
+.toggleSlider,
+.toggleSliderB {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: calc((100% - 0.35rem) / 2);
+  border-radius: 9px;
+  background: var(--dnid-neutral-200);
+  z-index: 0;
+  pointer-events: none;
+  transition: transform 0.22s ease;
+}
+
+.toggleSliderB {
+  transform: translateX(calc(100% + 0.35rem));
+}
+
+.toggleBar .toggleTrack .toggleTab {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+  opacity: 1 !important;
+  transition: color 0.18s ease;
+}
+
+.toggleBar .toggleTrack .toggleTab[aria-pressed="false"] {
+  color: color-mix(in srgb, var(--dnid-text-card) 58%, transparent);
+}
+
+.toggleBar .toggleTrack .toggleTab[aria-pressed="true"] {
+  color: var(--dnid-text-card);
+}
+
+.toggleBar .toggleTrack .toggleTab[aria-pressed="false"]:hover {
+  color: var(--dnid-text-card);
+}
+
+.toggleBar .toggleTrack .toggleTab[aria-pressed="true"]:hover {
+  color: color-mix(in srgb, var(--dnid-text-card) 88%, #000);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggleSlider,
+  .toggleSliderB {
+    transition: none;
+  }
+
+  .toggleBar .toggleTrack .toggleTab {
+    transition: none;
+  }
 }
 
 .metaNote {
