@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 // @ts-ignore
-// import igIcon from "@site/docs/attention/img/ig-transparent.png";
+// import igIcon from "@site/docs/attention/img/ig-transparent.webp";
 import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 

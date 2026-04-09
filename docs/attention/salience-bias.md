@@ -8,7 +8,7 @@ Salience is about introducing elements that are made to jump out, especially on 
 
 So it follows that Salience Bias is the way that people are bound to things that feel unique or different. This is a powerful tool to influence a user's perception of value. A mediocre product that stands out from its competitors may get more attention than the technically "superior" product.
 
-<img src={require('./img/cybertruck.jpg').default} alt="Elon Musk's Tesla Cybertruck." width="400" style={{ display: 'block', marginBottom: 'var(--ifm-leading, 1.25rem)' }} />
+<img src={require('./img/cybertruck.webp').default} alt="Elon Musk's Tesla Cybertruck." width="400" style={{ display: 'block', marginBottom: 'var(--ifm-leading, 1.25rem)' }} />
 
 There is no better parallel than [Elon Musk's Cybertruck](https://www.tesla.com/cybertruck). It isn't particularly special in terms of acting as a truck, but its angular design is immediately salient and eye-catching. Despite poor rear visibility, exorbitant repair costs, and a lack of crumple zones for safety, it has still managed to sell a decent number of units on the merit of its uniqueness.
 

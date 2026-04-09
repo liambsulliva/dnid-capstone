@@ -2,7 +2,7 @@ import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 // @ts-ignore
-import falseUrgency from "@site/docs/coercion/img/false-urgency.png";
+import falseUrgency from "@site/docs/coercion/img/false-urgency.webp";
 
 const INITIAL_SECONDS = 10 * 60;
 

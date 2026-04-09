@@ -5,7 +5,7 @@ sidebar_position: 3
 # Reachability
 
 <figure style={{ margin: '0', marginBottom: 'var(--ifm-leading, 1.25rem)' }}>
-  <img src={require('./img/reachability-2.jpg').default} alt="A screenshot of the Samsung One UI quick menu" width="400" />
+  <img src={require('./img/reachability-2.webp').default} alt="A screenshot of the Samsung One UI quick menu" width="400" />
   <figcaption style={{ fontSize: '0.8rem', color: 'var(--dnid-text-secondary)' }}>Courtesy of Roboflow Universe</figcaption>
 </figure>
 

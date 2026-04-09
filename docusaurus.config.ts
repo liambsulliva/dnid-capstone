@@ -134,8 +134,8 @@ const config: Config = {
       tagName: "link",
       attributes: {
         rel: "icon",
-        type: "image/png",
-        href: "/favicon-96x96.png",
+        type: "image/webp",
+        href: "/img/favicon-96x96.webp",
         sizes: "96x96",
       },
     },
@@ -159,7 +159,7 @@ const config: Config = {
       attributes: {
         rel: "apple-touch-icon",
         sizes: "180x180",
-        href: "/apple-touch-icon.png",
+        href: "/img/apple-touch-icon.webp",
       },
     },
     {
@@ -207,20 +207,7 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/liambsulliva/dnid-capstone/tree/main/",
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/liambsulliva/dnid-capstone/tree/main/",
-          // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -230,7 +217,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/docusaurus-social-card.webp",
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -238,7 +225,7 @@ const config: Config = {
       title: "The Invisible Hand of UX",
       logo: {
         alt: "The Invisible Hand of UX Logo",
-        src: "img/favicon-96x96.png",
+        src: "img/favicon-96x96.webp",
       },
       items: [
         {
@@ -286,7 +273,7 @@ const config: Config = {
           className: "footer__brand-col",
           items: [
             {
-              html: `<div class="footer__brand-heading"><img src="/img/favicon-96x96.png" alt="The Invisible Hand of UX logo" width="32" height="32" decoding="async" loading="lazy" /><span>The Invisible Hand of UX</span></div>`,
+              html: `<div class="footer__brand-heading"><img src="/img/favicon-96x96.webp" alt="The Invisible Hand of UX logo" width="32" height="32" decoding="async" loading="lazy" /><span>The Invisible Hand of UX</span></div>`,
             },
             {
               html: `<p class="footer__copyright">Copyright © ${new Date().getFullYear()} Liam Sullivan.</p>`,

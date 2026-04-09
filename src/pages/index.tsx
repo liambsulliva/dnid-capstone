@@ -15,11 +15,11 @@ function HomepageHeader() {
         <div className={styles.bannerContainer}>
           <picture>
             <source
-              srcSet="/img/print-logo-raster.png"
+              srcSet="/img/print-logo-raster.webp"
               media="(max-width: 600px)"
             />
             <img
-              src="/img/banner-raster.png"
+              src="/img/banner-raster.webp"
               alt="The Invisible Hand of UX Banner"
               className={styles.banner}
             />

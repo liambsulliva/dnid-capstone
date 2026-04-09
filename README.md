@@ -1,6 +1,6 @@
 <div align="center" style="padding: 20px;">
 
-![Banner](./static/img/banner-raster.png)
+![Banner](./static/img/banner-raster.webp)
 
 <div style="padding: 10px;">
 
