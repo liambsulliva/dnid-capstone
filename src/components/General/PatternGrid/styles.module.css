@@ -110,15 +110,11 @@
 
 @media (max-width: 996px) {
   .patternRow {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .patternRow {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .cardImage,
   .cardPlaceholder {
     height: 160px;
@@ -249,12 +245,6 @@
 }
 
 @media (max-width: 996px) {
-  .carouselScroller {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
   .carouselScroller {
     grid-template-columns: repeat(2, 1fr);
   }
