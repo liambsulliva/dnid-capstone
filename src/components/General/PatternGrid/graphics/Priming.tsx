@@ -295,3 +295,80 @@ export function MoodCongruenceGraphic(): ReactNode {
     </svg>
   );
 }
+
+export function PerceptualFluencyGraphic(): ReactNode {
+  const dotCount = 8;
+  const ringR = 30;
+  const dots = Array.from({ length: dotCount }, (_, i) => {
+    const a = (i / dotCount) * Math.PI * 2 - Math.PI / 2;
+    return {
+      cx: Math.cos(a) * ringR,
+      cy: Math.sin(a) * ringR,
+      o: 0.35 + (i / (dotCount - 1 || 1)) * 0.55,
+    };
+  });
+
+  return (
+    <svg
+      viewBox="0 0 200 160"
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      style={{ display: "block" }}
+    >
+      <style>{`
+        @keyframes pf-dot-orbit {
+          to { transform: rotate(360deg); }
+        }
+        .pf-idle {
+          transition: opacity 0.45s ease;
+        }
+        .pf-spinner-wrap {
+          pointer-events: none;
+          transition: opacity 0.35s ease;
+        }
+        .pf-spinner-ring {
+          transform-origin: 0px 0px;
+          animation: pf-dot-orbit 1.5s linear infinite;
+          animation-play-state: paused;
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .pf-idle {
+          opacity: 1;
+        }
+        :is(.patternGridCard:hover svg, svg.active) .pf-idle {
+          opacity: 0.22;
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .pf-spinner-wrap {
+          opacity: 0;
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .pf-spinner-ring {
+          animation-play-state: paused;
+        }
+        :is(.patternGridCard:hover svg, svg.active) .pf-spinner-wrap {
+          opacity: 1;
+        }
+        :is(.patternGridCard:hover svg, svg.active) .pf-spinner-ring {
+          animation-play-state: running;
+        }
+      `}</style>
+
+      <g
+        transform="translate(100,80)"
+        className="pf-spinner-wrap"
+        aria-hidden="true"
+      >
+        <g className="pf-spinner-ring">
+          {dots.map((d, i) => (
+            <circle
+              key={i}
+              cx={d.cx}
+              cy={d.cy}
+              r="3.4"
+              fill={`rgba(255,255,255,${d.o})`}
+            />
+          ))}
+        </g>
+      </g>
+    </svg>
+  );
+}

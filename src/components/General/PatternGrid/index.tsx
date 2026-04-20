@@ -23,6 +23,7 @@ import {
   ObstructionGraphic,
   MereExposureEffectGraphic,
   MoodCongruenceGraphic,
+  PerceptualFluencyGraphic,
   CuratedDefaultsGraphic,
   ConfirmshamingGraphic,
 } from "./graphics";
@@ -51,6 +52,7 @@ const graphicMap: Record<string, ComponentType> = {
   /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
   "Mere Exposure Effect": MereExposureEffectGraphic,
   "Mood Congruence": MoodCongruenceGraphic,
+  "Perceptual Fluency": PerceptualFluencyGraphic,
 };
 
 export type PatternCategorySlug =

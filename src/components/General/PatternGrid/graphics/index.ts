@@ -34,4 +34,5 @@ export {
   AvailabilityHeuristicGraphic,
   MereExposureEffectGraphic,
   MoodCongruenceGraphic,
+  PerceptualFluencyGraphic,
 } from "./Priming";
