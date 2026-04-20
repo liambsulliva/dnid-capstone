@@ -326,155 +326,92 @@ export function ObstructionGraphic(): ReactNode {
       height="100%"
     >
       <style>{`
-        .ob-block {
-          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        @keyframes ob-x-bounce {
+          0%   { transform: scale(0.35); opacity: 0; }
+          55%  { transform: scale(1.28); opacity: 1; }
+          78%  { transform: scale(0.9); opacity: 1; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        .ob-x {
           transform-box: fill-box;
           transform-origin: center;
         }
-        .ob-extra {
-          transition: opacity 0.4s ease;
+        .patternGridCard:not(:hover) svg:not(.active) .ob-x {
+          animation: none;
           opacity: 0;
+          transform: scale(0.35);
+          transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        :is(.patternGridCard:hover svg, svg.active) .ob-block { transform: scaleX(1.1); }
-        :is(.patternGridCard:hover svg, svg.active) .ob-extra { opacity: 1; }
+        :is(.patternGridCard:hover svg, svg.active) .ob-x {
+          animation: ob-x-bounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
       `}</style>
 
-      {/* Start marker */}
-      <circle
-        cx="24"
-        cy="80"
-        r="10"
-        fill="rgba(80,200,120,0.6)"
-        stroke="rgba(80,200,120,0.9)"
+      {/* Translucent “missing content” panel */}
+      <rect
+        x="36"
+        y="32"
+        width="128"
+        height="96"
+        rx="10"
+        fill="rgba(255,255,255,0.1)"
+        stroke="rgba(255,255,255,0.38)"
         strokeWidth="1.5"
       />
-      <text
-        x="24"
-        y="83.5"
-        textAnchor="middle"
-        fill="white"
-        fontSize="8"
-        fontFamily="Sora, sans-serif"
-      >
-        ▶
-      </text>
-
-      {/* Path line */}
-      <line
-        x1="34"
-        y1="80"
-        x2="80"
-        y2="80"
-        stroke="rgba(255,255,255,0.35)"
-        strokeWidth="2"
-        strokeDasharray="4,3"
+      <rect
+        x="52"
+        y="52"
+        width="72"
+        height="6"
+        rx="2"
+        fill="rgba(255,255,255,0.2)"
       />
-      <line
-        x1="120"
-        y1="80"
-        x2="168"
-        y2="80"
-        stroke="rgba(255,255,255,0.15)"
-        strokeWidth="2"
-        strokeDasharray="4,3"
+      <rect
+        x="52"
+        y="66"
+        width="96"
+        height="5"
+        rx="2"
+        fill="rgba(255,255,255,0.14)"
+      />
+      <rect
+        x="52"
+        y="78"
+        width="88"
+        height="5"
+        rx="2"
+        fill="rgba(255,255,255,0.14)"
+      />
+      <rect
+        x="52"
+        y="90"
+        width="64"
+        height="5"
+        rx="2"
+        fill="rgba(255,255,255,0.12)"
       />
 
-      {/* Obstruction block */}
-      <g className="ob-block">
-        <rect
-          x="80"
-          y="55"
-          width="40"
-          height="50"
-          rx="4"
-          fill="rgba(255,80,80,0.2)"
-          stroke="rgba(255,80,80,0.7)"
-          strokeWidth="2"
+      {/* X overlay — bounce-in on hover (same easing family as Forced Action) */}
+      <g className="ob-x">
+        <line
+          x1="56"
+          y1="48"
+          x2="144"
+          y2="112"
+          stroke="#C9C9D1"
+          strokeWidth="5"
+          strokeLinecap="round"
         />
-        <text
-          x="100"
-          y="78"
-          textAnchor="middle"
-          fill="rgba(255,100,100,0.9)"
-          fontSize="18"
-        >
-          🔒
-        </text>
-        <text
-          x="100"
-          y="96"
-          textAnchor="middle"
-          fill="rgba(255,100,100,0.7)"
-          fontSize="7"
-          fontFamily="Sora, sans-serif"
-        >
-          VERIFY ID
-        </text>
-      </g>
-
-      {/* Goal marker */}
-      <circle
-        cx="176"
-        cy="80"
-        r="10"
-        fill="rgba(255,255,255,0.15)"
-        stroke="rgba(255,255,255,0.4)"
-        strokeWidth="1.5"
-      />
-      <text
-        x="176"
-        y="84"
-        textAnchor="middle"
-        fill="rgba(255,255,255,0.5)"
-        fontSize="10"
-      >
-        ★
-      </text>
-
-      {/* Extra obstruction */}
-      <g className="ob-extra">
-        <rect
-          x="130"
-          y="62"
-          width="30"
-          height="36"
-          rx="4"
-          fill="rgba(255,150,50,0.2)"
-          stroke="rgba(255,150,50,0.6)"
-          strokeWidth="1.5"
+        <line
+          x1="144"
+          y1="48"
+          x2="56"
+          y2="112"
+          stroke="#C9C9D1"
+          strokeWidth="5"
+          strokeLinecap="round"
         />
-        <text
-          x="145"
-          y="78"
-          textAnchor="middle"
-          fill="rgba(255,180,80,0.85)"
-          fontSize="13"
-        >
-          ⚠
-        </text>
-        <text
-          x="145"
-          y="92"
-          textAnchor="middle"
-          fill="rgba(255,180,80,0.7)"
-          fontSize="6"
-          fontFamily="Sora, sans-serif"
-        >
-          SURVEY
-        </text>
       </g>
-
-      {/* Label */}
-      <text
-        x="100"
-        y="142"
-        textAnchor="middle"
-        fill="rgba(255,255,255,0.4)"
-        fontSize="8"
-        fontFamily="Sora, sans-serif"
-      >
-        Goal blocked by required steps
-      </text>
     </svg>
   );
 }
@@ -507,8 +444,6 @@ export function ForcedActionGraphic(): ReactNode {
         {/* Tapered stroke */}
         <polygon
           points="90,40 110,40 104,100 96,100"
-     
-     
           fill="rgba(255,255,255,0.6)"
           rx="2"
         />

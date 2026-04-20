@@ -20,6 +20,7 @@ import {
   NaggingGraphic,
   FalseUrgencyGraphic,
   ForcedActionGraphic,
+  ObstructionGraphic,
 } from "./graphics";
 
 const graphicMap: Record<string, ComponentType> = {
@@ -39,7 +40,7 @@ const graphicMap: Record<string, ComponentType> = {
   /*Confirmshaming: ConfirmshamingGraphic,*/
   /*Breakage: BreakageGraphic,*/
   Nagging: NaggingGraphic,
-  /*Obstruction: ObstructionGraphic,*/
+  Obstruction: ObstructionGraphic,
   "Forced Action": ForcedActionGraphic,
   /*"False Urgency": FalseUrgencyGraphic,*/
   /*"Curated Defaults": CuratedDefaultsGraphic,*/
