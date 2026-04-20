@@ -21,6 +21,7 @@ import {
   FalseUrgencyGraphic,
   ForcedActionGraphic,
   ObstructionGraphic,
+  MereExposureEffectGraphic,
 } from "./graphics";
 
 const graphicMap: Record<string, ComponentType> = {
@@ -45,7 +46,7 @@ const graphicMap: Record<string, ComponentType> = {
   "False Urgency": FalseUrgencyGraphic,
   /*"Curated Defaults": CuratedDefaultsGraphic,*/
   /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
-  /*"Mere Exposure Effect": MereExposureEffectGraphic,*/
+  "Mere Exposure Effect": MereExposureEffectGraphic,
   /*"Mood Congruence": MoodCongruenceGraphic,*/
 };
 

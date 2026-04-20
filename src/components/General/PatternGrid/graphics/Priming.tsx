@@ -199,13 +199,6 @@ export function AvailabilityHeuristicGraphic(): ReactNode {
 }
 
 export function MereExposureEffectGraphic(): ReactNode {
-  const instances = [
-    { x: 30, y: 36, size: 18, opacity: 0.25 },
-    { x: 72, y: 30, size: 22, opacity: 0.4 },
-    { x: 118, y: 24, size: 28, opacity: 0.6 },
-    { x: 155, y: 18, size: 34, opacity: 0.9 },
-  ];
-
   return (
     <svg
       viewBox="0 0 200 160"
@@ -214,138 +207,131 @@ export function MereExposureEffectGraphic(): ReactNode {
       height="100%"
     >
       <style>{`
-        .me-extra {
-          transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-          opacity: 0;
-          transform: translateX(20px) scale(0.8);
-          transform-box: fill-box;
-          transform-origin: center;
+        .me-stage {
+          transition: filter 0.75s cubic-bezier(0.33, 1, 0.68, 1);
+          transform: translateZ(0);
         }
-        .me-label {
-          transition: opacity 0.4s ease;
-          opacity: 0;
+        .me-noise {
+          transition: opacity 0.55s ease;
         }
-        :is(.patternGridCard:hover svg, svg.active) .me-extra { opacity: 1; transform: translateX(0) scale(1); }
-        :is(.patternGridCard:hover svg, svg.active) .me-label { opacity: 1; }
+        .me-boxes rect {
+          transition: fill 0.55s ease, stroke 0.55s ease;
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .me-stage {
+          filter: blur(12px);
+        }
+        :is(.patternGridCard:hover svg, svg.active) .me-stage {
+          filter: blur(0px);
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .me-noise {
+          opacity: 0.62;
+        }
+        :is(.patternGridCard:hover svg, svg.active) .me-noise {
+          opacity: 0;
+          transition-duration: 0.4s;
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .me-boxes rect {
+          fill: rgba(255,255,255,0.14);
+          stroke: rgba(255,255,255,0.28);
+        }
+        :is(.patternGridCard:hover svg, svg.active) .me-boxes rect {
+          fill: rgba(255,255,255,0.1);
+          stroke: rgba(255,255,255,0.48);
+        }
       `}</style>
 
-      {/* Label */}
-      <text
-        x="16"
-        y="100"
-        fill="rgba(255,255,255,0.3)"
-        fontSize="7.5"
-        fontFamily="Sora, sans-serif"
-      >
-        1st
-      </text>
-      <text
-        x="58"
-        y="100"
-        fill="rgba(255,255,255,0.45)"
-        fontSize="7.5"
-        fontFamily="Sora, sans-serif"
-      >
-        2nd
-      </text>
-      <text
-        x="104"
-        y="100"
-        fill="rgba(255,255,255,0.6)"
-        fontSize="7.5"
-        fontFamily="Sora, sans-serif"
-      >
-        3rd
-      </text>
-      <text
-        x="142"
-        y="100"
-        fill="rgba(255,255,255,0.85)"
-        fontSize="7.5"
-        fontFamily="Sora, sans-serif"
-      >
-        4th
-      </text>
-
-      {instances.map((inst, i) => (
-        <g key={i}>
-          {/* Logo circle */}
-          <circle
-            cx={inst.x + inst.size / 2}
-            cy={inst.y + inst.size / 2}
-            r={inst.size / 2}
-            fill={`rgba(255,255,255,${inst.opacity * 0.12})`}
-            stroke={`rgba(255,255,255,${inst.opacity})`}
-            strokeWidth="2"
+      {/* Blur + noise → three sharp stacked blocks (clarity through familiarity) */}
+      <g className="me-stage">
+        <g className="me-boxes">
+          <rect
+            x="48"
+            y="52"
+            width="104"
+            height="16"
+            rx="4"
+            fill="rgba(255,255,255,0.14)"
+            stroke="rgba(255,255,255,0.28)"
+            strokeWidth="1.25"
           />
-          {/* Brand letter */}
-          <text
-            x={inst.x + inst.size / 2}
-            y={inst.y + inst.size / 2 + 5}
-            textAnchor="middle"
-            fill={`rgba(255,255,255,${inst.opacity})`}
-            fontSize={inst.size * 0.55}
-            fontWeight="bold"
-            fontFamily="Sora, sans-serif"
-          >
-            B
-          </text>
+          <rect
+            x="48"
+            y="76"
+            width="104"
+            height="16"
+            rx="4"
+            fill="rgba(255,255,255,0.14)"
+            stroke="rgba(255,255,255,0.28)"
+            strokeWidth="1.25"
+          />
+          <rect
+            x="48"
+            y="100"
+            width="104"
+            height="16"
+            rx="4"
+            fill="rgba(255,255,255,0.14)"
+            stroke="rgba(255,255,255,0.28)"
+            strokeWidth="1.25"
+          />
         </g>
-      ))}
-
-      {/* Familiarity curve */}
-      <path
-        d="M39,106 Q80,118 128,112 Q158,108 183,95"
-        fill="none"
-        stroke="rgba(255,200,50,0.5)"
-        strokeWidth="1.5"
-        strokeDasharray="4,3"
-      />
-
-      {/* 5th repetition (appears on hover) */}
-      <g className="me-extra">
-        <circle
-          cx="188"
-          cy="34"
-          r="20"
-          fill="rgba(255,255,255,0.14)"
-          stroke="rgba(255,200,50,0.9)"
-          strokeWidth="2.5"
-        />
-        <text
-          x="188"
-          y="42"
-          textAnchor="middle"
-          fill="rgba(255,200,50,0.95)"
-          fontSize="18"
-          fontWeight="bold"
-          fontFamily="Sora, sans-serif"
-        >
-          B
-        </text>
+        <g className="me-noise" aria-hidden="true">
+          <rect
+            x="44"
+            y="56"
+            width="22"
+            height="9"
+            rx="2"
+            fill="rgba(255,255,255,0.28)"
+            transform="rotate(-18 55 60.5)"
+          />
+          <rect
+            x="118"
+            y="48"
+            width="18"
+            height="11"
+            rx="2"
+            fill="rgba(255,255,255,0.22)"
+            transform="rotate(14 127 53.5)"
+          />
+          <rect
+            x="72"
+            y="96"
+            width="28"
+            height="8"
+            rx="2"
+            fill="rgba(255,255,255,0.2)"
+            transform="rotate(6 86 100)"
+          />
+          <rect
+            x="132"
+            y="88"
+            width="14"
+            height="14"
+            rx="3"
+            fill="rgba(255,255,255,0.18)"
+          />
+          <rect
+            x="52"
+            y="102"
+            width="12"
+            height="12"
+            rx="2"
+            fill="rgba(255,255,255,0.16)"
+            transform="rotate(-24 58 108)"
+          />
+          <rect
+            x="98"
+            y="44"
+            width="10"
+            height="20"
+            rx="2"
+            fill="rgba(255,255,255,0.2)"
+            transform="rotate(8 103 54)"
+          />
+        </g>
       </g>
-      <text
-        x="188"
-        y="97"
-        textAnchor="middle"
-        fill="rgba(255,200,50,0.8)"
-        fontSize="7.5"
-        fontFamily="Sora, sans-serif"
-        className="me-label"
-      >
-        5th
-      </text>
 
-      <text
-        x="100"
-        y="148"
-        textAnchor="middle"
-        fill="rgba(255,255,255,0.35)"
-        fontSize="8"
-        fontFamily="Sora, sans-serif"
-      >
-        Familiarity breeds preference
-      </text>
+
     </svg>
   );
 }
