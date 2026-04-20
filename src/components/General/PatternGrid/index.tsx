@@ -22,6 +22,9 @@ import {
   ForcedActionGraphic,
   ObstructionGraphic,
   MereExposureEffectGraphic,
+  MoodCongruenceGraphic,
+  CuratedDefaultsGraphic,
+  ConfirmshamingGraphic,
 } from "./graphics";
 
 const graphicMap: Record<string, ComponentType> = {
@@ -38,7 +41,7 @@ const graphicMap: Record<string, ComponentType> = {
   "Loss Aversion": LossAversionGraphic,
   Reachability: ReachabilityGraphic,
   /*"Feedback Loop": FeedbackLoopGraphic,*/
-  /*Confirmshaming: ConfirmshamingGraphic,*/
+  Confirmshaming: ConfirmshamingGraphic,
   /*Breakage: BreakageGraphic,*/
   Nagging: NaggingGraphic,
   Obstruction: ObstructionGraphic,
@@ -47,7 +50,7 @@ const graphicMap: Record<string, ComponentType> = {
   /*"Curated Defaults": CuratedDefaultsGraphic,*/
   /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
   "Mere Exposure Effect": MereExposureEffectGraphic,
-  /*"Mood Congruence": MoodCongruenceGraphic,*/
+  "Mood Congruence": MoodCongruenceGraphic,
 };
 
 export type PatternCategorySlug =

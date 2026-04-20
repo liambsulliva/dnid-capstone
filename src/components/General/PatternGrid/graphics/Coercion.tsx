@@ -1,126 +1,232 @@
 import type { ReactNode } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
-export function ConfirmshamingGraphic(): ReactNode {
+/** Center of the accept button at rest (viewBox units). */
+const ACCEPT_CX = 148;
+const ACCEPT_CY = 130;
+
+/** Max travel in CSS px each way from rest; converted to viewBox units from rendered SVG size. */
+const MAX_TRACK_PX = 240;
+
+const VIEW_W = 200;
+const VIEW_H = 160;
+
+function easeOutBack(t: number): number {
+  const c1 = 1.70158;
+  const c3 = c1 + 1;
+  return 1 + c3 * (t - 1) ** 3 + c1 * (t - 1) ** 2;
+}
+
+function clamp(v: number, lo: number, hi: number): number {
+  return Math.min(hi, Math.max(lo, v));
+}
+
+/** Terms row + reject / evasive accept (pointer tracking). Shared by confirmshaming & curated-defaults cards. */
+function EvasiveTermsAcceptTrackingGraphic(): ReactNode {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+  const offsetRef = useRef(offset);
+  offsetRef.current = offset;
+  const returningRef = useRef(false);
+  const rafRef = useRef(0);
+  const animGenRef = useRef(0);
+
+  const cancelReturnAnim = useCallback(() => {
+    if (rafRef.current !== 0) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = 0;
+    }
+  }, []);
+
+  useEffect(() => () => cancelReturnAnim(), [cancelReturnAnim]);
+
+  const clientToSvg = useCallback((clientX: number, clientY: number) => {
+    const svg = svgRef.current;
+    if (!svg) return { x: ACCEPT_CX, y: ACCEPT_CY };
+    const pt = svg.createSVGPoint();
+    pt.x = clientX;
+    pt.y = clientY;
+    const ctm = svg.getScreenCTM();
+    if (!ctm) return { x: ACCEPT_CX, y: ACCEPT_CY };
+    return pt.matrixTransform(ctm.inverse());
+  }, []);
+
+  const applyPointer = useCallback(
+    (clientX: number, clientY: number) => {
+      if (returningRef.current) return;
+      const svg = svgRef.current;
+      const { x: mx, y: my } = clientToSvg(clientX, clientY);
+      const gain = 0.94;
+      const rect = svg?.getBoundingClientRect();
+      const limX = rect?.width
+        ? (MAX_TRACK_PX * VIEW_W) / rect.width
+        : 130;
+      const limY = rect?.height
+        ? (MAX_TRACK_PX * VIEW_H) / rect.height
+        : 130;
+      setOffset({
+        x: clamp((mx - ACCEPT_CX) * gain, -limX, limX),
+        y: clamp((my - ACCEPT_CY) * gain, -limY, limY),
+      });
+    },
+    [clientToSvg],
+  );
+
+  const startReturnAnimation = useCallback(() => {
+    const fromX = offsetRef.current.x;
+    const fromY = offsetRef.current.y;
+    if (fromX === 0 && fromY === 0) {
+      returningRef.current = false;
+      return;
+    }
+    returningRef.current = true;
+    cancelReturnAnim();
+    const gen = (animGenRef.current += 1);
+    const start = performance.now();
+    const dur = 540;
+    const tick = (now: number) => {
+      if (animGenRef.current !== gen) return;
+      const t = Math.min(1, (now - start) / dur);
+      const e = easeOutBack(t);
+      const f = 1 - e;
+      const nx = fromX * f;
+      const ny = fromY * f;
+      offsetRef.current = { x: nx, y: ny };
+      setOffset({ x: nx, y: ny });
+      if (t < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      } else {
+        if (animGenRef.current !== gen) return;
+        setOffset({ x: 0, y: 0 });
+        offsetRef.current = { x: 0, y: 0 };
+        returningRef.current = false;
+        rafRef.current = 0;
+      }
+    };
+    rafRef.current = requestAnimationFrame(tick);
+  }, [cancelReturnAnim]);
+
+  const onPointerEnter = useCallback(() => {
+    animGenRef.current += 1;
+    returningRef.current = false;
+    cancelReturnAnim();
+  }, [cancelReturnAnim]);
+
+  const onPointerMove = useCallback(
+    (e: React.MouseEvent<SVGSVGElement>) => {
+      applyPointer(e.clientX, e.clientY);
+    },
+    [applyPointer],
+  );
+
+  const onPointerLeave = useCallback(() => {
+    cancelReturnAnim();
+    startReturnAnimation();
+  }, [cancelReturnAnim, startReturnAnimation]);
+
+  const onTouchMove = useCallback(
+    (e: React.TouchEvent<SVGSVGElement>) => {
+      const t = e.touches[0];
+      if (!t) return;
+      applyPointer(t.clientX, t.clientY);
+    },
+    [applyPointer],
+  );
+
   return (
     <svg
+      ref={svgRef}
       viewBox="0 0 200 160"
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
+      onMouseEnter={onPointerEnter}
+      onMouseMove={onPointerMove}
+      onMouseLeave={onPointerLeave}
+      onTouchStart={onPointerEnter}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onPointerLeave}
     >
       <style>{`
-        .co-yes {
-          transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-          transform-box: fill-box;
-          transform-origin: center;
+        .cs-btn-reject {
+          fill: var(--dnid-surface-card);
+          stroke: var(--dnid-neutral-300);
         }
-        .co-no { transition: opacity 0.3s ease; }
-        .co-shame {
-          transition: opacity 0.3s ease;
-          opacity: 0;
+        .cs-btn-accept {
+          fill: var(--dnid-surface-card);
+          stroke: var(--dnid-brand-300);
         }
-        .co-normal { transition: opacity 0.3s ease; }
-        :is(.patternGridCard:hover svg, svg.active) .co-yes { transform: scale(1.06); }
-        :is(.patternGridCard:hover svg, svg.active) .co-no { opacity: 0.55; }
-        :is(.patternGridCard:hover svg, svg.active) .co-shame { opacity: 1; }
-        :is(.patternGridCard:hover svg, svg.active) .co-normal { opacity: 0; }
+        :is(.patternGridCard:hover svg, svg.active) .cs-btn-accept {
+          filter: drop-shadow(0 0 5px var(--dnid-brand-300));
+        }
       `}</style>
 
-      {/* Modal box */}
-      <rect
-        x="20"
-        y="18"
-        width="160"
-        height="124"
-        rx="8"
-        fill="rgba(255,255,255,0.12)"
-        stroke="rgba(255,255,255,0.45)"
-        strokeWidth="1.5"
-      />
-
-      {/* Headline */}
       <text
         x="100"
-        y="44"
+        y="45"
         textAnchor="middle"
-        fill="white"
-        fontSize="11"
-        fontWeight="bold"
+        fill="var(--dnid-text-card)"
+        fontSize="16"
+        fontWeight="600"
         fontFamily="Sora, sans-serif"
       >
-        Get 30% off today!
-      </text>
-      <text
-        x="100"
-        y="60"
-        textAnchor="middle"
-        fill="rgba(255,255,255,0.6)"
-        fontSize="8"
-        fontFamily="Sora, sans-serif"
-      >
-        Join our newsletter for exclusive deals
+        Terms and Conditions
       </text>
 
-      {/* YES button */}
-      <g className="co-yes">
+      <g transform="translate(18, 118)">
         <rect
-          x="30"
-          y="72"
-          width="140"
-          height="22"
+          className="cs-btn-reject"
+          x="0"
+          y="0"
+          width="68"
+          height="26"
           rx="5"
-          fill="rgba(80,200,120,0.8)"
-        />
-        <text
-          x="100"
-          y="87"
-          textAnchor="middle"
-          fill="white"
-          fontSize="9"
-          fontWeight="bold"
-          fontFamily="Sora, sans-serif"
-        >
-          YES, I LOVE SAVING MONEY!
-        </text>
-      </g>
-
-      {/* NO button — shame text swaps in on hover */}
-      <g className="co-no">
-        <rect
-          x="30"
-          y="102"
-          width="140"
-          height="18"
-          rx="5"
-          fill="none"
-          stroke="rgba(255,255,255,0.3)"
           strokeWidth="1"
         />
         <text
-          x="100"
-          y="114"
+          x="34"
+          y="17.5"
           textAnchor="middle"
-          fill="rgba(255,255,255,0.5)"
-          fontSize="7.5"
+          fill="var(--dnid-text-card)"
+          fontSize="8.5"
           fontFamily="Sora, sans-serif"
-          className="co-normal"
         >
-          No thanks
+          Reject
         </text>
+      </g>
+
+      <g transform={`translate(${114 + offset.x} ${118 + offset.y})`}>
+        <rect
+          className="cs-btn-accept"
+          x="0"
+          y="0"
+          width="68"
+          height="26"
+          rx="5"
+          strokeWidth="1.25"
+        />
         <text
-          x="100"
-          y="114"
+          x="34"
+          y="17.5"
           textAnchor="middle"
-          fill="rgba(255,180,180,0.85)"
-          fontSize="7"
+          fill="var(--dnid-brand-300)"
+          fontSize="8.5"
+          fontWeight="600"
           fontFamily="Sora, sans-serif"
-          className="co-shame"
         >
-          No, I hate good deals
+          Accept
         </text>
       </g>
     </svg>
   );
+}
+
+export function ConfirmshamingGraphic(): ReactNode {
+  return <EvasiveTermsAcceptTrackingGraphic />;
+}
+
+export function CuratedDefaultsGraphic(): ReactNode {
+  return <EvasiveTermsAcceptTrackingGraphic />;
 }
 
 export function BreakageGraphic(): ReactNode {

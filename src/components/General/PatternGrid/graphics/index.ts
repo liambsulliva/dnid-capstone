@@ -22,6 +22,7 @@ export {
 
 export {
   ConfirmshamingGraphic,
+  CuratedDefaultsGraphic,
   BreakageGraphic,
   NaggingGraphic,
   ObstructionGraphic,
@@ -30,7 +31,6 @@ export {
 } from "./Coercion";
 
 export {
-  CuratedDefaultsGraphic,
   AvailabilityHeuristicGraphic,
   MereExposureEffectGraphic,
   MoodCongruenceGraphic,
