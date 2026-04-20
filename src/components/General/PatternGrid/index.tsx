@@ -24,6 +24,7 @@ import {
   MereExposureEffectGraphic,
   MoodCongruenceGraphic,
   PerceptualFluencyGraphic,
+  AssociationTriggeringGraphic,
   CuratedDefaultsGraphic,
   ConfirmshamingGraphic,
 } from "./graphics";
@@ -42,7 +43,7 @@ const graphicMap: Record<string, ComponentType> = {
   "Loss Aversion": LossAversionGraphic,
   Reachability: ReachabilityGraphic,
   /*"Feedback Loop": FeedbackLoopGraphic,*/
-  Confirmshaming: ConfirmshamingGraphic,
+  /*Confirmshaming: ConfirmshamingGraphic,*/
   /*Breakage: BreakageGraphic,*/
   Nagging: NaggingGraphic,
   Obstruction: ObstructionGraphic,
@@ -53,6 +54,7 @@ const graphicMap: Record<string, ComponentType> = {
   "Mere Exposure Effect": MereExposureEffectGraphic,
   "Mood Congruence": MoodCongruenceGraphic,
   "Perceptual Fluency": PerceptualFluencyGraphic,
+  "Association Triggering": AssociationTriggeringGraphic,
 };
 
 export type PatternCategorySlug =
@@ -182,16 +184,20 @@ const PatternList: PatternCard[] = [
     category: "Behavior",
     path: "/docs/behavior/feedback-loop",
   },
+  /*
   {
     title: "Confirmshaming",
     category: "Coercion",
     path: "/docs/coercion/confirmshaming",
   },
+  */
+  /*
   {
     title: "Breakage",
     category: "Coercion",
     path: "/docs/coercion/breakage",
   },
+  */
   {
     title: "Nagging",
     category: "Coercion",
@@ -212,16 +218,20 @@ const PatternList: PatternCard[] = [
     category: "Coercion",
     path: "/docs/coercion/false-urgency",
   },
+  /*
   {
     title: "Curated Defaults",
     category: "Priming",
     path: "/docs/priming/curated-defaults",
   },
+  */
+  /*
   {
     title: "Availability Heuristic",
     category: "Priming",
     path: "/docs/priming/availability-heuristic",
   },
+  */
   {
     title: "Mere Exposure Effect",
     category: "Priming",

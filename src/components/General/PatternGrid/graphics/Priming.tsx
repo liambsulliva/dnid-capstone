@@ -372,3 +372,98 @@ export function PerceptualFluencyGraphic(): ReactNode {
     </svg>
   );
 }
+
+export function AssociationTriggeringGraphic(): ReactNode {
+  const magEase = "cubic-bezier(0.34, 1.56, 0.64, 1)";
+  return (
+    <svg
+      viewBox="0 0 200 160"
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      style={{ display: "block" }}
+    >
+      <style>{`
+        .at-field {
+          transition: opacity 0.4s ${magEase};
+        }
+        .at-ball {
+          transition:
+            transform 0.4s ${magEase},
+            filter 0.35s ease;
+          transform-box: fill-box;
+          transform-origin: center;
+        }
+        .at-b1 { transition-delay: 0s; }
+        .at-b2 { transition-delay: 0.05s; }
+        .at-b3 { transition-delay: 0.1s; }
+        .patternGridCard:not(:hover) svg:not(.active) .at-b1,
+        .patternGridCard:not(:hover) svg:not(.active) .at-b2,
+        .patternGridCard:not(:hover) svg:not(.active) .at-b3 {
+          transition-delay: 0s;
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .at-field {
+          opacity: 0.4;
+        }
+        :is(.patternGridCard:hover svg, svg.active) .at-field {
+          opacity: 0.12;
+        }
+        :is(.patternGridCard:hover svg, svg.active) .at-b1 {
+          transform: translate(0px, 16px);
+        }
+        :is(.patternGridCard:hover svg, svg.active) .at-b2 {
+          transform: translate(14px, -8px);
+        }
+        :is(.patternGridCard:hover svg, svg.active) .at-b3 {
+          transform: translate(-14px, -8px);
+        }
+        .patternGridCard:not(:hover) svg:not(.active) .at-ball {
+          filter: none;
+        }
+        :is(.patternGridCard:hover svg, svg.active) .at-ball {
+          filter: drop-shadow(0 0 7px rgba(160, 210, 255, 0.5));
+        }
+      `}</style>
+
+      <polygon
+        className="at-field"
+        points="100,40 65,100 135,100"
+        fill="none"
+        stroke="rgba(255,255,255,0.22)"
+        strokeWidth="1.25"
+        strokeDasharray="4 5"
+      />
+
+      <g className="at-ball at-b1">
+        <circle
+          cx="100"
+          cy="40"
+          r="14"
+          fill="rgba(255,255,255,0.2)"
+          stroke="rgba(255,255,255,0.72)"
+          strokeWidth="1.75"
+        />
+      </g>
+      <g className="at-ball at-b2">
+        <circle
+          cx="65"
+          cy="100"
+          r="14"
+          fill="rgba(255,255,255,0.2)"
+          stroke="rgba(255,255,255,0.72)"
+          strokeWidth="1.75"
+        />
+      </g>
+      <g className="at-ball at-b3">
+        <circle
+          cx="135"
+          cy="100"
+          r="14"
+          fill="rgba(255,255,255,0.2)"
+          stroke="rgba(255,255,255,0.72)"
+          strokeWidth="1.75"
+        />
+      </g>
+    </svg>
+  );
+}

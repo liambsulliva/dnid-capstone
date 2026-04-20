@@ -35,4 +35,5 @@ export {
   MereExposureEffectGraphic,
   MoodCongruenceGraphic,
   PerceptualFluencyGraphic,
+  AssociationTriggeringGraphic,
 } from "./Priming";
