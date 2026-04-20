@@ -114,16 +114,20 @@ const PatternList: PatternCard[] = [
     category: "Anchoring",
     path: "/docs/anchoring/partitioning",
   },
+  /*
   {
     title: "Baseline Effect",
     category: "Anchoring",
     path: "/docs/anchoring/baseline-effect",
   },
+  */
+  /*
   {
     title: "Range Influence",
     category: "Anchoring",
     path: "/docs/anchoring/range-influence",
   },
+  */
   {
     title: "Salience Bias",
     category: "Attention",
@@ -144,16 +148,20 @@ const PatternList: PatternCard[] = [
     category: "Attention",
     path: "/docs/attention/red-dot-effect",
   },
+  /*
   {
     title: "Banner Blindness",
     category: "Attention",
     path: "/docs/attention/banner-blindness",
   },
+  */
+  /*
   {
     title: "Peripheral Blindness",
     category: "Attention",
     path: "/docs/attention/peripheral-blindness",
   },
+  */
   {
     title: "A/B Testing",
     category: "Behavior",
@@ -174,16 +182,20 @@ const PatternList: PatternCard[] = [
     category: "Behavior",
     path: "/docs/behavior/reachability",
   },
+  /*
   {
     title: "Variable Reinforcement",
     category: "Behavior",
     path: "/docs/behavior/variable-reinforcement",
   },
+  */
+  /*
   {
     title: "Feedback Loop",
     category: "Behavior",
     path: "/docs/behavior/feedback-loop",
   },
+  */
   /*
   {
     title: "Confirmshaming",
