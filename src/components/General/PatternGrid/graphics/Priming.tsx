@@ -320,26 +320,17 @@ export function PerceptualFluencyGraphic(): ReactNode {
         @keyframes pf-dot-orbit {
           to { transform: rotate(360deg); }
         }
-        .pf-idle {
-          transition: opacity 0.45s ease;
-        }
         .pf-spinner-wrap {
           pointer-events: none;
-          transition: opacity 0.35s ease;
+          transition: opacity 0.45s ease;
         }
         .pf-spinner-ring {
           transform-origin: 0px 0px;
           animation: pf-dot-orbit 1.5s linear infinite;
           animation-play-state: paused;
         }
-        .patternGridCard:not(:hover) svg:not(.active) .pf-idle {
-          opacity: 1;
-        }
-        :is(.patternGridCard:hover svg, svg.active) .pf-idle {
-          opacity: 0.22;
-        }
         .patternGridCard:not(:hover) svg:not(.active) .pf-spinner-wrap {
-          opacity: 0;
+          opacity: 0.35;
         }
         .patternGridCard:not(:hover) svg:not(.active) .pf-spinner-ring {
           animation-play-state: paused;
