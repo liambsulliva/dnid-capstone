@@ -42,7 +42,7 @@ const graphicMap: Record<string, ComponentType> = {
   Nagging: NaggingGraphic,
   Obstruction: ObstructionGraphic,
   "Forced Action": ForcedActionGraphic,
-  /*"False Urgency": FalseUrgencyGraphic,*/
+  "False Urgency": FalseUrgencyGraphic,
   /*"Curated Defaults": CuratedDefaultsGraphic,*/
   /*"Availability Heuristic": AvailabilityHeuristicGraphic,*/
   /*"Mere Exposure Effect": MereExposureEffectGraphic,*/
