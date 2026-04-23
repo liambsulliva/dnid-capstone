@@ -58,12 +58,8 @@ function EvasiveTermsAcceptTrackingGraphic(): ReactNode {
       const { x: mx, y: my } = clientToSvg(clientX, clientY);
       const gain = 0.94;
       const rect = svg?.getBoundingClientRect();
-      const limX = rect?.width
-        ? (MAX_TRACK_PX * VIEW_W) / rect.width
-        : 130;
-      const limY = rect?.height
-        ? (MAX_TRACK_PX * VIEW_H) / rect.height
-        : 130;
+      const limX = rect?.width ? (MAX_TRACK_PX * VIEW_W) / rect.width : 130;
+      const limY = rect?.height ? (MAX_TRACK_PX * VIEW_H) / rect.height : 130;
       setOffset({
         x: clamp((mx - ACCEPT_CX) * gain, -limX, limX),
         y: clamp((my - ACCEPT_CY) * gain, -limY, limY),
@@ -434,7 +430,7 @@ export function ObstructionGraphic(): ReactNode {
       <style>{`
         @keyframes ob-x-bounce {
           0%   { transform: scale(0.35); opacity: 0; }
-          55%  { transform: scale(1.28); opacity: 1; }
+          55%  { transform: scale(1.75); opacity: 1; }
           78%  { transform: scale(0.9); opacity: 1; }
           100% { transform: scale(1); opacity: 1; }
         }
@@ -504,7 +500,7 @@ export function ObstructionGraphic(): ReactNode {
           y1="48"
           x2="144"
           y2="112"
-          stroke="#C9C9D1"
+          stroke="#e0e0e0"
           strokeWidth="5"
           strokeLinecap="round"
         />
@@ -513,7 +509,7 @@ export function ObstructionGraphic(): ReactNode {
           y1="48"
           x2="56"
           y2="112"
-          stroke="#C9C9D1"
+          stroke="#e0e0e0"
           strokeWidth="5"
           strokeLinecap="round"
         />
@@ -548,13 +544,9 @@ export function ForcedActionGraphic(): ReactNode {
 
       <g className="fa-exclaim">
         {/* Tapered stroke */}
-        <polygon
-          points="90,40 110,40 104,100 96,100"
-          fill="rgba(255,255,255,0.6)"
-          rx="2"
-        />
+        <polygon points="90,40 110,40 104,100 96,100" fill="#e0e0e0" rx="2" />
         {/* Dot */}
-        <circle cx="100" cy="122" r="6" fill="rgba(255,255,255,0.6)" />
+        <circle cx="100" cy="122" r="6" fill="#e0e0e0" />
       </g>
     </svg>
   );
@@ -646,7 +638,7 @@ export function FalseUrgencyGraphic(): ReactNode {
           y1={cy}
           x2={cx}
           y2={cy - 24}
-          stroke="var(--dnid-neutral-400)"
+          stroke="#e0e0e0"
           strokeWidth="3"
           strokeLinecap="round"
         />
@@ -657,12 +649,12 @@ export function FalseUrgencyGraphic(): ReactNode {
           y1={cy}
           x2={cx}
           y2={cy + 24}
-          stroke="var(--dnid-neutral-400)"
+          stroke="#e0e0e0"
           strokeWidth="2.2"
           strokeLinecap="round"
         />
         {/* Center dot */}
-        <circle cx={cx} cy={cy} r="2.5" fill="var(--dnid-neutral-400)" />
+        <circle cx={cx} cy={cy} r="2.5" fill="#e0e0e0" />
       </g>
 
       {/* CTA */}
