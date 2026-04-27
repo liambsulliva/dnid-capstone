@@ -125,6 +125,17 @@
   --dnid-modal-close-hover-fg: var(--dnid-neutral-900);
   --dnid-modal-close-hover-bg: var(--dnid-neutral-0);
 
+  /* ClippyAssistantDemo — assistant bubble */
+  --dnid-clippy-demo-bubble-bg: #fffbeb;
+  --dnid-clippy-demo-bubble-border: var(--dnid-neutral-800);
+  --dnid-clippy-demo-bubble-shadow: var(--dnid-shadow-umbra);
+  --dnid-clippy-demo-text: var(--dnid-text-card);
+  --dnid-clippy-demo-meta: var(--dnid-text-card-muted);
+  --dnid-clippy-demo-close: var(--dnid-text-card-muted);
+  --dnid-clippy-demo-close-hover-bg: rgb(0 0 0 / 0.06);
+  --dnid-clippy-demo-placeholder-border: var(--dnid-border-strong);
+  --dnid-clippy-demo-placeholder-bg: var(--dnid-neutral-50);
+
   --ifm-font-family-base: "Sora", system-ui, -apple-system, sans-serif;
   --ifm-letter-spacing: -0.05em;
   --ifm-font-family-monospace: "Martian Mono", "Courier New", monospace;
@@ -222,6 +233,17 @@
   --dnid-modal-dismiss-fg: var(--dnid-text-card);
   --dnid-modal-close-hover-fg: var(--dnid-text-card);
   --dnid-modal-close-hover-bg: var(--dnid-neutral-200);
+
+  --dnid-clippy-demo-bubble-bg: var(--dnid-surface-card);
+  --dnid-clippy-demo-bubble-border: var(--dnid-neutral-300);
+  --dnid-clippy-demo-bubble-shadow:
+    2px 4px 0 rgb(0 0 0 / 0.35), 0 8px 24px rgb(0 0 0 / 0.22);
+  --dnid-clippy-demo-text: var(--dnid-text-card);
+  --dnid-clippy-demo-meta: var(--dnid-text-card-muted);
+  --dnid-clippy-demo-close: var(--dnid-text-card-muted);
+  --dnid-clippy-demo-close-hover-bg: rgb(255 255 255 / 0.08);
+  --dnid-clippy-demo-placeholder-border: var(--dnid-border-strong);
+  --dnid-clippy-demo-placeholder-bg: var(--dnid-neutral-100);
 
   --ifm-breadcrumb-color-active: #ffffff;
   --ifm-menu-color-active: #ffffff;
