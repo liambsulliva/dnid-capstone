@@ -2,7 +2,11 @@
 sidebar_position: 4
 ---
 
+import FeedbackLoopDemo from '@site/src/components/Demos/FeedbackLoopDemo';
+
 # Feedback Loop
+
+<FeedbackLoopDemo />
 
 Feedback loops are a fundamental part of what make software _engaging_. They are the reason why people get stuck [infinitely scrolling](../attention/infinite-scroll.md) through endless feeds of content on their social media platforms, and why they keep up with their streaks on apps like Duolingo. There are 3 stages to this process:
 
