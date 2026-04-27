@@ -35,7 +35,7 @@ hide_table_of_contents: true
   className="dnid-breakage-media"
   style={{ display: 'flex', alignItems: 'flex-start', marginBottom: 'var(--ifm-leading, 1.25rem)' }}
 >
-  <figure style={{ margin: 0, marginRight: '1.5rem', width: '200px', flexShrink: 0 }}>
+  <figure style={{ margin: 0, marginRight: '1.5rem', width: '250px', flexShrink: 0 }}>
     <img
       src={require('./img/breakage.webp').default}
       alt="A screenshot of the Starbucks app payment screen"

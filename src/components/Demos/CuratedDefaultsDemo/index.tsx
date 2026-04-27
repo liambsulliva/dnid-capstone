@@ -78,63 +78,67 @@ export default function CuratedDefaultsDemo() {
   return (
     <div className={styles.scene}>
       <div className={styles.panel}>
-        <div className={styles.panelHeader}>
-          <div className={styles.appIcon}>
-            <svg viewBox="0 0 24 24" fill="none" className={styles.appIconSvg}>
-              <circle
-                cx="12"
-                cy="12"
-                r="10"
-                fill="currentColor"
-                opacity="0.15"
-              />
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
-                fill="currentColor"
-              />
-            </svg>
+        <div className={styles.panelLeft}>
+          <div className={styles.panelHeader}>
+            <div className={styles.appIcon}>
+              <svg viewBox="0 0 24 24" fill="none" className={styles.appIconSvg}>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  fill="currentColor"
+                  opacity="0.15"
+                />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div className={styles.panelTitleGroup}>
+              <span className={styles.panelTitle}>Notification Settings</span>
+              <span className={styles.panelSubtitle}>Pause Social</span>
+            </div>
+            <span className={styles.countBadge}>
+              {onCount} / {OPTIONS.length} on
+            </span>
           </div>
-          <div className={styles.panelTitleGroup}>
-            <span className={styles.panelTitle}>Notification Settings</span>
-            <span className={styles.panelSubtitle}>Pause Social</span>
-          </div>
-          <span className={styles.countBadge}>
-            {onCount} / {OPTIONS.length} on
-          </span>
         </div>
 
-        <ul className={styles.list}>
-          {OPTIONS.map((opt) => {
-            const isOn = enabled[opt.id];
-            return (
-              <li key={opt.id} className={styles.row}>
-                <div className={styles.rowText}>
-                  <span className={styles.rowLabel}>{opt.label}</span>
-                  <span className={styles.rowDesc}>{opt.description}</span>
-                </div>
-                <Button
-                  variant="toggle"
-                  role="switch"
-                  aria-checked={isOn}
-                  aria-label={`Toggle ${opt.label} notifications`}
-                  pressed={isOn}
-                  onClick={() => toggle(opt.id)}
-                />
-              </li>
-            );
-          })}
-        </ul>
+        <div className={styles.panelRight}>
+          <ul className={styles.list}>
+            {OPTIONS.map((opt) => {
+              const isOn = enabled[opt.id];
+              return (
+                <li key={opt.id} className={styles.row}>
+                  <div className={styles.rowText}>
+                    <span className={styles.rowLabel}>{opt.label}</span>
+                    <span className={styles.rowDesc}>{opt.description}</span>
+                  </div>
+                  <Button
+                    variant="toggle"
+                    role="switch"
+                    aria-checked={isOn}
+                    aria-label={`Toggle ${opt.label} notifications`}
+                    pressed={isOn}
+                    onClick={() => toggle(opt.id)}
+                  />
+                </li>
+              );
+            })}
+          </ul>
 
-        <div className={styles.footer}>
-          {dirty ? (
-            <Button onClick={reset}>
-              Restore defaults
-            </Button>
-          ) : (
-            <span className={styles.footerHint}>
-              Showing platform defaults — 5 of 7 enabled
-            </span>
-          )}
+          <div className={styles.footer}>
+            {dirty ? (
+              <Button onClick={reset}>
+                Restore defaults
+              </Button>
+            ) : (
+              <span className={styles.footerHint}>
+                Showing platform defaults — 5 of 7 enabled
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </div>

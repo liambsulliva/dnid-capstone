@@ -13,8 +13,8 @@ Nutrition labels also contain a lot of this brand of trickery, and my second art
   }
   .dnid-partitioning-float {
     float: left;
-    margin: 0 1.5rem 1rem 0;
-    width: 200px;
+    margin: 0 1.5rem 0 0;
+    width: 300px;
     max-width: 100%;
   }
   .dnid-partitioning-float img {
@@ -33,7 +33,7 @@ Nutrition labels also contain a lot of this brand of trickery, and my second art
       float: none;
       display: block;
       width: 100%;
-      max-width: 220px;
+      max-width: 300px;
       margin: 0 auto 1rem;
     }
   }

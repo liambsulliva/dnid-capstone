@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 type Layer = "snippet" | "modal" | "full";
 
 const REVIEW = {
-  author: "Sarah M.",
+  author: "Jane D.",
   rating: 5,
   preview: "I absolutely loved this product…",
   expanded:
@@ -54,7 +54,11 @@ export default function ObstructionDemo() {
             <span className={styles.author}>{REVIEW.author}</span>
           </div>
           <p className={styles.snippetText}>{REVIEW.preview}</p>
-          <Button variant="link" style={{ textAlign: "left" }} onClick={() => advance("modal")}>
+          <Button
+            variant="link"
+            style={{ textAlign: "left" }}
+            onClick={() => advance("modal")}
+          >
             See full review
           </Button>
         </div>
