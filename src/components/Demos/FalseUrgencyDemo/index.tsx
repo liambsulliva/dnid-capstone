@@ -221,7 +221,7 @@ export default function FalseUrgencyDemo() {
           </span>
         )}
       </Button>
-      <p className={styles.subtext}>Free 2-day shipping · 30-day returns</p>
+      <p className={styles.subtext}>This will not actually charge your card.</p>
     </>
   );
 

@@ -32,7 +32,7 @@ const OPTIONS: NotificationOption[] = [
     id: "messages",
     label: "Direct Messages",
     description: "When you receive a new message",
-    defaultOn: true,
+    defaultOn: false,
   },
   {
     id: "mentions",
@@ -44,12 +44,6 @@ const OPTIONS: NotificationOption[] = [
     id: "reposts",
     label: "Reposts",
     description: "When someone reposts your content",
-    defaultOn: false,
-  },
-  {
-    id: "digest",
-    label: "Weekly Digest",
-    description: "A weekly summary of your activity",
     defaultOn: false,
   },
 ];
@@ -81,7 +75,11 @@ export default function CuratedDefaultsDemo() {
         <div className={styles.panelLeft}>
           <div className={styles.panelHeader}>
             <div className={styles.appIcon}>
-              <svg viewBox="0 0 24 24" fill="none" className={styles.appIconSvg}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className={styles.appIconSvg}
+              >
                 <circle
                   cx="12"
                   cy="12"
@@ -130,12 +128,10 @@ export default function CuratedDefaultsDemo() {
 
           <div className={styles.footer}>
             {dirty ? (
-              <Button onClick={reset}>
-                Restore defaults
-              </Button>
+              <Button onClick={reset}>Restore defaults</Button>
             ) : (
               <span className={styles.footerHint}>
-                Showing platform defaults — 5 of 7 enabled
+                Showing platform defaults — {onCount} of {OPTIONS.length} enabled
               </span>
             )}
           </div>

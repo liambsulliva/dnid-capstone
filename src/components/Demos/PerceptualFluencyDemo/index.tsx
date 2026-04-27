@@ -63,160 +63,137 @@ export default function PerceptualFluencyDemo() {
         </div>
 
         <div className={styles.formBody}>
-          <div className={styles.orderRow}>
-            <div className={styles.orderInfo}>
-              <span className={styles.orderName}>Annual Plan</span>
-              <span className={styles.orderDesc}>
-                acme.io · renews Jan 2027
-              </span>
+          <div className={styles.summaryColumn}>
+            <div className={styles.orderRow}>
+              <div className={styles.orderInfo}>
+                <span className={styles.orderName}>Annual Plan</span>
+                <span className={styles.orderDesc}>
+                  example.io · renews Jan 2027
+                </span>
+              </div>
+              <span className={styles.orderAmount}>$49.99</span>
             </div>
-            <span className={styles.orderAmount}>$49.99</span>
+
+            <hr className={styles.divider} />
           </div>
 
-          <hr className={styles.divider} />
-
-          <div className={styles.fieldBlock}>
-            <label className={styles.fieldLabel}>Card information</label>
-            <div className={styles.cardGroup}>
-              <div className={styles.cardNumberRow}>
-                <input
-                  className={`${styles.input} ${styles.cardNumberInput}`}
-                  type="text"
-                  inputMode="numeric"
-                  placeholder="1234 1234 1234 1234"
-                  maxLength={19}
-                  readOnly
-                />
-                <div className={styles.cardBrands}>
-                  <span className={styles.cardBrand} data-brand="visa">
-                    VISA
-                  </span>
-                  <span className={styles.cardBrand} data-brand="mc">
-                    MC
-                  </span>
+          <div className={styles.fieldsColumn}>
+            <div className={styles.fieldBlock}>
+              <label className={styles.fieldLabel}>Card information</label>
+              <div className={styles.cardGroup}>
+                <div className={styles.cardNumberRow}>
+                  <input
+                    className={`${styles.input} ${styles.cardNumberInput}`}
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="1234 1234 1234 1234"
+                    maxLength={19}
+                  />
+                  <div className={styles.cardBrands}>
+                    <span className={styles.cardBrand} data-brand="visa">
+                      VISA
+                    </span>
+                    <span className={styles.cardBrand} data-brand="mc">
+                      MC
+                    </span>
+                  </div>
+                </div>
+                <div className={styles.cardBottomRow}>
+                  <input
+                    className={`${styles.input} ${styles.expiryInput}`}
+                    type="text"
+                    placeholder="MM / YY"
+                    maxLength={7}
+                  />
+                  <input
+                    className={`${styles.input} ${styles.cvcInput}`}
+                    type="text"
+                    placeholder="CVC"
+                    maxLength={4}
+                  />
                 </div>
               </div>
-              <div className={styles.cardBottomRow}>
-                <input
-                  className={`${styles.input} ${styles.expiryInput}`}
-                  type="text"
-                  placeholder="MM / YY"
-                  maxLength={7}
-                  readOnly
-                />
-                <input
-                  className={`${styles.input} ${styles.cvcInput}`}
-                  type="text"
-                  placeholder="CVC"
-                  maxLength={4}
-                  readOnly
-                />
-              </div>
             </div>
-          </div>
 
-          <div className={styles.fieldBlock}>
-            <label className={styles.fieldLabel}>Name on card</label>
-            <input
-              className={styles.input}
-              type="text"
-              placeholder="Jane Doe"
-              readOnly
-            />
-          </div>
+            <div className={styles.fieldBlock}>
+              <label className={styles.fieldLabel}>Name on card</label>
+              <input
+                className={styles.input}
+                type="text"
+                placeholder="Jane Doe"
+              />
+            </div>
 
-          <button
-            className={styles.payButton}
-            disabled={isProcessing || isFlashing}
-            onClick={handlePay}
-            aria-busy={isProcessing}
-            aria-label={
-              isProcessing
-                ? payPhase === "loading"
-                  ? "Processing payment"
-                  : "Payment complete"
-                : undefined
-            }
-          >
-            {isFlashing ? (
-              "Loading..."
-            ) : !isProcessing ? (
-              "Pay $49.99"
-            ) : (
-              <span className={styles.glyphPad} aria-hidden>
-                <span className={styles.glyphStack}>
-                  <span
-                    className={`${styles.spinnerShell} ${payPhase === "success" ? styles.spinnerMorphOut : ""}`}
-                  >
-                    <svg
-                      className={styles.spinnerSvg}
-                      viewBox="0 0 24 24"
-                      width="20"
-                      height="20"
-                      fill="none"
+            <button
+              className={styles.payButton}
+              disabled={isProcessing || isFlashing}
+              onClick={handlePay}
+              aria-busy={isProcessing}
+              aria-label={
+                isProcessing
+                  ? payPhase === "loading"
+                    ? "Processing payment"
+                    : "Payment complete"
+                  : undefined
+              }
+            >
+              {isFlashing ? (
+                "Loading..."
+              ) : !isProcessing ? (
+                "Pay $49.99"
+              ) : (
+                <span className={styles.glyphPad} aria-hidden>
+                  <span className={styles.glyphStack}>
+                    <span
+                      className={`${styles.spinnerShell} ${payPhase === "success" ? styles.spinnerMorphOut : ""}`}
                     >
-                      <circle
-                        className={styles.spinnerArc}
-                        cx="12"
-                        cy="12"
-                        r="9.5"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
-                  </span>
-                  <span
-                    className={`${styles.checkShell} ${payPhase === "success" ? styles.checkMorphIn : ""}`}
-                  >
-                    <svg
-                      className={styles.checkSvg}
-                      viewBox="0 0 24 24"
-                      width="20"
-                      height="20"
-                      fill="none"
+                      <svg
+                        className={styles.spinnerSvg}
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="none"
+                      >
+                        <circle
+                          className={styles.spinnerArc}
+                          cx="12"
+                          cy="12"
+                          r="9.5"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                    </span>
+                    <span
+                      className={`${styles.checkShell} ${payPhase === "success" ? styles.checkMorphIn : ""}`}
                     >
-                      <path
-                        className={styles.checkPath}
-                        d="M6 12.5 L10.2 17 L18 7.5"
-                        stroke="currentColor"
-                        strokeWidth="2.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                      <svg
+                        className={styles.checkSvg}
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        fill="none"
+                      >
+                        <path
+                          className={styles.checkPath}
+                          d="M6 12.5 L10.2 17 L18 7.5"
+                          stroke="currentColor"
+                          strokeWidth="2.6"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </span>
                 </span>
-              </span>
-            )}
-          </button>
+              )}
+            </button>
 
-          <p className={styles.secureNote}>
-            <svg
-              width="11"
-              height="11"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden
-            >
-              <rect
-                x="3"
-                y="11"
-                width="18"
-                height="11"
-                rx="2"
-                stroke="currentColor"
-                strokeWidth="2.2"
-              />
-              <path
-                d="M7 11V7a5 5 0 0 1 10 0v4"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-              />
-            </svg>
-            Secured by 256-bit SSL encryption
-          </p>
+            <p className={styles.secureNote}>
+              This will not actually charge your card.
+            </p>
+          </div>
         </div>
       </WindowContainer>
     </div>

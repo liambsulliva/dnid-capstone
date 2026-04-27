@@ -23,6 +23,37 @@
   gap: 1rem;
 }
 
+.summaryColumn,
+.fieldsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+@media (min-width: 901px) {
+  .window {
+    max-width: 800px;
+  }
+
+  .formBody {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 1rem 1.35rem;
+    align-items: start;
+  }
+
+  .summaryColumn {
+    padding-right: 1rem;
+    border-right: 1px solid var(--dnid-border-default);
+    margin-right: 0.1rem;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+
 .orderRow {
   display: flex;
   align-items: center;
