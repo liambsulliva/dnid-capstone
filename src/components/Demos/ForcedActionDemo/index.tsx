@@ -71,7 +71,7 @@ function ArticleBody(): ReactNode {
         ask for a phone number can even send text messages. It increases
         engagement to their site, which allows them to collect more information
         and personalize their ads to suit the person accessing their site. It’s
-        a not very subtle feedback loop.
+        a not very subtle <a href="../behavior/feedback-loop">feedback loop</a>.
       </p>
     </>
   );
