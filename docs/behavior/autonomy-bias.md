@@ -18,6 +18,11 @@ Have you ever picked up a choose your own adventure book and traversed two diffe
 
 RPG video games routinely do the same. [Mass Effect 3](http://gamefaqs.gamespot.com/boards/995452-mass-effect-3/61979760) famously leveraged paraphrased dialog options to make the player feel they're in control of the script, when in reality the character ends up saying the same thing regardless of the choice.
 
+<img src="/img/mass-effect-3.webp" alt="Mass Effect 3" />
+<figcaption>
+  A screenshot of Mass Effect 3's dialogue options. See how they are all saying roughly the same thing?
+</figcaption>
+
 This extends to software design. People like to feel like their software is tailored to them. Even if they decide not to configure their settings, they like to have the option to do so. That is why setup wizards will often times split the setup process into "Simple" and "Advanced" options.
 
 Presenting the advanced options as a default can increase cognitive load and make the user feel paralyzed by choice. But in this setup, if the user doesn't care about the advanced options, they can just skip them and be on their way. Meanwhile, knowledgable users who would be frustrated by having manual options abstracted away from them are given the option to tweak their software from the start.

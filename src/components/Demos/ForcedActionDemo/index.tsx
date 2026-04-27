@@ -1,14 +1,81 @@
-import { useState, useRef } from "react";
+import { useState, useRef, type FormEvent, type ReactNode } from "react";
 import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 
-const LOREM = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-
-Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+/** Article copy as JSX so paragraphs can include links. */
+function ArticleBody(): ReactNode {
+  return (
+    <>
+      <p>
+        BUT, the content itself needs to be interesting enough to be worth the
+        extra work. Often, this pattern favors companies that are already
+        established.{" "}
+        <a
+          href="https://www.nytimes.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The New York Times
+        </a>{" "}
+        and the{" "}
+        <a
+          href="https://www.wsj.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Wall Street Journal
+        </a>{" "}
+        are both companies that implement hard paywalls. Why? Because they have
+        so much cultural capital that they don’t mind losing a few users if it
+        forces existing users into paying customers.
+      </p>
+      <p>
+        In that case, what about the locked content that you had to pass to get
+        here? Social media giants like{" "}
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>{" "}
+        force sign ins to access their content. Why force users to sign in if
+        there is no monetary gain? Simple. Data collection.
+      </p>
+      <p>
+        There is a lot of information that you can gather from a user’s
+        behavior, and the only way to track that behavior is to have some kind
+        of record of their interaction with the page. Sign-ins function great
+        for this.
+      </p>
+      <p>
+        While{" "}
+        <a
+          href="https://wikipedia.org/wiki/HTTP_cookie"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          cookies
+        </a>{" "}
+        are an alternative option, sign-ins come with the added benefit of
+        email. Signing in to a website gives the company free reign to send
+        emails to the new user until they decide to unsubscribe. Companies that
+        ask for a phone number can even send text messages. It increases
+        engagement to their site, which allows them to collect more information
+        and personalize their ads to suit the person accessing their site. It’s
+        a not very subtle feedback loop.
+      </p>
+    </>
+  );
+}
 
 export default function ForcedActionDemo() {
   const [unlocked, setUnlocked] = useState(false);
@@ -19,7 +86,7 @@ export default function ForcedActionDemo() {
 
   const canSubmit = email.trim().length > 0 && password.length > 0;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!canSubmit) {
       setShaking(true);
@@ -33,9 +100,7 @@ export default function ForcedActionDemo() {
   return (
     <div className={styles.contentWrap}>
       <div className={`${styles.bodyText} ${!unlocked ? styles.blurred : ""}`}>
-        {LOREM.split("\n\n").map((para, i) => (
-          <p key={i}>{para}</p>
-        ))}
+        <ArticleBody />
       </div>
 
       {!unlocked && (

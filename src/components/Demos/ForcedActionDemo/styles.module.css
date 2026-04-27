@@ -8,6 +8,21 @@
   transition: filter 0.35s ease;
 }
 
+.bodyText a {
+  color: var(--ifm-link-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.bodyText a:hover {
+  color: var(--ifm-link-hover-color, var(--ifm-link-color));
+}
+
+.bodyText a:focus-visible {
+  outline: 2px solid var(--dnid-interactive-focus-ring);
+  outline-offset: 2px;
+}
+
 .bodyText.blurred {
   filter: blur(5px);
   user-select: none;
