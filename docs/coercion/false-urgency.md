@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+hide_table_of_contents: true
 ---
 
 import FalseUrgencyDemo from '@site/src/components/Demos/FalseUrgencyDemo';
@@ -7,12 +8,13 @@ import FalseUrgencyDemo from '@site/src/components/Demos/FalseUrgencyDemo';
 # False Urgency
 
 <style>{`
+  .dnid-false-urgency-page {
+    max-width: 1000px;
+    padding-right: 2rem;
+  }
   .dnid-false-urgency-float {
     float: left;
-    margin: 0 1.5rem 1rem 0;
-    width: 400px;
-    max-width: 100%;
-    flex-shrink: 0;
+    margin: 0 2rem 1rem 0;
   }
   .dnid-false-urgency-caption {
     font-size: 0.8rem;
@@ -21,14 +23,21 @@ import FalseUrgencyDemo from '@site/src/components/Demos/FalseUrgencyDemo';
   }
   @media (max-width: 900px) {
     .dnid-false-urgency-float {
+      float: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
       max-width: 600px;
-      margin: 0 0 1rem 0;
-      float: none;
-      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1rem;
+      text-align: center;
     }
   }
 `}</style>
+
+<div className="dnid-false-urgency-page">
 
 <figure className="dnid-false-urgency-float">
   <FalseUrgencyDemo />
@@ -57,3 +66,5 @@ import FalseUrgencyDemo from '@site/src/components/Demos/FalseUrgencyDemo';
 <p>
   Of course, this demo is a bit contrived. Refreshing the page will reset the timer. But, these are the kinds of tactics that companies leverage when they want you to take a serious look at their product.
 </p>
+
+</div>
