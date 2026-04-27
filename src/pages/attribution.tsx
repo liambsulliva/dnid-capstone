@@ -37,12 +37,12 @@ export default function Home(): ReactNode {
               Bennett1203 via Wikimedia Commons
             </li>
             <li>
-              <strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
+              <strong>Clippit/Clippy The Paperclip</strong> - By Saturn-Domo via
+              DeviantArt
             </li>
             <li>
-              <strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
+              <strong>Samsung's One UI quick menu</strong> - via Roboflow
+              Universe
             </li>
             <li>
               <strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet,
@@ -51,8 +51,8 @@ export default function Home(): ReactNode {
           </ol>
           <ol start={6} className={styles.attributionList}>
             <li>
-              <strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit.
+              <strong>3-D headphone clay dynamic icon</strong> - By Vijay Verma
+              via Wikimedia Commons
             </li>
             <li>
               <strong>Lorem Ipsum</strong> - Lorem ipsum dolor sit amet,
