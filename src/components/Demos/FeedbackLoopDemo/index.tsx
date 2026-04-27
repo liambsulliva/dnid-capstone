@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useState } from "react";
 import { Button } from "../../General/Button";
 import styles from "./styles.module.css";
 
@@ -11,36 +11,71 @@ type GameState = { level: number; xp: number };
 
 const INITIAL: GameState = { level: 1, xp: 0 };
 
-function gameReducer(state: GameState, action: "tap" | "reset"): GameState {
-  if (action === "reset") {
-    return INITIAL;
-  }
-  let { level, xp } = state;
-  xp += 1;
-  while (xp >= xpNeededForLevel(level)) {
-    xp -= xpNeededForLevel(level);
-    level += 1;
-  }
-  return { level, xp };
+/** When variable reinforcement is on, each level-up attempt succeeds only with this probability. */
+const VARIABLE_LEVEL_UP_CHANCE = 0.55;
+
+export type FeedbackLoopDemoVariant = "default" | "variableReinforcement";
+
+export interface FeedbackLoopDemoProps {
+  variant?: FeedbackLoopDemoVariant;
 }
 
-export default function FeedbackLoopDemo() {
-  const [state, dispatch] = useReducer(gameReducer, INITIAL);
-  const [levelUpPulse, setLevelUpPulse] = useState(false);
-  const prevLevelRef = useRef(state.level);
+type TapOutcome = {
+  state: GameState;
+  didLevelUp: boolean;
+  didNearMiss: boolean;
+};
 
-  useEffect(() => {
-    if (state.level > prevLevelRef.current) {
-      setLevelUpPulse(true);
-      const t = window.setTimeout(() => setLevelUpPulse(false), 700);
-      prevLevelRef.current = state.level;
-      return () => window.clearTimeout(t);
+function applyTap(
+  state: GameState,
+  variableReinforcement: boolean,
+  roll: () => number
+): TapOutcome {
+  let { level, xp } = state;
+  xp += 1;
+  let didLevelUp = false;
+  let didNearMiss = false;
+
+  while (xp >= xpNeededForLevel(level)) {
+    const needed = xpNeededForLevel(level);
+    if (!variableReinforcement || roll() < VARIABLE_LEVEL_UP_CHANCE) {
+      xp -= needed;
+      level += 1;
+      didLevelUp = true;
+    } else {
+      xp = 0;
+      didNearMiss = true;
+      break;
     }
-    prevLevelRef.current = state.level;
-  }, [state.level]);
+  }
+
+  return { state: { level, xp }, didLevelUp, didNearMiss };
+}
+
+export default function FeedbackLoopDemo({
+  variant = "default",
+}: FeedbackLoopDemoProps) {
+  const variableReinforcement = variant === "variableReinforcement";
+  const [state, setState] = useState<GameState>(INITIAL);
+  const [levelUpPulse, setLevelUpPulse] = useState(false);
+  const [nearMissPulse, setNearMissPulse] = useState(false);
 
   const needed = xpNeededForLevel(state.level);
   const pct = Math.min(100, (state.xp / needed) * 100);
+
+  const handleTap = () => {
+    const outcome = applyTap(state, variableReinforcement, () => Math.random());
+    setState(outcome.state);
+
+    if (outcome.didLevelUp) {
+      setLevelUpPulse(true);
+      window.setTimeout(() => setLevelUpPulse(false), 700);
+    }
+    if (outcome.didNearMiss) {
+      setNearMissPulse(true);
+      window.setTimeout(() => setNearMissPulse(false), 900);
+    }
+  };
 
   return (
     <div className={styles.scene}>
@@ -65,6 +100,11 @@ export default function FeedbackLoopDemo() {
                     Level up!
                   </span>
                 ) : null}
+                {nearMissPulse && !levelUpPulse ? (
+                  <span className={styles.toastNearMiss} role="status">
+                    Not quite…
+                  </span>
+                ) : null}
               </span>
             </div>
             <div
@@ -80,11 +120,7 @@ export default function FeedbackLoopDemo() {
           </div>
 
           <div className={styles.actions}>
-            <Button
-              variant="primary"
-              type="button"
-              onClick={() => dispatch("tap")}
-            >
+            <Button variant="primary" type="button" onClick={handleTap}>
               Click me!
             </Button>
           </div>

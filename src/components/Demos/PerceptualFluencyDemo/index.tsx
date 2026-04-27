@@ -64,14 +64,26 @@ export default function PerceptualFluencyDemo() {
 
         <div className={styles.formBody}>
           <div className={styles.summaryColumn}>
-            <div className={styles.orderRow}>
-              <div className={styles.orderInfo}>
-                <span className={styles.orderName}>Annual Plan</span>
-                <span className={styles.orderDesc}>
-                  example.io · renews Jan 2027
-                </span>
+            <div className={styles.orderBlock}>
+              <div className={styles.orderRow}>
+                <div className={styles.orderInfo}>
+                  <span className={styles.orderName}>Annual Plan</span>
+                  <span className={styles.orderDesc}>
+                    uxwiki.liambsullivan.com
+                  </span>
+                </div>
+                <span className={styles.orderAmount}>$49.99</span>
               </div>
-              <span className={styles.orderAmount}>$49.99</span>
+
+              <div className={styles.summaryPreview}>
+                <img
+                  className={styles.summaryPreviewImg}
+                  src="/img/print-logo-raster.webp"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             </div>
 
             <hr className={styles.divider} />

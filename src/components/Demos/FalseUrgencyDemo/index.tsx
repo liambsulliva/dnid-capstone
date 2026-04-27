@@ -250,7 +250,7 @@ export default function FalseUrgencyDemo() {
 
         <div className={styles.productInfo}>
           <p className={styles.productCategory}>Wireless Audio</p>
-          <h3 className={styles.productName}>Lumio ANC Pro Headphones</h3>
+          <h3 className={styles.productName}>Liam's Signature Headset</h3>
 
           <div className={styles.rating}>
             <span className={styles.stars}>★★★★☆</span>

@@ -75,30 +75,14 @@ export default function CuratedDefaultsDemo() {
         <div className={styles.panelLeft}>
           <div className={styles.panelHeader}>
             <div className={styles.appIcon}>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className={styles.appIconSvg}
-              >
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  fill="currentColor"
-                  opacity="0.15"
-                />
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"
-                  fill="currentColor"
-                />
-              </svg>
+              <p className={styles.appIconText}>S</p>
             </div>
             <div className={styles.panelTitleGroup}>
               <span className={styles.panelTitle}>Notification Settings</span>
-              <span className={styles.panelSubtitle}>Pause Social</span>
+              <span className={styles.panelSubtitle}>Sullivan Social</span>
             </div>
             <span className={styles.countBadge}>
-              {onCount} / {OPTIONS.length} on
+              {onCount} / {OPTIONS.length} on``
             </span>
           </div>
         </div>
@@ -131,7 +115,8 @@ export default function CuratedDefaultsDemo() {
               <Button onClick={reset}>Restore defaults</Button>
             ) : (
               <span className={styles.footerHint}>
-                Showing platform defaults — {onCount} of {OPTIONS.length} enabled
+                Showing platform defaults — {onCount} of {OPTIONS.length}{" "}
+                enabled
               </span>
             )}
           </div>
