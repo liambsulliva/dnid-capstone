@@ -130,6 +130,12 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+  .actions {
+    width: 100%;
+  }
+}
+
 .resetLink {
   font-size: 0.8rem !important;
   color: var(--dnid-text-card-muted) !important;

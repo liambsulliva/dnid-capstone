@@ -178,11 +178,10 @@
   grid-column: 1 / -1;
   justify-self: stretch;
   text-align: center;
-  margin-top: 0.35rem;
 }
 
 .attributionFooterText {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   opacity: 0.85;
   margin: 0;
 }
