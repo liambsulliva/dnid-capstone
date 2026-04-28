@@ -216,8 +216,19 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: "img/docusaurus-social-card.webp",
+    image: "img/print-logo-bg.png",
+    metadata: [
+      { property: "og:site_name", content: "The Invisible Hand of UX" },
+      { property: "og:type", content: "website" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:type", content: "image/png" },
+      {
+        property: "og:image:alt",
+        content:
+          "The Invisible Hand of UX — cartoon white glove pointing like a hand gun across a cyan background",
+      },
+    ],
     colorMode: {
       respectPrefersColorScheme: true,
     },
