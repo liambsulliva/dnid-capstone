@@ -101,7 +101,7 @@ export default function HighballingDemo() {
   return (
     <div className={styles.scene}>
       <WindowContainer
-        title="Acme Pro"
+        title="Sullivan Pro"
         className={animating ? styles.fadeOut : styles.fadeIn}
       >
         {!isCheckout ? (
@@ -204,6 +204,9 @@ export default function HighballingDemo() {
           </>
         )}
       </WindowContainer>
+      <p className={styles.attributionFooterText}>
+        This will not actually charge your card.
+      </p>
     </div>
   );
 }
