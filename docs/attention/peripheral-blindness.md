@@ -6,6 +6,6 @@ import PeripheralBlindnessDemo from '@site/src/components/Demos/PeripheralBlindn
 
 # Peripheral Blindness
 
-Hover your mouse over the window below!
+Hover your mouse or tap the window below!
 
 <PeripheralBlindnessDemo />
