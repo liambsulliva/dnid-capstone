@@ -147,6 +147,25 @@ export function MereExposureEffectGraphic(): ReactNode {
           fill: rgba(255,255,255,0.1);
           stroke: rgba(255,255,255,0.48);
         }
+        /* SVG blur transitions are unreliable on many mobile browsers; show static sharp state */
+        @media (max-width: 768px) {
+          .patternGridCard:not(:hover) svg:not(.active) .me-stage,
+          :is(.patternGridCard:hover svg, svg.active) .me-stage {
+            filter: blur(0) !important;
+            transition: none;
+          }
+          .patternGridCard:not(:hover) svg:not(.active) .me-noise,
+          :is(.patternGridCard:hover svg, svg.active) .me-noise {
+            opacity: 0 !important;
+            transition: none;
+          }
+          .patternGridCard:not(:hover) svg:not(.active) .me-boxes rect,
+          :is(.patternGridCard:hover svg, svg.active) .me-boxes rect {
+            fill: rgba(255,255,255,0.1);
+            stroke: rgba(255,255,255,0.48);
+            transition: none;
+          }
+        }
       `}</style>
 
       {/* Blur + noise → three sharp stacked blocks (clarity through familiarity) */}
