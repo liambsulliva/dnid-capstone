@@ -2,6 +2,15 @@
   margin-bottom: var(--ifm-leading, 1.25rem);
 }
 
+.window {
+  width: 100%;
+  max-width: 420px;
+}
+
+.windowBody {
+  padding: 1.1rem 1.15rem 1.25rem;
+}
+
 .toolbar {
   display: flex;
   flex-direction: row;

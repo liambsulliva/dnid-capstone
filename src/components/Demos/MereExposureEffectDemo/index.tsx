@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "../../General/Button";
+import { WindowContainer } from "../../General/WindowContainer";
 import styles from "./styles.module.css";
 
 export type MereExposureIconSet = "conventional" | "arbitrary";
@@ -145,15 +146,22 @@ export default function MereExposureEffectDemo({
 
   return (
     <div className={styles.scene}>
-      <ul className={styles.toolbar} role="list">
-        {actions.map(({ label, icon }) => (
-          <li key={label} className={styles.item}>
-            <Button variant="iconLabeled" iconLabel={label} type="button">
-              {icon}
-            </Button>
-          </li>
-        ))}
-      </ul>
+      <WindowContainer
+        title="editor.liambsullivan.com"
+        className={styles.window}
+      >
+        <div className={styles.windowBody}>
+          <ul className={styles.toolbar} role="list">
+            {actions.map(({ label, icon }) => (
+              <li key={label} className={styles.item}>
+                <Button variant="iconLabeled" iconLabel={label} type="button">
+                  {icon}
+                </Button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </WindowContainer>
     </div>
   );
 }
