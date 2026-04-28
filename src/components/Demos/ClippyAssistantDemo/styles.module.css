@@ -1,10 +1,12 @@
 .scene {
   margin: 1.5rem 0;
+  width: 100%;
 }
 
 .window {
   width: 100%;
-  max-width: 560px;
+  /* Wide enough for figure (~120px) + gap + bubble (≥220px) without wrapping */
+  max-width: min(680px, 100%);
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +16,9 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  min-width: 0;
   padding: 1rem 1rem 1.25rem;
+  overflow-x: auto;
 }
 
 /* PNG left; bubble stretches to match stage / window body height */
@@ -22,17 +26,18 @@
   flex: 1 1 auto;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   gap: 0.75rem 1rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   min-height: 0;
+  min-width: 0;
 }
 
 .figure {
   flex: 0 0 auto;
   align-self: stretch;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   min-width: 72px;
   min-height: 100px;
@@ -44,7 +49,7 @@
   max-width: 120px;
   max-height: 120px;
   object-fit: contain;
-  object-position: bottom;
+  object-position: center;
   user-select: none;
   pointer-events: none;
 }
@@ -53,7 +58,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 0.35rem;
   width: 120px;
   min-height: 120px;
@@ -84,6 +89,8 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
+  /* Allow shrinking inside nowrap row so text wraps inside bubble instead of stacking layout */
+  min-width: 0;
   max-width: min(100%, 420px);
   padding: 0.85rem 2.25rem 0.85rem 1rem;
   border: 2px solid var(--dnid-clippy-demo-bubble-border);
