@@ -82,7 +82,7 @@ export default function CuratedDefaultsDemo() {
               <span className={styles.panelSubtitle}>Sullivan Social</span>
             </div>
             <span className={styles.countBadge}>
-              {onCount} / {OPTIONS.length} on``
+              {onCount} / {OPTIONS.length} on
             </span>
           </div>
         </div>

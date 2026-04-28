@@ -98,7 +98,9 @@ export default function ForcedActionDemo() {
   };
 
   return (
-    <div className={styles.contentWrap}>
+    <div
+      className={`${styles.contentWrap} ${!unlocked ? styles.locked : ""}`}
+    >
       <div className={`${styles.bodyText} ${!unlocked ? styles.blurred : ""}`}>
         <ArticleBody />
       </div>

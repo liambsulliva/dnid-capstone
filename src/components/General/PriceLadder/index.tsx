@@ -88,6 +88,11 @@ export function PriceLadder({ tiers, className }: PriceLadderProps) {
           </div>
         </div>
       ))}
+      <div className={styles.attributionFooter}>
+        <p className={styles.attributionFooterText}>
+          This will not actually charge your card.
+        </p>
+      </div>
     </div>
   );
 }
