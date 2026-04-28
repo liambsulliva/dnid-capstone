@@ -9,6 +9,7 @@ const VARIANT_CLASS = {
   primary: styles.primary,
   danger: styles.danger,
   icon: styles.icon,
+  iconLabeled: styles.iconLabeled,
   selectCard: styles.selectCard,
   tab: styles.tab,
   chip: styles.chip,
@@ -35,6 +36,7 @@ export type ButtonProps = {
   variant?: ButtonVariant;
   active?: boolean;
   pressed?: boolean;
+  iconLabel?: string;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({
@@ -44,6 +46,7 @@ export function Button({
   className,
   children,
   type,
+  iconLabel,
   ...rest
 }: ButtonProps) {
   const v = VARIANT_CLASS[variant];
@@ -62,13 +65,23 @@ export function Button({
     );
   }
 
+  const body =
+    variant === "iconLabeled" && iconLabel !== undefined ? (
+      <>
+        {children}
+        <span className={styles.iconLabeledLabel}>{iconLabel}</span>
+      </>
+    ) : (
+      children
+    );
+
   return (
     <button
       type={type ?? (variant === "submit" ? "submit" : "button")}
       className={cx(v, activeClass, pressedClass, className)}
       {...rest}
     >
-      {children}
+      {body}
     </button>
   );
 }

@@ -206,6 +206,49 @@
   transform: scale(0.94);
 }
 
+/* Icon + text (toolbar affordances; same motion as .icon) */
+
+.iconLabeled {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 4.5rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: var(--dnid-text-card);
+  font: inherit;
+  cursor: pointer;
+  transform: scale(1);
+  transition:
+    background 0.15s ease,
+    transform 0.12s ease;
+}
+
+.iconLabeled:hover {
+  background: var(--dnid-surface-subtle);
+}
+
+.iconLabeled:active {
+  transform: scale(0.94);
+}
+
+.iconLabeled:focus-visible {
+  outline: 2px solid var(--dnid-brand-300);
+  outline-offset: 2px;
+}
+
+.iconLabeledLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dnid-text-card-muted);
+}
+
 /* ─── Select Card ─── */
 
 .selectCard {
@@ -314,6 +357,7 @@
   .primary,
   .danger,
   .icon,
+  .iconLabeled,
   .selectCard,
   .tab,
   .chip {

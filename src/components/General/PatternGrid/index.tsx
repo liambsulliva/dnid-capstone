@@ -25,8 +25,6 @@ import {
   MoodCongruenceGraphic,
   PerceptualFluencyGraphic,
   AssociationTriggeringGraphic,
-  CuratedDefaultsGraphic,
-  ConfirmshamingGraphic,
 } from "./graphics";
 
 const graphicMap: Record<string, ComponentType> = {
