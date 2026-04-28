@@ -1,5 +1,10 @@
 .scene {
   display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
   margin-bottom: var(--ifm-leading, 1.25rem);
 }
 
@@ -21,6 +26,7 @@
   display: block;
   width: 100%;
   height: auto;
+  max-height: min(240px, 34vw);
   grid-column: 1;
   align-self: center;
   object-fit: contain;
@@ -582,18 +588,21 @@
   }
 }
 
-/* Stacked narrow card at 900px and below */
+/* Stacked layout at 900px and below: full-width scene, wider card, comfortable gutters */
 @media (max-width: 900px) {
   .scene {
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.85rem;
     width: 100%;
-    max-width: min(600px, 100%);
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 1.75rem);
   }
 
   .panel {
     display: block;
-    max-width: 280px;
     width: 100%;
+    max-width: min(520px, 100%);
+    margin-inline: auto;
   }
 
   .urgencyBanner {
@@ -605,14 +614,17 @@
   .falseUrgency {
     grid-column: unset;
     align-self: auto;
-    width: 100%;
+    width: auto;
+    max-width: min(280px, 78%);
+    max-height: clamp(108px, 32vw, 180px);
+    margin-inline: auto;
     object-fit: contain;
     object-position: center;
   }
 
   .productInfo {
     grid-column: unset;
-    padding: 0.85rem 0.95rem 1rem;
+    padding: 1rem 1.1rem 1.15rem;
   }
 
   .productCategory {
@@ -703,6 +715,10 @@
   .endSub {
     font-size: 0.78rem;
     margin: 0 0 0.65rem;
+  }
+
+  img {
+    margin-top: 1rem;
   }
 }
 
