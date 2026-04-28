@@ -1,0 +1,437 @@
+.demoRoot {
+  width: 100%;
+  max-width: min(400px, 100%);
+  box-sizing: border-box;
+  margin-bottom: var(--ifm-leading, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  align-self: stretch;
+}
+
+/* ——— Calm banking ——— */
+
+.calmWindow {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.calmWindow > div:first-child {
+  flex-shrink: 0;
+}
+
+.calmBody {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem 1.25rem 1.35rem;
+  background: var(--dnid-surface-card);
+}
+
+.calmHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--dnid-border-default);
+}
+
+.calmBrand {
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--dnid-text-card);
+}
+
+.calmTag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dnid-text-card-muted);
+}
+
+.balanceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.15rem;
+}
+
+.balanceLabel {
+  font-size: 0.75rem;
+  color: var(--dnid-text-card-muted);
+}
+
+.balanceValue {
+  font-size: 1.45rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--dnid-text-card);
+}
+
+.field {
+  margin-bottom: 0.85rem;
+}
+
+.calmLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--dnid-text-card-muted);
+  margin-bottom: 0.35rem;
+}
+
+.calmInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--dnid-border-default);
+  border-radius: 6px;
+  background: var(--dnid-surface-subtle);
+  color: var(--dnid-text-card);
+}
+
+.calmInput:focus {
+  outline: 2px solid var(--dnid-brand-400);
+  outline-offset: 1px;
+}
+
+.calmSubmit {
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.calmFinePrint {
+  margin: auto 0 0;
+  padding-top: 0.75rem;
+  font-size: 0.58rem;
+  line-height: 1.4;
+  color: var(--dnid-text-card-muted);
+}
+
+/* ——— Gaming-style shell (toned) ——— */
+
+.rogShell {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #0a0a0a;
+  box-shadow:
+    0 0 0 1px #2a1216,
+    0 8px 28px rgb(0 0 0 / 0.45);
+}
+
+.rogChrome {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 11px 14px;
+  background: linear-gradient(180deg, #14080a 0%, #0a0607 100%);
+  border-bottom: 1px solid #3a1518;
+}
+
+.rogDots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rogDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--dnid-border-strong);
+}
+
+.rogDot[data-variant="close"] {
+  background: var(--dnid-traffic-close);
+}
+
+.rogDot[data-variant="min"] {
+  background: var(--dnid-traffic-minimize);
+}
+
+.rogDot[data-variant="max"] {
+  background: var(--dnid-traffic-maximize);
+}
+
+.rogTitle {
+  flex: 1;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: ui-monospace, monospace;
+  color: #d4d4d4;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rogScan {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgb(0 0 0 / 0.06) 3px,
+    rgb(0 0 0 / 0.06) 4px
+  );
+  opacity: 0.2;
+}
+
+.rogBody {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 1rem 1.1rem;
+  background: linear-gradient(165deg, #100608 0%, #080808 50%, #0c0608 100%);
+}
+
+.rogRibbon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem;
+  padding: 0.4rem 0.55rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(90deg, #4a080e, #c41020 50%, #5c0c12);
+  border-radius: 4px;
+  border: 1px solid #d42838;
+}
+
+.rogRibbonText {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+.rogRibbonSub {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #f5d0d4;
+  letter-spacing: 0.04em;
+}
+
+.rogHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+.rogLogoMark {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(145deg, #d01020, #4a060c);
+  border: 1px solid #e84858;
+  border-radius: 4px;
+}
+
+.rogHeaderText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.rogWordmark {
+  font-size: 0.88rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: #f5f5f5;
+  text-shadow: 0 0 10px rgb(200 20 40 / 0.35);
+}
+
+.rogMode {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #e84858;
+}
+
+.rogBalanceCard {
+  position: relative;
+  padding: 0.7rem 0.8rem;
+  margin-bottom: 0.9rem;
+  border: 1px solid #4a1518;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #120608 0%, #0a0a0a 70%);
+  overflow: hidden;
+}
+
+.rogBalanceGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 100% 80% at 20% 0%,
+    rgb(200 24 40 / 0.12),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.rogBalanceLabel {
+  position: relative;
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a8a8a8;
+  margin-bottom: 0.2rem;
+}
+
+.rogBalanceValue {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  text-shadow: 0 0 8px rgb(200 30 45 / 0.25);
+}
+
+.rogField {
+  margin-bottom: 0.7rem;
+}
+
+.rogLabel {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #c87880;
+  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+.rogInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: ui-monospace, monospace;
+  color: #f0f0f0;
+  background: #0e0e0e;
+  border: 1px solid #5c2028;
+  border-radius: 4px;
+}
+
+.rogInput:focus {
+  outline: none;
+  border-color: #d01020;
+  box-shadow: 0 0 0 1px rgb(208 16 32 / 0.45);
+}
+
+.rogSubmit {
+  width: 100%;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #d82030 0%, #901018 100%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.35);
+}
+
+.rogSubmit:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.rogSubmit:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.rogFinePrint {
+  margin: auto 0 0;
+  padding-top: 0.75rem;
+  font-size: 0.58rem;
+  line-height: 1.4;
+  color: #6a6062;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rogScan {
+    opacity: 0.12;
+  }
+}
+
+/* ——— Side-by-side layout (docs) ——— */
+
+.demoPair {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .demoPair {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+}
+
+.demoPairCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .demoPairCell {
+    flex: 1 1 0;
+  }
+}
+
+.demoPairLabel {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
