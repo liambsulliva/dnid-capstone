@@ -13,3 +13,5 @@ Feedback loops are a fundamental part of what make software _engaging_. They are
 1. **Action**: This is the user's initiating input. It can be in the form of a button, link, or a tap on the screen.
 2. **Feedback**: The feedback is the immediate response that the user recieves from the action. It doesn't necessarily need to be positive, but it does need to convey some form of information to the user about the status of the system.
 3. **Reward**: The reward is the positive outcome of the action. It can be a feeling of accomplishment, a sense of progress, or even a physical reward like a badge or a trophy.
+
+In our experience bar, all 3 stages are clearly visible and working in tandem. The "Action" is the click of the button. As the user clicks the button, they recieve "Feedback" in the form of the experience bar filling up and the squash and stretch animation of the button. Finally, the user is "Rewarded" for their hard work by levelling up when the button has been clicked enough times.

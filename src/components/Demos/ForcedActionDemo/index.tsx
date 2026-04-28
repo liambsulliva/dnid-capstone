@@ -145,9 +145,8 @@ export default function ForcedActionDemo() {
             </form>
 
             <p className={styles.disclaimer}>
-              By continuing, you agree to our{" "}
-              <span className={styles.fakeLink}>Terms of Service</span> and{" "}
-              <span className={styles.fakeLink}>Privacy Policy</span>.
+              By continuing, you agree to our nonexistent{" "}
+              <span className={styles.fakeLink}>Terms of Service</span>.
             </p>
           </div>
         </div>

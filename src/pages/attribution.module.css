@@ -12,8 +12,81 @@
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
+  max-width: 960px;
+  width: 100%;
+}
+
+.attributionIntro {
+  max-width: 52rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ieeeSectionHeading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 2.25rem 0 0.65rem;
+  width: 100%;
+}
+
+.attributionIntro > h2:first-of-type {
+  margin-top: 1rem;
+}
+
+.ieeeSectionLead {
+  font-size: 0.88rem;
+  opacity: 0.88;
+  margin: 0 0 1rem;
+  line-height: 1.45;
+  max-width: 48rem;
+}
+
+.ieeeRefMark {
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.35em;
+}
+
+.ieeeList {
+  margin: 0 0 2rem;
+  padding-left: 1.35rem;
+  list-style-type: decimal;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ieeeList li {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  padding-left: 0.25rem;
+}
+
+.ieeeList.ieeeListBracketed {
+  display: block;
+  list-style: none;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.ieeeList.ieeeListBracketed > li + li {
+  margin-top: 1rem;
+}
+
+.ieeeList.ieeeListBracketed > li {
+  padding-left: 0;
+  list-style: none;
+  list-style-type: none;
+  display: block;
+}
+
+.ieeeList.ieeeListBracketed > li::marker {
+  content: none;
+}
+
+.ieeeList a {
+  word-break: break-word;
 }
 
 .attributionList {
@@ -23,4 +96,74 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.inventorySection {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.inventorySection h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.inventoryMeta {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+  max-width: 52rem;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.inventoryTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.inventoryTable th,
+.inventoryTable td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.inventoryTable th {
+  background: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+}
+
+.inventoryTable td:first-child {
+  word-break: break-all;
+  min-width: 12rem;
+}
+
+.sourcesCell {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+
+.crawlCell {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.attributionFooter {
+  margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.attributionFooterText {
+  font-size: 0.9rem;
+  opacity: 0.85;
 }

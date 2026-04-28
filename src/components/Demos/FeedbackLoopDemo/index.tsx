@@ -29,7 +29,7 @@ type TapOutcome = {
 function applyTap(
   state: GameState,
   variableReinforcement: boolean,
-  roll: () => number
+  roll: () => number,
 ): TapOutcome {
   let { level, xp } = state;
   xp += 1;
