@@ -2,14 +2,6 @@
   margin-bottom: var(--ifm-leading, 1.25rem);
 }
 
-.panel {
-  border-radius: 14px;
-  background: var(--dnid-surface-card);
-  border: 1px solid var(--dnid-border-default);
-  box-shadow: var(--dnid-shadow-2);
-  padding: 1rem 1.15rem;
-}
-
 .toolbar {
   display: flex;
   flex-direction: row;
@@ -31,5 +23,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--dnid-text-card);
 }

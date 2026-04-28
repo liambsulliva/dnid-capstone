@@ -206,46 +206,52 @@
   transform: scale(0.94);
 }
 
-/* Icon + text (toolbar affordances; same motion as .icon) */
+/* Icon + label (compact control; follows .default surface + motion) */
 
 .iconLabeled {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
-  min-width: 4.5rem;
-  padding: 0.5rem 0.65rem;
-  border-radius: 12px;
-  border: none;
-  background: transparent;
+  gap: 0.35rem;
+  min-width: 4.25rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--dnid-border-strong);
+  background: var(--dnid-surface-card);
   color: var(--dnid-text-card);
   font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
   cursor: pointer;
+  text-align: center;
   transform: scale(1);
   transition:
-    background 0.15s ease,
-    transform 0.12s ease;
+    filter 0.15s ease,
+    transform 0.1s ease;
 }
 
 .iconLabeled:hover {
-  background: var(--dnid-surface-subtle);
+  filter: brightness(0.92);
 }
 
 .iconLabeled:active {
-  transform: scale(0.94);
+  transform: scale(0.97);
 }
 
 .iconLabeled:focus-visible {
-  outline: 2px solid var(--dnid-brand-300);
+  outline: 2px solid var(--dnid-interactive-focus-ring);
   outline-offset: 2px;
 }
 
 .iconLabeledLabel {
-  font-size: 0.72rem;
+  display: block;
+  max-width: 9rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-transform: none;
   color: var(--dnid-text-card-muted);
 }
 
