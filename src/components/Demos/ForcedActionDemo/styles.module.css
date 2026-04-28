@@ -102,12 +102,17 @@
 }
 
 .input {
+  --demo-field-bg: #f3f4f6;
+  --demo-field-border: #d1d5db;
+  --demo-field-border-focus: #9ca3af;
+  --demo-field-fg: #1f2937;
+  --demo-field-placeholder: #6b7280;
   width: 100%;
   padding: 0.6rem 0.8rem;
   border-radius: 8px;
-  border: 1.5px solid transparent;
-  background: var(--dnid-surface-muted);
-  color: var(--ifm-font-color-base);
+  border: 1.5px solid var(--demo-field-border);
+  background: var(--demo-field-bg);
+  color: var(--demo-field-fg);
   font-size: 0.85rem;
   font-family: inherit;
   outline: none;
@@ -118,13 +123,21 @@
 }
 
 .input:focus {
-  border-color: var(--dnid-surface-subtle);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dnid-brand-500) 20%, transparent);
+  border-color: var(--demo-field-border-focus);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--dnid-brand-500) 20%, transparent);
+}
+
+:global([data-theme="dark"]) .input {
+  --demo-field-bg: var(--dnid-surface-muted);
+  --demo-field-border: var(--dnid-border-default);
+  --demo-field-border-focus: var(--dnid-surface-subtle);
+  --demo-field-fg: #f3f4f6;
+  --demo-field-placeholder: #9ca3af;
 }
 
 .input::placeholder {
-  color: var(--ifm-font-color-base);
-  opacity: 0.35;
+  color: var(--demo-field-placeholder);
 }
 
 .disclaimer {
@@ -139,4 +152,3 @@
   text-decoration: underline;
   cursor: pointer;
 }
-

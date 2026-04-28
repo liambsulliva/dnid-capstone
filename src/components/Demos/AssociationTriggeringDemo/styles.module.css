@@ -48,14 +48,19 @@
 }
 
 .fieldWrap {
+  --demo-field-bg: #f3f4f6;
+  --demo-field-border: #d1d5db;
+  --demo-field-border-focus: #9ca3af;
+  --demo-field-fg: #1f2937;
+  --demo-field-placeholder: #6b7280;
   --at-track-pad-y: 0.6rem;
   --at-track-pad-left: 0.8rem;
   position: relative;
   display: block;
   width: 100%;
   box-sizing: border-box;
-  border: 1.5px solid transparent;
-  background: var(--dnid-surface-muted);
+  border: 1.5px solid var(--demo-field-border);
+  background: var(--demo-field-bg);
   border-radius: 999px;
   overflow: hidden;
   transition:
@@ -64,8 +69,17 @@
 }
 
 .fieldWrap:focus-within {
-  border-color: var(--dnid-surface-subtle);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dnid-brand-500) 20%, transparent);
+  border-color: var(--demo-field-border-focus);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--dnid-brand-500) 20%, transparent);
+}
+
+:global([data-theme="dark"]) .fieldWrap {
+  --demo-field-bg: var(--dnid-surface-muted);
+  --demo-field-border: var(--dnid-border-default);
+  --demo-field-border-focus: var(--dnid-surface-subtle);
+  --demo-field-fg: #f3f4f6;
+  --demo-field-placeholder: #9ca3af;
 }
 
 .field {
@@ -73,11 +87,12 @@
   width: 100%;
   min-width: 0;
   margin: 0;
-  padding: var(--at-track-pad-y) calc(0.35rem + 2.75rem) var(--at-track-pad-y) var(--at-track-pad-left);
+  padding: var(--at-track-pad-y) calc(0.35rem + 2.75rem) var(--at-track-pad-y)
+    var(--at-track-pad-left);
   border: none;
   border-radius: 0;
   background: transparent;
-  color: var(--ifm-font-color-base);
+  color: var(--demo-field-fg);
   font-size: 0.85rem;
   font-family: inherit;
   outline: none;
@@ -86,8 +101,7 @@
 }
 
 .field::placeholder {
-  color: var(--ifm-font-color-base);
-  opacity: 0.35;
+  color: var(--demo-field-placeholder);
 }
 
 .submitArrow {
@@ -107,14 +121,16 @@
   border-radius: 999px;
   background: color-mix(
     in srgb,
-    var(--ifm-font-color-base) 5%,
-    var(--dnid-surface-muted)
+    var(--demo-field-fg) 5%,
+    var(--demo-field-bg)
   );
-  color: var(--ifm-font-color-base);
+  color: var(--demo-field-fg);
   cursor: pointer;
   outline: none;
   box-sizing: border-box;
-  transition: filter 0.15s ease, transform 0.1s ease;
+  transition:
+    filter 0.15s ease,
+    transform 0.1s ease;
 }
 
 .submitArrow:hover {
