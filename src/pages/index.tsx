@@ -43,7 +43,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={siteConfig.title}
-      description="Description will go into a meta tag in <head />"
+      description="A comprehensive glossary of example-driven UX design."
     >
       <HomepageHeader />
       <main>{/*<HomepageFeatures />*/}</main>
