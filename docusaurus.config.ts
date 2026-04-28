@@ -25,7 +25,18 @@ const ayuLight: PrismTheme = {
       style: { color: "#575f66" },
     },
     {
-      types: ["entity", "url", "symbol", "number", "boolean", "variable", "constant", "property", "regex", "inserted"],
+      types: [
+        "entity",
+        "url",
+        "symbol",
+        "number",
+        "boolean",
+        "variable",
+        "constant",
+        "property",
+        "regex",
+        "inserted",
+      ],
       style: { color: "#f2ae49" },
     },
     {
@@ -74,7 +85,18 @@ const ayuDark: PrismTheme = {
       style: { color: "#b3b1ad" },
     },
     {
-      types: ["entity", "url", "symbol", "number", "boolean", "variable", "constant", "property", "regex", "inserted"],
+      types: [
+        "entity",
+        "url",
+        "symbol",
+        "number",
+        "boolean",
+        "variable",
+        "constant",
+        "property",
+        "regex",
+        "inserted",
+      ],
       style: { color: "#e6b673" },
     },
     {
@@ -219,6 +241,10 @@ const config: Config = {
     image: "img/print-logo-bg.png",
     metadata: [
       { property: "og:site_name", content: "The Invisible Hand of UX" },
+      {
+        property: "og:description",
+        content: "A comprehensive glossary of example-driven UX design.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
