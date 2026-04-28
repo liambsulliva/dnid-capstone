@@ -1,0 +1,146 @@
+.scene {
+  margin-bottom: var(--ifm-leading, 1.25rem);
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.shakeTarget {
+  width: 100%;
+  max-width: 340px;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.shakeTargetActive {
+  animation: headNo 0.55s ease-in-out;
+}
+
+@keyframes headNo {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  12% {
+    transform: translateX(-10px);
+  }
+  24% {
+    transform: translateX(10px);
+  }
+  36% {
+    transform: translateX(-7px);
+  }
+  48% {
+    transform: translateX(7px);
+  }
+  60% {
+    transform: translateX(-4px);
+  }
+  72% {
+    transform: translateX(4px);
+  }
+  84% {
+    transform: translateX(-2px);
+  }
+  92% {
+    transform: translateX(0);
+  }
+}
+
+.fieldWrap {
+  --at-track-pad-y: 0.6rem;
+  --at-track-pad-left: 0.8rem;
+  position: relative;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid transparent;
+  background: var(--dnid-surface-muted);
+  border-radius: 999px;
+  overflow: hidden;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.fieldWrap:focus-within {
+  border-color: var(--dnid-surface-subtle);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--dnid-brand-500) 20%, transparent);
+}
+
+.field {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: var(--at-track-pad-y) calc(0.35rem + 2.75rem) var(--at-track-pad-y) var(--at-track-pad-left);
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  font-size: 0.85rem;
+  font-family: inherit;
+  outline: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.field::placeholder {
+  color: var(--ifm-font-color-base);
+  opacity: 0.35;
+}
+
+.submitArrow {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  bottom: 0;
+  width: auto;
+  height: 90%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: color-mix(
+    in srgb,
+    var(--ifm-font-color-base) 5%,
+    var(--dnid-surface-muted)
+  );
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.submitArrow:hover {
+  filter: brightness(0.96);
+}
+
+.submitArrow:active {
+  transform: scale(0.96);
+}
+
+.submitArrow:focus-visible {
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0 0 0 2px var(--dnid-interactive-focus-ring);
+}
+
+.arrowIcon {
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shakeTargetActive {
+    animation: none;
+  }
+
+  .submitArrow:active {
+    transform: none;
+  }
+}
